@@ -1,16 +1,20 @@
 <template>
-  <el-row>
-    <el-col>
-      <h1> Unser Pilot nennt sich {{ pilot }} </h1>
-      <el-button @click="onTheFly=!onTheFly">
-        LOS!
-      </el-button>
-      <h2 v-if="onTheFly">
-        Werner startet in Richtung 1.0
-      </h2>
-      <div id="arc" />
-    </el-col>
-  </el-row>
+  <div>
+    <h1> United States of America </h1>
+    <el-row>
+      <el-col :span="12">
+        <div id="arc" />
+      </el-col>
+      <el-col :span="12">
+        <el-row :span="12">
+          <h1>Diagramm 1 </h1>
+        </el-row>
+        <el-row>
+          <h1> Diagramm 2</h1>
+        </el-row>
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>
@@ -98,6 +102,7 @@ export default {
     }
   },
   mounted() {
+    
     this.generateArc();
   },
 
