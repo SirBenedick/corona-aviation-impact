@@ -114,6 +114,9 @@ export default {
       chart.accessor(function(d) {
         return d.value;
       });
+      chart.accessorSegment(function(d) {
+        return d.month;
+      });
 
       var svg = d3
         .select(dom_element_to_append_to)
@@ -175,10 +178,17 @@ export default {
         accessor = function(d) {
           return d;
         },
+        accessorSegment = function(d) {
+          return d;
+        },
         segmentLabels = [], // Value assigned only for init
         radialLabels = (segmentLabels = []); // Value assigned only for init
 
-      const segmentAngle = (1.5 * Math.PI) / numSegments;
+      const freeSpaceSize = 0.5;
+      const emptySpaceAngleInRad = freeSpaceSize * Math.PI;
+      const segementSapceAngleInRad = (2 - freeSpaceSize) * Math.PI;
+      const singleSegmentAngle = segementSapceAngleInRad / numSegments;
+
       /* Arc functions */
       let ir = function(d, i) {
         return innerRadius + Math.floor(i / numSegments) * segmentHeight;
@@ -191,26 +201,19 @@ export default {
         );
       };
       let sa = function(d, i) {
-        console.log(i);
-        console.log(
-          "sa",
-          0.5 * Math.PI + ((segmentAngle * i) % (1.5 * Math.PI))
+        return (
+          emptySpaceAngleInRad +
+          ((singleSegmentAngle * i) % segementSapceAngleInRad)
         );
-        // return (i * 2 * Math.PI) / numSegments;
-        return 0.5 * Math.PI + ((segmentAngle * i) % (1.5 * Math.PI));
       };
       let ea = function(d, i) {
-        // return ((i + 1) * 2 * Math.PI) / numSegments;
-        console.log(
-          "ea",
-          0.5 * Math.PI + ((segmentAngle * (i + 1)) % (1.5 * Math.PI))
-        );
-        // console.log("ea", segmentAngle * (i + 1));
-        console.log("ea", (segmentAngle * (i + 1)) % (1.5 * Math.PI));
-        if ((segmentAngle * (i + 1)) % (1.5 * Math.PI) === 0) {
+        if ((singleSegmentAngle * (i + 1)) % segementSapceAngleInRad === 0) {
           return 2 * Math.PI;
         }
-        return 0.5 * Math.PI + ((segmentAngle * (i + 1)) % (1.5 * Math.PI));
+        return (
+          emptySpaceAngleInRad +
+          ((singleSegmentAngle * (i + 1)) % segementSapceAngleInRad)
+        );
       };
 
       function chart(selection) {
@@ -218,9 +221,11 @@ export default {
           console.log(data);
           var svg = d3.select(this);
 
+          // Ofset of the whole svg
           var offset =
             innerRadius + Math.ceil(data.length / numSegments) * segmentHeight;
 
+          // The circular heatmap
           let g = svg
             .append("g")
             .classed("circular-heat", true)
@@ -240,6 +245,7 @@ export default {
             autoDomain = true;
           }
 
+          // Linear d3 color scale
           var color = d3
             .scaleLinear()
             .domain(domain)
@@ -247,6 +253,7 @@ export default {
 
           if (autoDomain) domain = null;
 
+          // Path is a single cell inside the heatmap
           g.selectAll("path")
             .data(data)
             .enter()
@@ -265,6 +272,9 @@ export default {
             })
             .attr("fill", function(d) {
               return color(accessor(d));
+            })
+            .attr("class", function(d) {
+              return accessorSegment(d);
             });
 
           // Unique id so that the text path defs are unique - is there a better way to do this?
@@ -424,6 +434,12 @@ export default {
       chart.accessor = function(_) {
         if (!arguments.length) return accessor;
         accessor = _;
+        return chart;
+      };
+
+      chart.accessorSegment = function(_) {
+        if (!arguments.length) return accessorSegment;
+        accessorSegment = _;
         return chart;
       };
 
