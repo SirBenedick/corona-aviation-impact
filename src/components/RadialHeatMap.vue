@@ -9,6 +9,8 @@ export default {
     return {
       radial_labels: ["January", "Feburary", "March", "April"],
       segment_labels: [
+        // "",
+        // "",
         "January",
         "February",
         "March",
@@ -23,7 +25,9 @@ export default {
         "December"
       ],
       gdp: [
-        { month: 1, type: "Category 1", value: 25 },
+        // { month: 1, type: "egal", value: 0 },
+        // { month: 1, type: "EGAL", value: 0 },
+        { month: 1, type: "Category 1", value: 12 },
         { month: 2, type: "Category 1", value: 15 },
         { month: 3, type: "Category 1", value: 27 },
         { month: 4, type: "Category 1", value: 10 },
@@ -35,6 +39,8 @@ export default {
         { month: 10, type: "Category 1", value: 12 },
         { month: 11, type: "Category 1", value: 32 },
         { month: 12, type: "Category 1", value: 35 },
+        // { month: 1, type: "EGAL", value: 0 },
+        // { month: 1, type: "EGAL", value: 0 },
         { month: 1, type: "Category 2", value: 19 },
         { month: 2, type: "Category 2", value: 24 },
         { month: 3, type: "Category 2", value: 27 },
@@ -47,6 +53,8 @@ export default {
         { month: 10, type: "Category 2", value: 5 },
         { month: 11, type: "Category 2", value: 21 },
         { month: 12, type: "Category 2", value: 10 },
+        // { month: 1, type: "Category 3", value: 0 },
+        // { month: 1, type: "Category 3", value: 0 },
         { month: 1, type: "Category 3", value: 19 },
         { month: 2, type: "Category 3", value: 3 },
         { month: 3, type: "Category 3", value: 32 },
@@ -59,6 +67,8 @@ export default {
         { month: 10, type: "Category 3", value: 33 },
         { month: 11, type: "Category 3", value: 19 },
         { month: 12, type: "Category 3", value: 24 },
+        // // { month: 1, type: "Category 4", value: 0 },
+        // { month: 1, type: "Category 4", value: 0 },
         { month: 1, type: "Category 4", value: 12 },
         { month: 2, type: "Category 4", value: 43 },
         { month: 3, type: "Category 4", value: 12 },
@@ -71,6 +81,10 @@ export default {
         { month: 10, type: "Category 4", value: 26 },
         { month: 11, type: "Category 4", value: 31 },
         { month: 12, type: "Category 4", value: 25 }
+        // { month: 13, type: "Category 1", value: 12 },
+        // { month: 13, type: "Category 2", value: 43 },
+        // { month: 13, type: "Category 3", value: 12 },
+        // { month: 13, type: "Category 4", value: 23 }
       ]
     };
   },
@@ -85,10 +99,10 @@ export default {
       var width = 600 - margin.left - margin.right;
 
       var height = width;
-      var innerRadius = width / 14;
+      var innerRadius = width / 10; // Size of the inner circle
       var segmentHeight =
         (width - margin.top - margin.bottom - 2 * innerRadius) /
-        (2 * this.radial_labels.length);
+        (2 * this.radial_labels.length); // Height of a single cell
 
       var chart = this.circularHeatChart()
         .innerRadius(innerRadius)
@@ -153,17 +167,18 @@ export default {
     },
     circularHeatChart() {
       var margin = { top: 20, right: 20, bottom: 20, left: 20 },
-        innerRadius = 20,
+        innerRadius = 20, // Value assigned only for init
         numSegments = this.segment_labels.length,
-        segmentHeight = 20,
+        segmentHeight = 200, // Value assigned only for init
         domain = null,
-        range = ["white", "red"],
+        range = ["white", "red"], // Value assigned only for init
         accessor = function(d) {
           return d;
         },
-        segmentLabels = [],
-        radialLabels = (segmentLabels = []);
+        segmentLabels = [], // Value assigned only for init
+        radialLabels = (segmentLabels = []); // Value assigned only for init
 
+      const segmentAngle = (1.5 * Math.PI) / numSegments;
       /* Arc functions */
       let ir = function(d, i) {
         return innerRadius + Math.floor(i / numSegments) * segmentHeight;
@@ -176,14 +191,31 @@ export default {
         );
       };
       let sa = function(d, i) {
-        return (i * 2 * Math.PI) / numSegments;
+        console.log(i);
+        console.log(
+          "sa",
+          0.5 * Math.PI + ((segmentAngle * i) % (1.5 * Math.PI))
+        );
+        // return (i * 2 * Math.PI) / numSegments;
+        return 0.5 * Math.PI + ((segmentAngle * i) % (1.5 * Math.PI));
       };
       let ea = function(d, i) {
-        return ((i + 1) * 2 * Math.PI) / numSegments;
+        // return ((i + 1) * 2 * Math.PI) / numSegments;
+        console.log(
+          "ea",
+          0.5 * Math.PI + ((segmentAngle * (i + 1)) % (1.5 * Math.PI))
+        );
+        // console.log("ea", segmentAngle * (i + 1));
+        console.log("ea", (segmentAngle * (i + 1)) % (1.5 * Math.PI));
+        if ((segmentAngle * (i + 1)) % (1.5 * Math.PI) === 0) {
+          return 2 * Math.PI;
+        }
+        return 0.5 * Math.PI + ((segmentAngle * (i + 1)) % (1.5 * Math.PI));
       };
 
       function chart(selection) {
         selection.each(function(data) {
+          console.log(data);
           var svg = d3.select(this);
 
           var offset =
@@ -229,7 +261,7 @@ export default {
                 .endAngle(ea)
             )
             .attr("stroke", function(d) {
-              return "#4f5b69";
+              return "#4f5b69"; // Cell border
             })
             .attr("fill", function(d) {
               return color(accessor(d));
@@ -294,7 +326,7 @@ export default {
             });
 
           //Segment labels
-          var segmentLabelOffset = 2;
+          var segmentLabelOffset = 8;
 
           var r =
             innerRadius +
@@ -329,7 +361,8 @@ export default {
             .attr("xlink:href", "#segment-label-path-" + id)
             .style("font-size", "16px")
             .attr("startOffset", function(d, i) {
-              return (i * 100) / numSegments + "%";
+              // return (i * 100) / numSegments + "%";
+              return (75 / numSegments) * i + 25 + "%";
             })
             .text(function(d) {
               return d;
