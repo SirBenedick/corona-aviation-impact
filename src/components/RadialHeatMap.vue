@@ -7,85 +7,9 @@ import * as d3 from "d3";
 export default {
   data() {
     return {
-      radial_labels: ["January", "Feburary", "March", "April"],
-      segment_labels: [
-        // "",
-        // "",
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-      ],
-      gdp: [
-        // { month: 1, type: "egal", value: 0 },
-        // { month: 1, type: "EGAL", value: 0 },
-        { month: 1, type: "Category 1", value: 12 },
-        { month: 2, type: "Category 1", value: 15 },
-        { month: 3, type: "Category 1", value: 27 },
-        { month: 4, type: "Category 1", value: 10 },
-        { month: 5, type: "Category 1", value: 54 },
-        { month: 6, type: "Category 1", value: 23 },
-        { month: 7, type: "Category 1", value: 31 },
-        { month: 8, type: "Category 1", value: 17 },
-        { month: 9, type: "Category 1", value: 8 },
-        { month: 10, type: "Category 1", value: 12 },
-        { month: 11, type: "Category 1", value: 32 },
-        { month: 12, type: "Category 1", value: 35 },
-        // { month: 1, type: "EGAL", value: 0 },
-        // { month: 1, type: "EGAL", value: 0 },
-        { month: 1, type: "Category 2", value: 19 },
-        { month: 2, type: "Category 2", value: 24 },
-        { month: 3, type: "Category 2", value: 27 },
-        { month: 4, type: "Category 2", value: 12 },
-        { month: 5, type: "Category 2", value: 19 },
-        { month: 6, type: "Category 2", value: 30 },
-        { month: 7, type: "Category 2", value: 31 },
-        { month: 8, type: "Category 2", value: 25 },
-        { month: 9, type: "Category 2", value: 20 },
-        { month: 10, type: "Category 2", value: 5 },
-        { month: 11, type: "Category 2", value: 21 },
-        { month: 12, type: "Category 2", value: 10 },
-        // { month: 1, type: "Category 3", value: 0 },
-        // { month: 1, type: "Category 3", value: 0 },
-        { month: 1, type: "Category 3", value: 19 },
-        { month: 2, type: "Category 3", value: 3 },
-        { month: 3, type: "Category 3", value: 32 },
-        { month: 4, type: "Category 3", value: 23 },
-        { month: 5, type: "Category 3", value: 9 },
-        { month: 6, type: "Category 3", value: 17 },
-        { month: 7, type: "Category 3", value: 25 },
-        { month: 8, type: "Category 3", value: 29 },
-        { month: 9, type: "Category 3", value: 32 },
-        { month: 10, type: "Category 3", value: 33 },
-        { month: 11, type: "Category 3", value: 19 },
-        { month: 12, type: "Category 3", value: 24 },
-        // // { month: 1, type: "Category 4", value: 0 },
-        // { month: 1, type: "Category 4", value: 0 },
-        { month: 1, type: "Category 4", value: 12 },
-        { month: 2, type: "Category 4", value: 43 },
-        { month: 3, type: "Category 4", value: 12 },
-        { month: 4, type: "Category 4", value: 23 },
-        { month: 5, type: "Category 4", value: 14 },
-        { month: 6, type: "Category 4", value: 19 },
-        { month: 7, type: "Category 4", value: 22 },
-        { month: 8, type: "Category 4", value: 39 },
-        { month: 9, type: "Category 4", value: 22 },
-        { month: 10, type: "Category 4", value: 26 },
-        { month: 11, type: "Category 4", value: 31 },
-        { month: 12, type: "Category 4", value: 25 }
-        // { month: 13, type: "Category 1", value: 12 },
-        // { month: 13, type: "Category 2", value: 43 },
-        // { month: 13, type: "Category 3", value: 12 },
-        // { month: 13, type: "Category 4", value: 23 }
-      ]
+      radial_labels: [],
+      segment_labels: [],
+      inputData: []
     };
   },
   methods: {
@@ -107,7 +31,7 @@ export default {
       var chart = this.circularHeatChart()
         .innerRadius(innerRadius)
         .segmentHeight(segmentHeight)
-        .range(["white", "#01579b"])
+        .range(["green", "red"])
         .radialLabels(radial_labels)
         .segmentLabels(segment_labels);
 
@@ -115,7 +39,7 @@ export default {
         return d.value;
       });
       chart.accessorSegment(function(d) {
-        return d.month;
+        return d.displayedCountryName;
       });
 
       var svg = d3
@@ -143,15 +67,17 @@ export default {
         .append("div")
         .attr("class", "tooltip");
 
-      tooltip.append("div").attr("class", "month");
+      tooltip.append("div").attr("class", "displayedCountryName");
       tooltip.append("div").attr("class", "value");
-      tooltip.append("div").attr("class", "type");
+      tooltip.append("div").attr("class", "month");
 
       svg
         .selectAll("path")
         .on("mouseover", function(d) {
+          tooltip
+            .select(".displayedCountryName")
+            .html("<b> Country: " + d.displayedCountryName + "</b>");
           tooltip.select(".month").html("<b> Month: " + d.month + "</b>");
-          tooltip.select(".type").html("<b> Type: " + d.type + "</b>");
           tooltip.select(".value").html("<b> Value: " + d.value + "</b>");
 
           tooltip.style("display", "block");
@@ -184,9 +110,9 @@ export default {
         segmentLabels = [], // Value assigned only for init
         radialLabels = (segmentLabels = []); // Value assigned only for init
 
-      const freeSpaceSize = 0.5;
-      const emptySpaceAngleInRad = freeSpaceSize * Math.PI;
-      const segementSapceAngleInRad = (2 - freeSpaceSize) * Math.PI;
+      const freeSpaceSizeInPercent = 0.25;
+      const emptySpaceAngleInRad = freeSpaceSizeInPercent * 2 * Math.PI;
+      const segementSapceAngleInRad = 2 * Math.PI - emptySpaceAngleInRad;
       const singleSegmentAngle = segementSapceAngleInRad / numSegments;
 
       /* Arc functions */
@@ -215,10 +141,10 @@ export default {
           ((singleSegmentAngle * (i + 1)) % segementSapceAngleInRad)
         );
       };
+      const that = this;
 
       function chart(selection) {
         selection.each(function(data) {
-          console.log(data);
           var svg = d3.select(this);
 
           // Ofset of the whole svg
@@ -275,6 +201,9 @@ export default {
             })
             .attr("class", function(d) {
               return accessorSegment(d);
+            })
+            .on("click", function(d) {
+              that.emitSelectCountry(accessorSegment(d));
             });
 
           // Unique id so that the text path defs are unique - is there a better way to do this?
@@ -372,7 +301,11 @@ export default {
             .style("font-size", "16px")
             .attr("startOffset", function(d, i) {
               // return (i * 100) / numSegments + "%";
-              return (75 / numSegments) * i + 25 + "%";
+              return (
+                ((100 - freeSpaceSizeInPercent * 100) / numSegments) * i +
+                freeSpaceSizeInPercent * 100 +
+                "%"
+              );
             })
             .text(function(d) {
               return d;
@@ -444,11 +377,96 @@ export default {
       };
 
       return chart;
+    },
+    emitSelectCountry(newCountryName) {
+      this.$emit("selectCountry", newCountryName);
     }
   },
   mounted() {
+    // Call Service
+    let allData = {
+      radial_labels: ["January", "Feburary", "March", "April"],
+      segment_labels: [
+        "Germany",
+        "United Kingdom",
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      data: [
+        {
+          displayedCountryName: "Germany",
+          countryCode: "DE",
+          month: "January",
+          value: 12
+        },
+        { displayedCountryName: "United Kingdom", month: "January", value: 15 },
+        { displayedCountryName: 3, month: "January", value: 27 },
+        { displayedCountryName: 4, month: "January", value: 10 },
+        { displayedCountryName: 5, month: "January", value: 54 },
+        { displayedCountryName: 6, month: "January", value: 23 },
+        { displayedCountryName: 7, month: "January", value: 31 },
+        { displayedCountryName: 8, month: "January", value: 17 },
+        { displayedCountryName: 9, month: "January", value: 8 },
+        { displayedCountryName: 10, month: "January", value: 12 },
+        { displayedCountryName: 11, month: "January", value: 32 },
+        { displayedCountryName: 12, month: "January", value: 35 },
+        { displayedCountryName: "Germany", month: "February", value: 19 },
+        {
+          displayedCountryName: "United Kingdom",
+          month: "February",
+          value: 24
+        },
+        { displayedCountryName: 3, month: "February", value: 27 },
+        { displayedCountryName: 4, month: "February", value: 12 },
+        { displayedCountryName: 5, month: "February", value: 19 },
+        { displayedCountryName: 6, month: "February", value: 30 },
+        { displayedCountryName: 7, month: "February", value: 31 },
+        { displayedCountryName: 8, month: "February", value: 25 },
+        { displayedCountryName: 9, month: "February", value: 20 },
+        { displayedCountryName: 10, month: "February", value: 5 },
+        { displayedCountryName: 11, month: "February", value: 21 },
+        { displayedCountryName: 12, month: "February", value: 10 },
+        { displayedCountryName: "Germany", month: "March", value: 19 },
+        { displayedCountryName: "United Kingdom", month: "March", value: 3 },
+        { displayedCountryName: 3, month: "March", value: 32 },
+        { displayedCountryName: 4, month: "March", value: 23 },
+        { displayedCountryName: 5, month: "March", value: 9 },
+        { displayedCountryName: 6, month: "March", value: 17 },
+        { displayedCountryName: 7, month: "March", value: 25 },
+        { displayedCountryName: 8, month: "March", value: 29 },
+        { displayedCountryName: 9, month: "March", value: 32 },
+        { displayedCountryName: 10, month: "March", value: 33 },
+        { displayedCountryName: 11, month: "March", value: 19 },
+        { displayedCountryName: 12, month: "March", value: 24 },
+        { displayedCountryName: "Germany", month: "April", value: 12 },
+        { displayedCountryName: "United Kingdom", month: "April", value: 43 },
+        { displayedCountryName: 3, month: "April", value: 12 },
+        { displayedCountryName: 4, month: "April", value: 23 },
+        { displayedCountryName: 5, month: "April", value: 14 },
+        { displayedCountryName: 6, month: "April", value: 19 },
+        { displayedCountryName: 7, month: "April", value: 22 },
+        { displayedCountryName: 8, month: "April", value: 39 },
+        { displayedCountryName: 9, month: "April", value: 22 },
+        { displayedCountryName: 10, month: "April", value: 26 },
+        { displayedCountryName: 11, month: "April", value: 31 },
+        { displayedCountryName: 12, month: "April", value: 25 }
+      ]
+    };
+
+    this.radial_labels = allData.radial_labels;
+    this.segment_labels = allData.segment_labels;
+    this.inputData = allData.data;
+
     this.loadCircularHeatMap(
-      this.gdp,
+      this.inputData,
       "#arc",
       this.radial_labels,
       this.segment_labels

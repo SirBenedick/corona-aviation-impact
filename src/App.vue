@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <h1>United States of America</h1>
+    <SelectedCountryTitle :country-name="selectedCountry" />
     <el-row>
       <el-col :span="12">
-        <RadialHeatMap />
+        <RadialHeatMap @selectCountry="setSelectedCountry" />
       </el-col>
       <el-col :span="12">
         <el-row :span="12">
@@ -20,12 +20,24 @@
 <script>
 import LSDFlights from "./components/LSDFlights.vue";
 import RadialHeatMap from "./components/RadialHeatMap.vue";
+import SelectedCountryTitle from "./components/SelectedCountryTitle.vue";
 
 export default {
   name: "App",
   components: {
-    // LSDFlights,
-    RadialHeatMap
+    RadialHeatMap,
+    SelectedCountryTitle
+  },
+  data() {
+    return {
+      selectedCountry: "World",
+      selectedTimeStamp: ""
+    };
+  },
+  methods: {
+    setSelectedCountry(newCountryName) {
+      this.selectedCountry = newCountryName;
+    }
   }
 };
 </script>
