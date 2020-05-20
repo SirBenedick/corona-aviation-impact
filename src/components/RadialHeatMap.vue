@@ -8,9 +8,13 @@ import FlightService from '../services/FlightService'
 export default {
   data() {
     return {
-      radial_labels: [],
-      segment_labels: [],
-      inputData: []
+      radial_labels: ["January", "Feburary", "March", "April"],
+      segment_labels: [{
+        countryCode : 'DE',
+        countryDisplayedName: 'Germany',
+      }],
+      inputData: [],
+      data: []
     };
   },
   methods: {
@@ -384,7 +388,8 @@ export default {
     }
   },
   mounted() {
-
+    this.data = FlightService.getFlights(this.segment_labels)
+    console.log(this.data)
     // Call Service
     let allData = {
       radial_labels: ["January", "Feburary", "March", "April"],

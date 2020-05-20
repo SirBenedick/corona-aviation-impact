@@ -5,11 +5,18 @@ import moment from 'moment'
 
 class FlightService {
 
-  getFlights(){
-    var arr = Object.entries(flightData)
-    var data = []
-   
-    arr.forEach(element => {
+  getFlights(segmentLabels){
+    let flights = {}
+    let data = []
+
+    segmentLabels.forEach(segment => {
+      flights[segment.countryCode] = flightData[segment.countryCode]
+      flights[segment.countryCode]['countryDisplayedName'] = segment.countryDisplayedName 
+    });
+
+    let array = Object.entries(flights)
+
+    array.forEach(element => {
     
       var january2019 = 0
       var february2019 = 0
@@ -105,7 +112,7 @@ class FlightService {
         switch (index) {
         case 0:
           data.push({
-            displayedCountryName: element[1].countryName,
+            displayedCountryName: element[1].countryDisplayedName,
             month: 'january',
             numericMonth: index,
             value2020: january2020,
