@@ -251,34 +251,10 @@ class FlightService {
     return flightData[country]
   }
 
-  getDataByDate(timestamp){
-
-    console.log(flightData.dates)
-  }
-
   getDataByCountryAndDate(country, timestamp){
     return flightData[country].dates[timestamp]
   }
-
-  getDataByTimeSpan(begin, end){
-    console.log(flightData.dates)
-    var dateKeys = []
-    var filtered = []
-    var begin = '1577836800'
-    var end = 'D'
-
-    dateKeys = _.keys(flightData['NZ'].dates)
-    var filteredDates = _.filter(dateKeys, function(num){
-      return num >= begin && num <= end;
-    })
-    
-
-    filteredDates.forEach(element => {
-      // filtered.push(flightData.dates[element])
-    });
-
-
-  }
+  
 
 }
 export default new FlightService();
