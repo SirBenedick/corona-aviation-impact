@@ -4,15 +4,33 @@
 
 <script>
 import * as d3 from "d3";
-import FlightService from '../services/FlightService'
+import FlightService from "../services/FlightService";
 export default {
   data() {
     return {
       radial_labels: ["January", "Feburary", "March", "April"],
-      segment_labels: [{
-        countryCode : 'DE',
-        countryDisplayedName: 'Germany',
-      }],
+      segment_labels: [
+        {
+          countryCode: "DE",
+          countryDisplayedName: "Germany"
+        },
+        {
+          countryCode: "GB",
+          countryDisplayedName: "United Kingdom"
+        },
+        {
+          countryCode: "US",
+          countryDisplayedName: "United States"
+        },
+        {
+          countryCode: "CN",
+          countryDisplayedName: "China"
+        },
+        {
+          countryCode: "FR",
+          countryDisplayedName: "France"
+        }
+      ],
       inputData: [],
       data: []
     };
@@ -36,12 +54,12 @@ export default {
       var chart = this.circularHeatChart()
         .innerRadius(innerRadius)
         .segmentHeight(segmentHeight)
-        .range(["green", "red"])
+        .range(["red", "green"])
         .radialLabels(radial_labels)
-        .segmentLabels(segment_labels);
+        .segmentLabels(segment_labels.map(label => label.countryDisplayedName));
 
       chart.accessor(function(d) {
-        return d.value;
+        return (d.value2020 / d.value2019) * 100;
       });
       chart.accessorSegment(function(d) {
         return d.displayedCountryName;
@@ -83,7 +101,9 @@ export default {
             .select(".displayedCountryName")
             .html("<b> Country: " + d.displayedCountryName + "</b>");
           tooltip.select(".month").html("<b> Month: " + d.month + "</b>");
-          tooltip.select(".value").html("<b> Value: " + d.value + "</b>");
+          tooltip
+            .select(".value")
+            .html("<b> Value: " + (d.value2020 / d.value2019) * 100 + "</b>");
 
           tooltip.style("display", "block");
           tooltip.style("opacity", 2);
@@ -388,89 +408,11 @@ export default {
     }
   },
   mounted() {
-    this.data = FlightService.getFlights(this.segment_labels)
-    console.log(this.data)
-    // Call Service
-    let allData = {
-      radial_labels: ["January", "Feburary", "March", "April"],
-      segment_labels: [
-        "Germany",
-        "United Kingdom",
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ],
-      data: [
-        {
-          displayedCountryName: "Germany",
-          countryCode: "DE",
-          month: "January",
-          value: 12
-        },
-        { displayedCountryName: "United Kingdom", month: "January", value: 15 },
-        { displayedCountryName: 3, month: "January", value: 27 },
-        { displayedCountryName: 4, month: "January", value: 10 },
-        { displayedCountryName: 5, month: "January", value: 54 },
-        { displayedCountryName: 6, month: "January", value: 23 },
-        { displayedCountryName: 7, month: "January", value: 31 },
-        { displayedCountryName: 8, month: "January", value: 17 },
-        { displayedCountryName: 9, month: "January", value: 8 },
-        { displayedCountryName: 10, month: "January", value: 12 },
-        { displayedCountryName: 11, month: "January", value: 32 },
-        { displayedCountryName: 12, month: "January", value: 35 },
-        { displayedCountryName: "Germany", month: "February", value: 19 },
-        {
-          displayedCountryName: "United Kingdom",
-          month: "February",
-          value: 24
-        },
-        { displayedCountryName: 3, month: "February", value: 27 },
-        { displayedCountryName: 4, month: "February", value: 12 },
-        { displayedCountryName: 5, month: "February", value: 19 },
-        { displayedCountryName: 6, month: "February", value: 30 },
-        { displayedCountryName: 7, month: "February", value: 31 },
-        { displayedCountryName: 8, month: "February", value: 25 },
-        { displayedCountryName: 9, month: "February", value: 20 },
-        { displayedCountryName: 10, month: "February", value: 5 },
-        { displayedCountryName: 11, month: "February", value: 21 },
-        { displayedCountryName: 12, month: "February", value: 10 },
-        { displayedCountryName: "Germany", month: "March", value: 19 },
-        { displayedCountryName: "United Kingdom", month: "March", value: 3 },
-        { displayedCountryName: 3, month: "March", value: 32 },
-        { displayedCountryName: 4, month: "March", value: 23 },
-        { displayedCountryName: 5, month: "March", value: 9 },
-        { displayedCountryName: 6, month: "March", value: 17 },
-        { displayedCountryName: 7, month: "March", value: 25 },
-        { displayedCountryName: 8, month: "March", value: 29 },
-        { displayedCountryName: 9, month: "March", value: 32 },
-        { displayedCountryName: 10, month: "March", value: 33 },
-        { displayedCountryName: 11, month: "March", value: 19 },
-        { displayedCountryName: 12, month: "March", value: 24 },
-        { displayedCountryName: "Germany", month: "April", value: 12 },
-        { displayedCountryName: "United Kingdom", month: "April", value: 43 },
-        { displayedCountryName: 3, month: "April", value: 12 },
-        { displayedCountryName: 4, month: "April", value: 23 },
-        { displayedCountryName: 5, month: "April", value: 14 },
-        { displayedCountryName: 6, month: "April", value: 19 },
-        { displayedCountryName: 7, month: "April", value: 22 },
-        { displayedCountryName: 8, month: "April", value: 39 },
-        { displayedCountryName: 9, month: "April", value: 22 },
-        { displayedCountryName: 10, month: "April", value: 26 },
-        { displayedCountryName: 11, month: "April", value: 31 },
-        { displayedCountryName: 12, month: "April", value: 25 }
-      ]
-    };
-
-    this.radial_labels = allData.radial_labels;
-    this.segment_labels = allData.segment_labels;
-    this.inputData = allData.data;
+    this.data = FlightService.getFlights(this.segment_labels);
+    console.log(this.data);
+    // this.radial_labels = allData.radial_labels;
+    // this.segment_labels = allData.segment_labels;
+    this.inputData = this.data;
 
     this.loadCircularHeatMap(
       this.inputData,

@@ -225,6 +225,8 @@ class FlightService {
       }
     });
 
+    data = data.filter(entry => entry.value2019 !== 0)
+
     data.sort(function(a,b) {
       const countryA = a.numericMonth
       const countryB = b.numericMonth
