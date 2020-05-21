@@ -30,10 +30,10 @@ export default {
           countryCode: "CA",
           countryDisplayedName: "Canada"
         },
-        // {
-        //   countryCode: "CN",
-        //   countryDisplayedName: "China"
-        // },
+        {
+          countryCode: "CN",
+          countryDisplayedName: "China"
+        },
         {
           countryCode: "FR",
           countryDisplayedName: "France"
@@ -80,11 +80,11 @@ export default {
         },
         {
           countryCode: "GB",
-          countryDisplayedName: "United Kingdom"
+          countryDisplayedName: "UK"
         },
         {
           countryCode: "US",
-          countryDisplayedName: "United States"
+          countryDisplayedName: "USA"
         },
       ],
       inputData: [],
@@ -110,12 +110,14 @@ export default {
       var chart = this.circularHeatChart()
         .innerRadius(innerRadius)
         .segmentHeight(segmentHeight)
-        .range(["red", "green"])
+        .domain([-100,100])
+        // .range(["#9E0142", "#D53E4F", "#F46D43", "#FDAE61", "#FEE08B", "#FFFFBF", "#E6F598", "#ABDDA4", "#66C2A5", "#3288BD", "#5E4FA2"])
+        .range(["#0A2F51", "#0E4D64", "#137177", "#188977", "#1D9A6C", "#39A96B", "#56B870", "#74C67A", "#99D492", "#BFE1B0", "#DEEDCF"])
         .radialLabels(radial_labels)
         .segmentLabels(segment_labels.map(label => label.countryDisplayedName));
 
       chart.accessor(function(d) {
-        return (d.value2020 / d.value2019) * 100;
+        return (d.value2020 / d.value2019) * 100 -100;
       });
       chart.accessorSegment(function(d) {
         return d.displayedCountryName;
@@ -147,19 +149,20 @@ export default {
         .attr("class", "tooltip");
 
       tooltip.append("div").attr("class", "displayedCountryName");
-      tooltip.append("div").attr("class", "value");
       tooltip.append("div").attr("class", "month");
+      tooltip.append("div").attr("class", "change");
 
       svg
         .selectAll("path")
-        .on("mouseover", function(d) {
+        .on("mouseover", function(d) { 
+          let change= Math.round(((d.value2020 / d.value2019) * 100)-100);
           tooltip
             .select(".displayedCountryName")
-            .html("<b> Country: " + d.displayedCountryName + "</b>");
+            .html("<b>"+ d.displayedCountryName + "</b>");
           tooltip.select(".month").html("<b> Month: " + d.month + "</b>");
           tooltip
-            .select(".value")
-            .html("<b> Value: " + (d.value2020 / d.value2019) * 100 + "</b>");
+            .select(".change")
+            .html("<b> Change: " +  ((change>0) ? "+": "")+change +"% "+ ((change>0) ? "increase ": "decrease ") +"in traffic" +"</b>");
 
           tooltip.style("display", "block");
           tooltip.style("opacity", 2);
@@ -191,7 +194,7 @@ export default {
         segmentLabels = [], // Value assigned only for init
         radialLabels = (segmentLabels = []); // Value assigned only for init
 
-      const freeSpaceSizeInPercent = 0.25;
+      const freeSpaceSizeInPercent = 0.2;
       const emptySpaceAngleInRad = freeSpaceSizeInPercent * 2 * Math.PI;
       const segementSapceAngleInRad = 2 * Math.PI - emptySpaceAngleInRad;
       const singleSegmentAngle = segementSapceAngleInRad / numSegments;
@@ -254,7 +257,7 @@ export default {
 
           // Linear d3 color scale
           var color = d3
-            .scaleLinear()
+            .scaleQuantize()
             .domain(domain)
             .range(range);
 
@@ -292,7 +295,7 @@ export default {
           var id = 123;
 
           //Radial labels
-          var lsa = 0.01; //Label start angle
+          var lsa = 0.05; //Label start angle
           var labels = svg
             .append("g")
             .classed("labels", true)
@@ -464,11 +467,7 @@ export default {
     }
   },
   mounted() {
-    this.data = FlightService.getFlights(this.segment_labels);
-    console.log(this.data);
-    // this.radial_labels = allData.radial_labels;
-    // this.segment_labels = allData.segment_labels;
-    this.inputData = this.data;
+    this.inputData = FlightService.getFlights(this.segment_labels);
 
     this.loadCircularHeatMap(
       this.inputData,
