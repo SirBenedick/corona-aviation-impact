@@ -19,6 +19,8 @@
 
 <script>
 import * as d3 from 'd3';
+import FlightService from '../services/FlightService'
+import moment from 'moment'
 export default {
 
   data(){
@@ -102,7 +104,7 @@ export default {
     }
   },
   mounted() {
-    
+    console.log(FlightService.getFlights());
     this.generateArc();
   },
 
