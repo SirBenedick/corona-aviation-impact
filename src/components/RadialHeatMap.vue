@@ -10,9 +10,73 @@ export default {
     return {
       radial_labels: ["January", "Feburary", "March", "April"],
       segment_labels: [
+        // {
+        //   countryCode: "TW",
+        //   countryDisplayedName: "Taiwan"
+        // },
+        {
+          countryCode: "AR",
+          countryDisplayedName: "Argentina"
+        },
+        {
+          countryCode: "AT",
+          countryDisplayedName: "Australia"
+        },
+        {
+          countryCode: "BR",
+          countryDisplayedName: "Brazil"
+        },
+        {
+          countryCode: "CA",
+          countryDisplayedName: "Canada"
+        },
+        // {
+        //   countryCode: "CN",
+        //   countryDisplayedName: "China"
+        // },
+        {
+          countryCode: "FR",
+          countryDisplayedName: "France"
+        },
         {
           countryCode: "DE",
           countryDisplayedName: "Germany"
+        },
+        {
+          countryCode: "IN",
+          countryDisplayedName: "India"
+        },
+        {
+          countryCode: "ID",
+          countryDisplayedName: "Indonesia"
+        },
+        {
+          countryCode: "IT",
+          countryDisplayedName: "Italy"
+        },
+        {
+          countryCode: "JP",
+          countryDisplayedName: "Japan"
+        },
+        {
+          countryCode: "MX",
+          countryDisplayedName: "Mexico"
+        },
+        {
+          countryCode: "RU",
+          countryDisplayedName: "Russia"
+        },
+        {
+          countryCode: "SA",
+          countryDisplayedName: "Saudi Arabia"
+        },
+        // {
+        //   countryCode: "ZA",
+        //   countryDisplayedName: "South Africa"
+        // },
+        {
+          countryCode: "TR",
+          countryDisplayedName: "Turkey"
         },
         {
           countryCode: "GB",
@@ -22,14 +86,6 @@ export default {
           countryCode: "US",
           countryDisplayedName: "United States"
         },
-        {
-          countryCode: "CN",
-          countryDisplayedName: "China"
-        },
-        {
-          countryCode: "FR",
-          countryDisplayedName: "France"
-        }
       ],
       inputData: [],
       data: []
