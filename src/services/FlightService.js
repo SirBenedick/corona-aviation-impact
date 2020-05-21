@@ -1,5 +1,5 @@
 
-import flightData from '../data/flights.json'
+import flightData from '../data/flights2.json'
 import _ from 'underscore'
 import moment from 'moment'
 
