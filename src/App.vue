@@ -39,4 +39,13 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+html, body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#app {
+  font-family: 'Roboto Condensed', sans-serif;
+}
 </style>
