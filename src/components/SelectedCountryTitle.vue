@@ -1,5 +1,8 @@
 <template>
-  <h1>{{ countryName }}</h1>
+  <div>
+    <h3>How did SARS-CoV-2 Virus restrictions impact the global aviation traffic?</h3>
+    <h1>{{ countryName }}</h1>
+  </div>
 </template>
 
 <script>
