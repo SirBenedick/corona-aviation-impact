@@ -14,10 +14,6 @@ export default {
       radial_labels: ["January", "Feburary", "March", "April"],
       segment_labels: [
         {
-          countryCode: "TW",
-          countryDisplayedName: "Taiwan"
-        },
-        {
           countryCode: "AR",
           countryDisplayedName: "Argentina"
         },
@@ -80,6 +76,10 @@ export default {
         {
           countryCode: "TR",
           countryDisplayedName: "Turkey"
+        },
+        {
+          countryCode: "TW",
+          countryDisplayedName: "Taiwan"
         },
         {
           countryCode: "GB",
@@ -217,7 +217,7 @@ export default {
         segmentLabels = [], // Value assigned only for init
         radialLabels = (segmentLabels = []); // Value assigned only for init
 
-      const freeSpaceSizeInPercent = 0.18;
+      const freeSpaceSizeInPercent = 0.16;
       const emptySpaceAngleInRad = freeSpaceSizeInPercent * 2 * Math.PI;
       const segementSapceAngleInRad = 2 * Math.PI - emptySpaceAngleInRad;
       const singleSegmentAngle = segementSapceAngleInRad / numSegments;
