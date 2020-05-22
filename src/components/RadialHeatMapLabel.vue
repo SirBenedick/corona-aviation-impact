@@ -1,5 +1,5 @@
 <template>
-  <div id="legend" />
+  <div id="radialHeatMapLAbel" />
 </template>
 
 <script>
@@ -25,7 +25,7 @@ export default {
       color,
       title,
       tickSize = 6,
-      width = 320, 
+      width = 200, 
       height = 44 + tickSize,
       marginTop = 18,
       marginRight = 0,
@@ -160,10 +160,10 @@ export default {
 
     let legend = this.legend({
       color: d3.scaleDiverging([-1, 0, 1], d3.interpolateRdBu),
-      title: "Daily change",
+      title: "Aviation traffic change",
       tickFormat: "+%"
     });
-    document.getElementById("legend").appendChild(legend)
+    document.getElementById("radialHeatMapLAbel").appendChild(legend)
   }
 };
 </script>
