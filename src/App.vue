@@ -10,7 +10,7 @@
           active-value="internationalFlights"
           inactive-value="domesticFlights"
           active-text="international"
-          inactive-text="doemstic"
+          inactive-text="domestic"
         />
         <RadialHeatMap
           @selectCountry="setSelectedCountry"
