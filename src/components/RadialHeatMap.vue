@@ -157,7 +157,7 @@ export default {
       chart.accessorSegment(function(d) {
         return d.displayedCountryName;
       });
-      
+
       d3.select(dom_element_to_append_to).select("svg").remove();
       var svg = d3
         .select(dom_element_to_append_to)
@@ -238,7 +238,7 @@ export default {
         segmentLabels = [], // Value assigned only for init
         radialLabels = (segmentLabels = []); // Value assigned only for init
 
-      const freeSpaceSizeInPercent = 0.16;
+      const freeSpaceSizeInPercent = 0.169;
       const emptySpaceAngleInRad = freeSpaceSizeInPercent * 2 * Math.PI;
       const segementSapceAngleInRad = 2 * Math.PI - emptySpaceAngleInRad;
       const singleSegmentAngle = segementSapceAngleInRad / numSegments;
