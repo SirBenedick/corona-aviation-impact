@@ -1,8 +1,17 @@
 <template>
-<div>
+  <div>
+    <el-switch
+      v-model="toogleTypeOfFlights"
+      active-color="#13ce66"
+      inactive-color="#ff4949"
+      active-value="internationalFlights"
+      inactive-value="domesticFlights"
+      active-text="international"
+      inactive-text="doemstic"
+    />
     <div id="arc" />
     <RadialHeatMapLabel />
-</div>
+  </div>
 </template>
 
 <script>
@@ -96,8 +105,14 @@ export default {
         }
       ],
       inputData: [],
-      colorScale: d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu)
+      colorScale: d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu),
+      toogleTypeOfFlights: "internationalFlights",
     };
+  },
+  watch: {
+    toogleTypeOfFlights: function (newQuestion, oldQuestion) {
+      this.createHeatmap();
+    }
   },
   methods: {
     loadCircularHeatMap(
@@ -142,7 +157,8 @@ export default {
       chart.accessorSegment(function(d) {
         return d.displayedCountryName;
       });
-
+      
+      d3.select(dom_element_to_append_to).select("svg").remove();
       var svg = d3
         .select(dom_element_to_append_to)
         .selectAll("svg")
@@ -490,16 +506,19 @@ export default {
     emitSelectCountry(newCountryName) {
       this.$emit("selectCountry", newCountryName);
     },
+    createHeatmap(){
+      this.inputData = FlightService.getFlights(this.segment_labels, this.toogleTypeOfFlights);
+      
+      this.loadCircularHeatMap(
+        this.inputData,
+        "#arc",
+        this.radial_labels,
+        this.segment_labels
+      );
+    }
   },
   mounted() {
-    this.inputData = FlightService.getFlights(this.segment_labels, "internationalFlights");
-
-    this.loadCircularHeatMap(
-      this.inputData,
-      "#arc",
-      this.radial_labels,
-      this.segment_labels
-    );
+    this.createHeatmap();
   }
 };
 </script>
