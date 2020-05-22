@@ -6,12 +6,7 @@
         <RadialHeatMap @selectCountry="setSelectedCountry" />
       </el-col>
       <el-col :span="12">
-        <el-row :span="12">
-          <h1>Diagramm 1</h1>
-        </el-row>
-        <el-row>
-          <h1>Diagramm 2</h1>
-        </el-row>
+        <LineChart :country-name="selectedCountry" />
       </el-col>
     </el-row>
   </div>
@@ -20,12 +15,14 @@
 <script>
 import RadialHeatMap from "./components/RadialHeatMap.vue";
 import SelectedCountryTitle from "./components/SelectedCountryTitle.vue";
+import LineChart from "./components/LineChart.vue";
 
 export default {
   name: "App",
   components: {
     RadialHeatMap,
-    SelectedCountryTitle
+    SelectedCountryTitle,
+    LineChart
   },
   data() {
     return {
