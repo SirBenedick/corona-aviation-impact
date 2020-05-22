@@ -3,7 +3,7 @@ import _ from "underscore";
 import moment from "moment";
 
 class FlightService {
-  getFlights(segmentLabels) {
+  getFlights(segmentLabels, type) {
     let flights = {};
     let data = [];
 
@@ -48,52 +48,52 @@ class FlightService {
 
         switch (month) {
         case 0:
-          january2020 = january2020 + element[1].dates[time].domesticFlights[2020];
-          january2019 = january2019 + element[1].dates[time].domesticFlights[2019];
+          january2020 = january2020 + element[1].dates[time][type][2020];
+          january2019 = january2019 + element[1].dates[time][type][2019];
           break;
         case 1:
-          february2020 = february2020 + element[1].dates[time].domesticFlights[2020];
-          february2019 = february2019 + element[1].dates[time].domesticFlights[2019];
+          february2020 = february2020 + element[1].dates[time][type][2020];
+          february2019 = february2019 + element[1].dates[time][type][2019];
           break;
         case 2:
-          march2020 = march2020 + element[1].dates[time].domesticFlights[2020];
-          march2019 = march2019 + element[1].dates[time].domesticFlights[2019];
+          march2020 = march2020 + element[1].dates[time][type][2020];
+          march2019 = march2019 + element[1].dates[time][type][2019];
           break;
         case 3:
-          april2020 = april2020 + element[1].dates[time].domesticFlights[2020];
-          april2019 = april2019 + element[1].dates[time].domesticFlights[2019];
+          april2020 = april2020 + element[1].dates[time][type][2020];
+          april2019 = april2019 + element[1].dates[time][type][2019];
           break;
         case 4:
-          may2020 = may2020 + element[1].dates[time].domesticFlights[2020];
-          may2019 = may2019 + element[1].dates[time].domesticFlights[2019];
+          may2020 = may2020 + element[1].dates[time][type][2020];
+          may2019 = may2019 + element[1].dates[time][type][2019];
           break;
         case 5:
-          june2020 = june2020 + element[1].dates[time].domesticFlights[2020];
-          june2019 = june2019 + element[1].dates[time].domesticFlights[2019];
+          june2020 = june2020 + element[1].dates[time][type][2020];
+          june2019 = june2019 + element[1].dates[time][type][2019];
           break;
         case 6:
-          july2020 = july2020 + element[1].dates[time].domesticFlights[2020];
-          july2019 = july2019 + element[1].dates[time].domesticFlights[2019];
+          july2020 = july2020 + element[1].dates[time][type][2020];
+          july2019 = july2019 + element[1].dates[time][type][2019];
           break;
         case 7:
-          august2020 = august2020 + element[1].dates[time].domesticFlights[2020];
-          august2019 = august2019 + element[1].dates[time].domesticFlights[2019];
+          august2020 = august2020 + element[1].dates[time][type][2020];
+          august2019 = august2019 + element[1].dates[time][type][2019];
           break;
         case 8:
-          september2020 = september2020 + element[1].dates[time].domesticFlights[2020];
-          september2019 = september2019 + element[1].dates[time].domesticFlights[2019];
+          september2020 = september2020 + element[1].dates[time][type][2020];
+          september2019 = september2019 + element[1].dates[time][type][2019];
           break;
         case 9:
-          october2020 = october2020 + element[1].dates[time].domesticFlights[2020];
-          october2019 = october2019 + element[1].dates[time].domesticFlights[2019];
+          october2020 = october2020 + element[1].dates[time][type][2020];
+          october2019 = october2019 + element[1].dates[time][type][2019];
           break;
         case 10:
-          november2020 = november2020 + element[1].dates[time].domesticFlights[2020];
-          november2019 = november2019 + element[1].dates[time].domesticFlights[2019];
+          november2020 = november2020 + element[1].dates[time][type][2020];
+          november2019 = november2019 + element[1].dates[time][type][2019];
           break;
         case 11:
-          december2020 = december2020 + element[1].dates[time].domesticFlights[2020];
-          december2019 = december2019 + element[1].dates[time].domesticFlights[2019];
+          december2020 = december2020 + element[1].dates[time][type][2020];
+          december2019 = december2019 + element[1].dates[time][type][2019];
           break;
         default:
           break;

@@ -631,7 +631,7 @@ export default {
     }
   },
   mounted() {
-    this.inputData = FlightService.getFlights(this.segment_labels);
+    this.inputData = FlightService.getFlights(this.segment_labels, "internationalFlights");
 
     this.loadCircularHeatMap(
       this.inputData,
