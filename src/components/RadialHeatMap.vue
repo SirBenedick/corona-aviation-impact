@@ -1,14 +1,5 @@
 <template>
   <div>
-    <el-switch
-      v-model="toogleTypeOfFlights"
-      active-color="#13ce66"
-      inactive-color="#ff4949"
-      active-value="internationalFlights"
-      inactive-value="domesticFlights"
-      active-text="international"
-      inactive-text="doemstic"
-    />
     <div id="arc" />
     <RadialHeatMapLabel />
   </div>
@@ -22,6 +13,9 @@ import RadialHeatMapLabel from "../components/RadialHeatMapLabel"
 export default {
   components:{
     RadialHeatMapLabel
+  },
+  props:{
+    typeOfFlights: { default: "internationalFlights", type: String, required: true }
   },
   data() {
     return {
@@ -106,11 +100,10 @@ export default {
       ],
       inputData: [],
       colorScale: d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu),
-      toogleTypeOfFlights: "internationalFlights",
     };
   },
   watch: {
-    toogleTypeOfFlights: function (newQuestion, oldQuestion) {
+    typeOfFlights: function (newQuestion, oldQuestion) {
       this.createHeatmap();
     }
   },
@@ -507,7 +500,7 @@ export default {
       this.$emit("selectCountry", newCountryName);
     },
     createHeatmap(){
-      this.inputData = FlightService.getFlights(this.segment_labels, this.toogleTypeOfFlights);
+      this.inputData = FlightService.getFlights(this.segment_labels, this.typeOfFlights);
       
       this.loadCircularHeatMap(
         this.inputData,

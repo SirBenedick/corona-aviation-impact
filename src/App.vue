@@ -3,10 +3,25 @@
     <SelectedCountryTitle :country-name="selectedCountry" />
     <el-row>
       <el-col :span="12">
-        <RadialHeatMap @selectCountry="setSelectedCountry" />
+        <el-switch
+          v-model="toogleTypeOfFlights"
+          active-color="#13ce66"
+          inactive-color="#ff4949"
+          active-value="internationalFlights"
+          inactive-value="domesticFlights"
+          active-text="international"
+          inactive-text="doemstic"
+        />
+        <RadialHeatMap
+          @selectCountry="setSelectedCountry"
+          :type-of-flights="toogleTypeOfFlights"
+        />
       </el-col>
       <el-col :span="12">
-        <LineChart :country-name="selectedCountry" />
+        <LineChart
+          :country-name="selectedCountry"
+          :type-of-flights="toogleTypeOfFlights"
+        />
       </el-col>
     </el-row>
   </div>
@@ -27,7 +42,8 @@ export default {
   data() {
     return {
       selectedCountry: "World",
-      selectedTimeStamp: ""
+      selectedTimeStamp: "",
+      toogleTypeOfFlights: "internationalFlights",
     };
   },
   methods: {
