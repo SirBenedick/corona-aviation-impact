@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import LSDFlights from "./components/LSDFlights.vue";
 import RadialHeatMap from "./components/RadialHeatMap.vue";
 import SelectedCountryTitle from "./components/SelectedCountryTitle.vue";
 

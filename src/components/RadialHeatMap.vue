@@ -85,7 +85,7 @@ export default {
         {
           countryCode: "US",
           countryDisplayedName: "USA"
-        },
+        }
       ],
       inputData: [],
       data: []
@@ -110,14 +110,26 @@ export default {
       var chart = this.circularHeatChart()
         .innerRadius(innerRadius)
         .segmentHeight(segmentHeight)
-        .domain([-100,100])
+        .domain([-100, 100])
         // .range(["#9E0142", "#D53E4F", "#F46D43", "#FDAE61", "#FEE08B", "#FFFFBF", "#E6F598", "#ABDDA4", "#66C2A5", "#3288BD", "#5E4FA2"])
-        .range(["#0A2F51", "#0E4D64", "#137177", "#188977", "#1D9A6C", "#39A96B", "#56B870", "#74C67A", "#99D492", "#BFE1B0", "#DEEDCF"])
+        .range([
+          "#0A2F51",
+          "#0E4D64",
+          "#137177",
+          "#188977",
+          "#1D9A6C",
+          "#39A96B",
+          "#56B870",
+          "#74C67A",
+          "#99D492",
+          "#BFE1B0",
+          "#DEEDCF"
+        ])
         .radialLabels(radial_labels)
         .segmentLabels(segment_labels.map(label => label.countryDisplayedName));
 
       chart.accessor(function(d) {
-        return (d.value2020 / d.value2019) * 100 -100;
+        return (d.value2020 / d.value2019) * 100 - 100;
       });
       chart.accessorSegment(function(d) {
         return d.displayedCountryName;
@@ -154,15 +166,23 @@ export default {
 
       svg
         .selectAll("path")
-        .on("mouseover", function(d) { 
-          let change= Math.round(((d.value2020 / d.value2019) * 100)-100);
+        .on("mouseover", function(d) {
+          let change = Math.round((d.value2020 / d.value2019) * 100 - 100);
           tooltip
             .select(".displayedCountryName")
-            .html("<b>"+ d.displayedCountryName + "</b>");
+            .html("<b>" + d.displayedCountryName + "</b>");
           tooltip.select(".month").html("<b> Month: " + d.month + "</b>");
           tooltip
             .select(".change")
-            .html("<b> Change: " +  ((change>0) ? "+": "")+change +"% "+ ((change>0) ? "increase ": "decrease ") +"in traffic" +"</b>");
+            .html(
+              "<b> Change: " +
+                (change > 0 ? "+" : "") +
+                change +
+                "% " +
+                (change > 0 ? "increase " : "decrease ") +
+                "in traffic" +
+                "</b>"
+            );
 
           tooltip.style("display", "block");
           tooltip.style("opacity", 2);
