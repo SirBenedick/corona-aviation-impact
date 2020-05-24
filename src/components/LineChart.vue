@@ -32,6 +32,7 @@ export default {
       // The number of datapoints
       var n = 31;
 
+      var color = d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu);
       // X scale will use the index of our data
       var xScale = d3
         .scaleLinear()
@@ -46,7 +47,7 @@ export default {
 
       // d3's line generator
       var line = d3
-        .area()
+        .line()
         .x(function(d, i) {
           return xScale(i);
         }) // set the x values for the line generator
@@ -85,13 +86,34 @@ export default {
         .attr("class", "y axis")
         .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
 
+      var areaGradient = svg
+        .select("g")
+        .append("defs")
+        .append("linearGradient")
+        .attr("id", "areaGradient")
+        .attr("x1", "0")
+        .attr("y1", "0")
+        .attr("x2", "0")
+        .attr("y2", "1");
+
+      // Sets the gradient color from -100%to100%
+      for (let i = 0; i <= 100; i += 10) {
+        areaGradient
+          .append("stop")
+          .attr("offset", i + "%")
+          .attr("stop-color", color(i>50? i*-1: i))
+          .attr("stop-opacity", 0.9);
+      }
+
       // Append the path, bind the data, and call the line generator
       svg
         .select("g")
         .append("path")
         .datum(dataset) // 10. Binds data to the line
         .attr("class", "line") // Assign a class for styling
-        .attr("d", line); // 11. Calls the line generator
+        .attr("d", line) // 11. Calls the line generator
+        .style("fill", "url(#areaGradient)")
+        .attr("d", line);
 
       // Appends a circle for each datapoint
       svg
@@ -137,7 +159,7 @@ export default {
 .line {
   fill: none;
   stroke: #ffab00;
-  stroke-width: 3;
+  stroke-width: 1;
 }
 
 .overlay {
