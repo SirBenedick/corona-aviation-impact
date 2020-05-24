@@ -1,7 +1,16 @@
 <template>
   <div>
     <div id="arc" />
+    <el-row >
+      <el-col  :span="12">
+    <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
+
+      </el-col>
+      <el-col  :span="12">
+
     <RadialHeatMapLabel />
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -114,8 +123,8 @@ export default {
       radial_labels,
       segment_labels
     ) {
-      var margin = { top: 50, right: 50, bottom: 50, left: 50 };
-      var width = 600 - margin.left - margin.right;
+      var margin = { top: 5, right: 30, bottom: 30, left: 5 };
+      var width = screen.width*0.312 - margin.left - margin.right;
 
       var height = width;
       var innerRadius = width / 10; // Size of the inner circle
@@ -178,8 +187,9 @@ export default {
         .attr("class", "tooltip");
 
       tooltip.append("div").attr("class", "displayedCountryName");
-      tooltip.append("div").attr("class", "month");
-      tooltip.append("div").attr("class", "change");
+      tooltip.append("div").attr("class", "description");
+      // tooltip.append("div").attr("class", "month");
+      // tooltip.append("div").attr("class", "change");
 
       svg
         .selectAll("path")
@@ -188,18 +198,22 @@ export default {
           tooltip
             .select(".displayedCountryName")
             .html("<b>" + d.displayedCountryName + "</b>");
-          tooltip.select(".month").html("<b> Month: " + d.month + "</b>");
           tooltip
-            .select(".change")
-            .html(
-              "<b> Change: " +
-                (change > 0 ? "+" : "") +
-                change +
-                "% " +
-                (change > 0 ? "increase " : "decrease ") +
-                "in traffic" +
-                "</b>"
-            );
+            .select(".description")
+            .html(`In <b>${d.month}</b> 2020 there was an </br><b>${(change > 0 ? "increase " : "decrease ")}</b> of <b>${(change > 0 ? "+" : "")+change}%</b> in aviation traffic</br> compared to <b>${d.month}</b> 2019.`);
+
+          // tooltip.select(".month").html("<b> Month: " + d.month + "</b>");
+          // tooltip
+          //   .select(".change")
+          //   .html(
+          //     "<b> Change: " +
+          //       (change > 0 ? "+" : "") +
+          //       change +
+          //       "% " +
+          //       (change > 0 ? "increase " : "decrease ") +
+          //       "in traffic" +
+          //       "</b>"
+          //   );
 
           tooltip.style("display", "block");
           tooltip.style("opacity", 2);
@@ -518,7 +532,7 @@ export default {
 
 <style>
 path:hover {
-  fill: #9b59b6;
+  fill: #37a561;
 }
 
 .tooltip {

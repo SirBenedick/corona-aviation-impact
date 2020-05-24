@@ -41,7 +41,9 @@ export default {
         .attr("height", height)
         .attr("viewBox", [0, 0, width, height])
         .style("overflow", "visible")
-        .style("display", "block");
+        .style("display", "block")        
+        .style("margin-right", "30px")        
+        .style("margin-left", "auto");
 
       let tickAdjust = g => g.selectAll(".tick line").attr("y1", marginTop + marginBottom - height);
       let x;
@@ -169,5 +171,7 @@ export default {
 </script>
 
 <style>
-
+/* #radialHeatMapLAbel {
+  margin-left: auto;
+} */
 </style>
