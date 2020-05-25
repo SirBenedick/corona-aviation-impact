@@ -13,6 +13,7 @@ import * as d3 from "d3";
 export default {
   props: {
     countryName: { default: "World", type: String, required: true },
+    countryCode: { default: "", type: String, required: true },
     typeOfFlights: {
       default: "internationalFlights",
       type: String,
@@ -58,6 +59,8 @@ export default {
 
       // An array of objects of length N. Each object has key -> value pair, the key being "y" and the value is a random number
       var dataset = d3.range(n).map(function(d) {
+        if(d===0){return { y: 0, x: 0 };}
+        if(d===n-1){return { y: 0, x: 0 };}
         return { y: d3.randomUniform(-80, 50)(), x: 0 };
       });
 
@@ -76,7 +79,7 @@ export default {
         .select("g")
         .append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + height / 2 + ")")
+        .attr("transform", "translate(0," + height * 1/3 + ")")
         .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
 
       // Call the y axis in a group tag
@@ -101,7 +104,7 @@ export default {
         areaGradient
           .append("stop")
           .attr("offset", i + "%")
-          .attr("stop-color", color(i>50? i*-1: i))
+          .attr("stop-color", color(i>100*1/3? i*-1: i))
           .attr("stop-opacity", 0.9);
       }
 
@@ -112,8 +115,7 @@ export default {
         .datum(dataset) // 10. Binds data to the line
         .attr("class", "line") // Assign a class for styling
         .attr("d", line) // 11. Calls the line generator
-        .style("fill", "url(#areaGradient)")
-        .attr("d", line);
+        .style("fill", "url(#areaGradient)");
 
       // Appends a circle for each datapoint
       svg

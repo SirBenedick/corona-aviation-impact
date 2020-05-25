@@ -10,10 +10,11 @@ class FlightService {
     segmentLabels.forEach((segment) => {
       flights[segment.countryCode] = flightData[segment.countryCode];
       flights[segment.countryCode]["countryDisplayedName"] = segment.countryDisplayedName;
+      flights[segment.countryCode]["countryCode"] = segment.countryCode;
     });
 
     let array = Object.entries(flights);
-
+  
     array.forEach((element) => {
       var january2019 = 0;
       var february2019 = 0;
@@ -104,6 +105,7 @@ class FlightService {
         switch (index) {
         case 0:
           data.push({
+            countryCode: element[1].countryCode,
             displayedCountryName: element[1].countryDisplayedName,
             month: "January",
             numericMonth: index,
@@ -114,6 +116,7 @@ class FlightService {
           break;
         case 1:
           data.push({
+            countryCode: element[1].countryCode,
             displayedCountryName: element[1].countryName,
             month: "February",
             numericMonth: index,
@@ -123,6 +126,7 @@ class FlightService {
           break;
         case 2:
           data.push({
+            countryCode: element[1].countryCode,
             displayedCountryName: element[1].countryName,
             month: "March",
             numericMonth: index,
@@ -132,6 +136,7 @@ class FlightService {
           break;
         case 3:
           data.push({
+            countryCode: element[1].countryCode,
             displayedCountryName: element[1].countryName,
             month: "April",
             numericMonth: index,
@@ -141,6 +146,7 @@ class FlightService {
           break;
         case 4:
           data.push({
+            countryCode: element[1].countryCode,
             displayedCountryName: element[1].countryName,
             month: "May",
             numericMonth: index,
@@ -150,6 +156,7 @@ class FlightService {
           break;
         case 5:
           data.push({
+            countryCode: element[1].countryCode,
             displayedCountryName: element[1].countryName,
             month: "June",
             numericMonth: index,
@@ -159,6 +166,7 @@ class FlightService {
           break;
         case 6:
           data.push({
+            countryCode: element[1].countryCode,
             displayedCountryName: element[1].countryName,
             month: "July",
             numericMonth: index,
@@ -168,6 +176,7 @@ class FlightService {
           break;
         case 7:
           data.push({
+            countryCode: element[1].countryCode,
             displayedCountryName: element[1].countryName,
             month: "August",
             numericMonth: index,
@@ -177,6 +186,7 @@ class FlightService {
           break;
         case 8:
           data.push({
+            countryCode: element[1].countryCode,
             displayedCountryName: element[1].countryName,
             month: "September",
             numericMonth: index,
@@ -186,6 +196,7 @@ class FlightService {
           break;
         case 9:
           data.push({
+            countryCode: element[1].countryCode,
             displayedCountryName: element[1].countryName,
             month: "October",
             numericMonth: index,
@@ -195,6 +206,7 @@ class FlightService {
           break;
         case 10:
           data.push({
+            countryCode: element[1].countryCode,
             displayedCountryName: element[1].countryName,
             month: "November",
             numericMonth: index,
@@ -204,6 +216,7 @@ class FlightService {
           break;
         case 11:
           data.push({
+            countryCode: element[1].countryCode,
             displayedCountryName: element[1].countryName,
             month: "December",
             numericMonth: index,
@@ -247,6 +260,13 @@ class FlightService {
 
   getDataByCountry(country) {
     return flightData[country];
+  }
+
+  getFlightDataByCountry(country){
+    let countryData = flightData[country.countryCode]
+    console.log(countryData);
+    
+
   }
 
   getDataByCountryAndDate(country, timestamp) {

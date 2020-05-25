@@ -159,6 +159,9 @@ export default {
       chart.accessorSegment(function(d) {
         return d.displayedCountryName;
       });
+      chart.accessorCountryCode(function(d) {
+        return d.countryCode;
+      });
 
       d3.select(dom_element_to_append_to).select("svg").remove();
       var svg = d3
@@ -240,6 +243,9 @@ export default {
           return d;
         },
         accessorSegment = function(d) {
+          return d;
+        },
+        accessorCountryCode = function(d) {
           return d;
         },
         segmentLabels = [], // Value assigned only for init
@@ -335,7 +341,7 @@ export default {
               return accessorSegment(d);
             })
             .on("click", function(d) {
-              that.emitSelectCountry(accessorSegment(d));
+              that.emitSelectCountry({countryName: accessorSegment(d), countryCode: accessorCountryCode(d)});
             });
 
           // Unique id so that the text path defs are unique - is there a better way to do this?
@@ -505,6 +511,12 @@ export default {
       chart.accessorSegment = function(_) {
         if (!arguments.length) return accessorSegment;
         accessorSegment = _;
+        return chart;
+      };
+
+      chart.accessorCountryCode = function(_) {
+        if (!arguments.length) return accessorCountryCode;
+        accessorCountryCode = _;
         return chart;
       };
 

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <SelectedCountryTitle :country-name="selectedCountry" />
+    <SelectedCountryTitle :country-name="selectedCountry" :country-code="selectedCountryCode" />
     <el-row>
       <el-col :span="12">
         <el-switch
@@ -20,6 +20,7 @@
       <el-col :span="12">
         <LineChart
           :country-name="selectedCountry"
+          :country-code="selectedCountryCode"
           :type-of-flights="toogleTypeOfFlights"
         />
       </el-col>
@@ -42,13 +43,15 @@ export default {
   data() {
     return {
       selectedCountry: "World",
+      selectedCountryCode: "World",
       selectedTimeStamp: "",
       toogleTypeOfFlights: "internationalFlights",
     };
   },
   methods: {
-    setSelectedCountry(newCountryName) {
-      this.selectedCountry = newCountryName;
+    setSelectedCountry(newCountry) {
+      this.selectedCountry = newCountry.countryName;
+      this.selectedCountryCode = newCountry.countryCode;
     }
   }
 };
