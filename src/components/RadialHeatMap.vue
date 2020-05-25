@@ -31,12 +31,12 @@ export default {
       radial_labels: ["January", "Feburary", "March", "April"],
       segment_labels: [
         {
-          countryCode: "AR",
-          countryDisplayedName: "Argentina"
+          countryCode: "AT",
+          countryDisplayedName: "Austria"
         },
         {
-          countryCode: "AT",
-          countryDisplayedName: "Australia"
+          countryCode: "IS",
+          countryDisplayedName: "Iceland"
         },
         {
           countryCode: "BR",
@@ -63,10 +63,6 @@ export default {
           countryDisplayedName: "India"
         },
         {
-          countryCode: "ID",
-          countryDisplayedName: "Indonesia"
-        },
-        {
           countryCode: "IT",
           countryDisplayedName: "Italy"
         },
@@ -74,10 +70,10 @@ export default {
           countryCode: "JP",
           countryDisplayedName: "Japan"
         },
-        {
-          countryCode: "MX",
-          countryDisplayedName: "Mexico"
-        },
+        // {
+        //   countryCode: "SN",
+        //   countryDisplayedName: "Senegal"
+        // },
         {
           countryCode: "RU",
           countryDisplayedName: "Russia"
@@ -87,24 +83,16 @@ export default {
           countryDisplayedName: "Saudi Arabia"
         },
         {
-          countryCode: "ZA",
-          countryDisplayedName: "South Africa"
-        },
-        {
-          countryCode: "TR",
-          countryDisplayedName: "Turkey"
-        },
-        {
-          countryCode: "TW",
-          countryDisplayedName: "Taiwan"
-        },
-        {
           countryCode: "GB",
           countryDisplayedName: "UK"
         },
         {
           countryCode: "US",
           countryDisplayedName: "USA"
+        },
+        {
+          countryCode: "SE",
+          countryDisplayedName: "Sweden"
         }
       ],
       inputData: [],
@@ -204,19 +192,6 @@ export default {
           tooltip
             .select(".description")
             .html(`In <b>${d.month}</b> 2020 there was an </br><b>${(change > 0 ? "increase " : "decrease ")}</b> of <b>${(change > 0 ? "+" : "")+change}%</b> in aviation traffic</br> compared to <b>${d.month}</b> 2019.`);
-
-          // tooltip.select(".month").html("<b> Month: " + d.month + "</b>");
-          // tooltip
-          //   .select(".change")
-          //   .html(
-          //     "<b> Change: " +
-          //       (change > 0 ? "+" : "") +
-          //       change +
-          //       "% " +
-          //       (change > 0 ? "increase " : "decrease ") +
-          //       "in traffic" +
-          //       "</b>"
-          //   );
 
           tooltip.style("display", "block");
           tooltip.style("opacity", 2);

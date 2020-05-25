@@ -266,7 +266,10 @@ class FlightService {
     if(countryCode === "World"){countryCode = "DE"};
     let countryData = flightData[countryCode]
     let keys = Object.keys(countryData["dates"]);
-    let listOfFlightData = keys.map(timestamp => countryData["dates"][timestamp])
+    let listOfFlightData = keys.map(timestamp => {
+      countryData["dates"][timestamp]["timestamp"] = timestamp;
+      return countryData["dates"][timestamp];
+    })
 
     return listOfFlightData;
   }

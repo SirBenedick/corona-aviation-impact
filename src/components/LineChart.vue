@@ -66,15 +66,22 @@ export default {
         }
 
         if (average2019 === 0) {
-          return { y: 0, x: 0 };
+          return { y: 0, x: element["timestamp"] * 1000 };
         }
         let delta = (average2020 / average2019) * 100 - 100;
-        return { y: delta, x: 0 };
+        return { y: delta, x: element["timestamp"] * 1000 };
       });
+      let minMaxYAxis  = d3.extent(dataset, function(d){
+        return d.y
+      })
+      let minMaxXAxis  = d3.extent(dataset, function(d){
+        return d.x
+      })
 
       // Fix, not nice, fix this!
       dataset.push({ y: 0, x: 0 });
-      dataset.unshift({ y: 50, x: 0 });
+      dataset.unshift({ y: 0, x: 1577836800000 });
+      dataset.unshift({ y: 100, x: 0 });
       dataset.unshift({ y: -100, x: 0 });
       dataset.unshift({ y: 0, x: 0 });
 
@@ -89,21 +96,21 @@ export default {
       var color = d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu);
       // X scale will use the index of our data
       var xScale = d3
-        .scaleLinear()
-        .domain([0, n - 1]) // input
+        .scaleTime()
+        .domain(minMaxXAxis) // input
         .range([0, width]); // output
 
       // Y scale will use the randomly generate number
       var yScale = d3
         .scaleLinear()
-        .domain([-100, 50]) // input
+        .domain([-100, minMaxYAxis[1]]) // input
         .range([height, 0]); // output
 
       // d3's line generator
       var line = d3
         .line()
         .x(function(d, i) {
-          return xScale(i);
+          return xScale(d.x);
         }) // set the x values for the line generator
         .y(function(d) {
           return yScale(d.y);
@@ -127,8 +134,13 @@ export default {
         .select("g")
         .append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + (height) / 3 + ")")
-        .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
+        .attr("transform", "translate(0," + height * minMaxYAxis[1]/(minMaxYAxis[1]+100) + ")")
+        .call(d3.axisBottom(xScale).tickFormat(d3.timeFormat("%B %d")))
+        .selectAll("text")
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .attr("transform", "rotate(-65)"); // Create an axis component with d3.axisBottom
 
       // Call the y axis in a group tag
       svg
@@ -148,7 +160,8 @@ export default {
         .attr("y2", "100%");
 
       // Sets the gradient color from -100%to100%
-      const mapColor = (value, x1, y1, x2, y2) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;
+      const mapColor = (value, x1, y1, x2, y2) =>
+        ((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
       for (let i = 0; i <= 100; i += 10) {
         areaGradient
           .append("stop")
