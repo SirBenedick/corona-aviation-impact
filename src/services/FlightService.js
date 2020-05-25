@@ -262,11 +262,13 @@ class FlightService {
     return flightData[country];
   }
 
-  getFlightDataByCountry(country){
-    let countryData = flightData[country.countryCode]
-    console.log(countryData);
-    
+  getFlightDataByCountryCode(countryCode){
+    if(countryCode === "World"){countryCode = "DE"};
+    let countryData = flightData[countryCode]
+    let keys = Object.keys(countryData["dates"]);
+    let listOfFlightData = keys.map(timestamp => countryData["dates"][timestamp])
 
+    return listOfFlightData;
   }
 
   getDataByCountryAndDate(country, timestamp) {
