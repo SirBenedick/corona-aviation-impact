@@ -43,7 +43,6 @@ export default {
       );
 
       let dataset = flightData.map((element, i) => {
-
         let average2019 = 0;
         let average2020 = 0;
 
@@ -72,6 +71,12 @@ export default {
         let delta = (average2020 / average2019) * 100 - 100;
         return { y: delta, x: 0 };
       });
+
+      // Fix, not nice, fix this!
+      dataset.push({ y: 0, x: 0 });
+      dataset.unshift({ y: 50, x: 0 });
+      dataset.unshift({ y: -100, x: 0 });
+      dataset.unshift({ y: 0, x: 0 });
 
       // Use the margin convention practice
       var margin = { top: 50, right: 50, bottom: 50, left: 50 },
@@ -122,7 +127,7 @@ export default {
         .select("g")
         .append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + (height * 1) / 3 + ")")
+        .attr("transform", "translate(0," + (height) / 3 + ")")
         .call(d3.axisBottom(xScale)); // Create an axis component with d3.axisBottom
 
       // Call the y axis in a group tag
@@ -137,17 +142,18 @@ export default {
         .append("defs")
         .append("linearGradient")
         .attr("id", "areaGradient")
-        .attr("x1", "0")
-        .attr("y1", "0")
-        .attr("x2", "0")
-        .attr("y2", "1");
+        .attr("x1", "0%")
+        .attr("y1", "0%")
+        .attr("x2", "0%")
+        .attr("y2", "100%");
 
       // Sets the gradient color from -100%to100%
+      const mapColor = (value, x1, y1, x2, y2) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;
       for (let i = 0; i <= 100; i += 10) {
         areaGradient
           .append("stop")
           .attr("offset", i + "%")
-          .attr("stop-color", color(i > (100 * 1) / 3 ? i * -1 : i))
+          .attr("stop-color", color(mapColor(i, 0, 100, 100, -100)))
           .attr("stop-opacity", 0.9);
       }
 
