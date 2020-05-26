@@ -1,14 +1,12 @@
 <template>
   <div>
     <div id="arc" />
-    <el-row >
-      <el-col  :span="12">
-    <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-
+    <el-row>
+      <el-col :span="12">
+        <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
       </el-col>
-      <el-col  :span="12">
-
-    <RadialHeatMapLabel />
+      <el-col :span="12">
+        <RadialHeatMapLabel />
       </el-col>
     </el-row>
   </div>
@@ -17,14 +15,18 @@
 <script>
 import * as d3 from "d3";
 import FlightService from "../services/FlightService";
-import RadialHeatMapLabel from "../components/RadialHeatMapLabel" 
+import RadialHeatMapLabel from "../components/RadialHeatMapLabel";
 
 export default {
-  components:{
+  components: {
     RadialHeatMapLabel
   },
-  props:{
-    typeOfFlights: { default: "internationalFlights", type: String, required: true }
+  props: {
+    typeOfFlights: {
+      default: "internationalFlights",
+      type: String,
+      required: true
+    }
   },
   data() {
     return {
@@ -87,7 +89,7 @@ export default {
           countryDisplayedName: "Saudi Arabia"
         },
         {
-          countryCode: "GB",
+          countryCode: "UK",
           countryDisplayedName: "UK"
         },
         {
@@ -100,11 +102,11 @@ export default {
         }
       ],
       inputData: [],
-      colorScale: d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu),
+      colorScale: d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu)
     };
   },
   watch: {
-    typeOfFlights: function (newQuestion, oldQuestion) {
+    typeOfFlights: function(newQuestion, oldQuestion) {
       this.createHeatmap();
     }
   },
@@ -116,7 +118,7 @@ export default {
       segment_labels
     ) {
       var margin = { top: 5, right: 30, bottom: 30, left: 5 };
-      var width = screen.width*0.312 - margin.left - margin.right;
+      var width = screen.width * 0.312 - margin.left - margin.right;
 
       var height = width;
       var innerRadius = width / 10; // Size of the inner circle
@@ -155,7 +157,9 @@ export default {
         return d.countryCode;
       });
 
-      d3.select(dom_element_to_append_to).select("svg").remove();
+      d3.select(dom_element_to_append_to)
+        .select("svg")
+        .remove();
       var svg = d3
         .select(dom_element_to_append_to)
         .selectAll("svg")
@@ -195,7 +199,14 @@ export default {
             .html("<b>" + d.displayedCountryName + "</b>");
           tooltip
             .select(".description")
-            .html(`In <b>${d.month}</b> 2020 there was an </br><b>${(change > 0 ? "increase " : "decrease ")}</b> of <b>${(change > 0 ? "+" : "")+change}%</b> in aviation traffic</br> compared to <b>${d.month}</b> 2019.`);
+            .html(
+              `In <b>${d.month}</b> 2020 there was an </br><b>${
+                change > 0 ? "increase " : "decrease "
+              }</b> of <b>${(change > 0 ? "+" : "") +
+                change}%</b> in aviation traffic</br> compared to <b>${
+                d.month
+              }</b> 2019.`
+            );
 
           tooltip.style("display", "block");
           tooltip.style("opacity", 2);
@@ -253,7 +264,11 @@ export default {
         );
       };
       let ea = function(d, i) {
-        if (Math.floor((singleSegmentAngle * (i + 1)) % segementSapceAngleInRad) === 0) {
+        if (
+          Math.floor(
+            (singleSegmentAngle * (i + 1)) % segementSapceAngleInRad
+          ) === 0
+        ) {
           return 2 * Math.PI;
         }
         return (
@@ -320,7 +335,10 @@ export default {
               return accessorSegment(d);
             })
             .on("click", function(d) {
-              that.emitSelectCountry({countryName: accessorSegment(d), countryCode: accessorCountryCode(d)});
+              that.emitSelectCountry({
+                countryName: accessorSegment(d),
+                countryCode: accessorCountryCode(d)
+              });
             });
 
           // Unique id so that the text path defs are unique - is there a better way to do this?
@@ -504,9 +522,12 @@ export default {
     emitSelectCountry(newCountryName) {
       this.$emit("selectCountry", newCountryName);
     },
-    createHeatmap(){
-      this.inputData = FlightService.getFlights(this.segment_labels, this.typeOfFlights);
-      
+    createHeatmap() {
+      this.inputData = FlightService.getFlights(
+        this.segment_labels,
+        this.typeOfFlights
+      );
+
       this.loadCircularHeatMap(
         this.inputData,
         "#arc",
