@@ -11372,7 +11372,7 @@
       }
     }
   },
-  "GB": {
+  "UK": {
     "countryName": "United Kingdom",
     "continent": "EU",
     "dates": {
@@ -11386,7 +11386,10 @@
           "2020": 1341
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1577923200": {
         "domesticFlights": {
@@ -11398,7 +11401,10 @@
           "2020": 1643
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1578009600": {
         "domesticFlights": {
@@ -11410,7 +11416,10 @@
           "2020": 1583
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1578096000": {
         "domesticFlights": {
@@ -11422,7 +11431,10 @@
           "2020": 1577
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1578182400": {
         "domesticFlights": {
@@ -11434,7 +11446,10 @@
           "2020": 1749
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1578268800": {
         "domesticFlights": {
@@ -11446,7 +11461,10 @@
           "2020": 1629
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1578355200": {
         "domesticFlights": {
@@ -11458,7 +11476,10 @@
           "2020": 1394
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1578441600": {
         "domesticFlights": {
@@ -11470,7 +11491,10 @@
           "2020": 1207
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1578528000": {
         "domesticFlights": {
@@ -11482,7 +11506,10 @@
           "2020": 1451
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1578614400": {
         "domesticFlights": {
@@ -11494,7 +11521,10 @@
           "2020": 1630
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1578700800": {
         "domesticFlights": {
@@ -11506,7 +11536,10 @@
           "2020": 1367
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1578787200": {
         "domesticFlights": {
@@ -11518,7 +11551,10 @@
           "2020": 1635
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1578873600": {
         "domesticFlights": {
@@ -11530,7 +11566,10 @@
           "2020": 1384
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1578960000": {
         "domesticFlights": {
@@ -11542,7 +11581,10 @@
           "2020": 1213
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1579046400": {
         "domesticFlights": {
@@ -11554,7 +11596,10 @@
           "2020": 1312
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1579132800": {
         "domesticFlights": {
@@ -11566,7 +11611,10 @@
           "2020": 1478
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1579219200": {
         "domesticFlights": {
@@ -11578,7 +11626,10 @@
           "2020": 1668
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1579305600": {
         "domesticFlights": {
@@ -11590,7 +11641,10 @@
           "2020": 1367
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1579392000": {
         "domesticFlights": {
@@ -11602,7 +11656,10 @@
           "2020": 1609
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1579478400": {
         "domesticFlights": {
@@ -11614,7 +11671,10 @@
           "2020": 1454
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1579564800": {
         "domesticFlights": {
@@ -11626,7 +11686,10 @@
           "2020": 1260
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1579651200": {
         "domesticFlights": {
@@ -11638,7 +11701,10 @@
           "2020": 1138
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1579737600": {
         "domesticFlights": {
@@ -11650,7 +11716,10 @@
           "2020": 1471
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1579824000": {
         "domesticFlights": {
@@ -11662,7 +11731,10 @@
           "2020": 1680
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1579910400": {
         "domesticFlights": {
@@ -11674,7 +11746,10 @@
           "2020": 1337
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1579996800": {
         "domesticFlights": {
@@ -11686,7 +11761,10 @@
           "2020": 1460
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1580083200": {
         "domesticFlights": {
@@ -11698,7 +11776,10 @@
           "2020": 1523
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1580169600": {
         "domesticFlights": {
@@ -11710,7 +11791,10 @@
           "2020": 1233
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1580256000": {
         "domesticFlights": {
@@ -11722,7 +11806,10 @@
           "2020": 1280
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1580342400": {
         "domesticFlights": {
@@ -11734,7 +11821,10 @@
           "2020": 1439
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1580428800": {
         "domesticFlights": {
@@ -11746,7 +11836,10 @@
           "2020": 1525
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "2",
+          "Deaths": "0"
+        }
       },
       "1580515200": {
         "domesticFlights": {
@@ -11758,7 +11851,10 @@
           "2020": 1355
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1580601600": {
         "domesticFlights": {
@@ -11770,7 +11866,10 @@
           "2020": 1571
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1580688000": {
         "domesticFlights": {
@@ -11782,7 +11881,10 @@
           "2020": 1576
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1580774400": {
         "domesticFlights": {
@@ -11794,7 +11896,10 @@
           "2020": 1364
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1580860800": {
         "domesticFlights": {
@@ -11806,7 +11911,10 @@
           "2020": 1372
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1580947200": {
         "domesticFlights": {
@@ -11818,7 +11926,10 @@
           "2020": 1536
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1581033600": {
         "domesticFlights": {
@@ -11830,7 +11941,10 @@
           "2020": 1753
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "1",
+          "Deaths": "0"
+        }
       },
       "1581120000": {
         "domesticFlights": {
@@ -11842,7 +11956,10 @@
           "2020": 1488
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1581206400": {
         "domesticFlights": {
@@ -11854,7 +11971,10 @@
           "2020": 1081
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "1",
+          "Deaths": "0"
+        }
       },
       "1581292800": {
         "domesticFlights": {
@@ -11866,7 +11986,10 @@
           "2020": 1515
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1581379200": {
         "domesticFlights": {
@@ -11878,7 +12001,10 @@
           "2020": 1408
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4",
+          "Deaths": "0"
+        }
       },
       "1581465600": {
         "domesticFlights": {
@@ -11890,7 +12016,10 @@
           "2020": 1411
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1581552000": {
         "domesticFlights": {
@@ -11902,7 +12031,10 @@
           "2020": 1655
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "1",
+          "Deaths": "0"
+        }
       },
       "1581638400": {
         "domesticFlights": {
@@ -11914,7 +12046,10 @@
           "2020": 1851
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1581724800": {
         "domesticFlights": {
@@ -11926,7 +12061,10 @@
           "2020": 1391
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1581811200": {
         "domesticFlights": {
@@ -11938,7 +12076,10 @@
           "2020": 1585
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1581897600": {
         "domesticFlights": {
@@ -11950,7 +12091,10 @@
           "2020": 1716
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1581984000": {
         "domesticFlights": {
@@ -11962,7 +12106,10 @@
           "2020": 1520
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1582070400": {
         "domesticFlights": {
@@ -11974,7 +12121,10 @@
           "2020": 1502
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1582156800": {
         "domesticFlights": {
@@ -11986,7 +12136,10 @@
           "2020": 1663
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1582243200": {
         "domesticFlights": {
@@ -11998,7 +12151,10 @@
           "2020": 1815
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1582329600": {
         "domesticFlights": {
@@ -12010,7 +12166,10 @@
           "2020": 1651
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1582416000": {
         "domesticFlights": {
@@ -12022,7 +12181,10 @@
           "2020": 1854
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1582502400": {
         "domesticFlights": {
@@ -12034,7 +12196,10 @@
           "2020": 1797
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4",
+          "Deaths": "0"
+        }
       },
       "1582588800": {
         "domesticFlights": {
@@ -12046,7 +12211,10 @@
           "2020": 1576
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1582675200": {
         "domesticFlights": {
@@ -12058,7 +12226,10 @@
           "2020": 1545
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1582761600": {
         "domesticFlights": {
@@ -12070,7 +12241,10 @@
           "2020": 1666
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "0",
+          "Deaths": "0"
+        }
       },
       "1582848000": {
         "domesticFlights": {
@@ -12082,7 +12256,10 @@
           "2020": 1805
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "3",
+          "Deaths": "0"
+        }
       },
       "1582934400": {
         "domesticFlights": {
@@ -12094,7 +12271,10 @@
           "2020": 1541
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "2",
+          "Deaths": "0"
+        }
       },
       "1583020800": {
         "domesticFlights": {
@@ -12106,7 +12286,10 @@
           "2020": 1749
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "5",
+          "Deaths": "0"
+        }
       },
       "1583107200": {
         "domesticFlights": {
@@ -12118,7 +12301,10 @@
           "2020": 1700
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "13",
+          "Deaths": "0"
+        }
       },
       "1583193600": {
         "domesticFlights": {
@@ -12130,7 +12316,10 @@
           "2020": 1517
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4",
+          "Deaths": "0"
+        }
       },
       "1583280000": {
         "domesticFlights": {
@@ -12142,7 +12331,10 @@
           "2020": 1487
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "11",
+          "Deaths": "0"
+        }
       },
       "1583366400": {
         "domesticFlights": {
@@ -12154,7 +12346,10 @@
           "2020": 1659
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "34",
+          "Deaths": "0"
+        }
       },
       "1583452800": {
         "domesticFlights": {
@@ -12166,7 +12361,10 @@
           "2020": 1727
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "30",
+          "Deaths": "0"
+        }
       },
       "1583539200": {
         "domesticFlights": {
@@ -12178,7 +12376,10 @@
           "2020": 1510
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "48",
+          "Deaths": "1"
+        }
       },
       "1583625600": {
         "domesticFlights": {
@@ -12190,7 +12391,10 @@
           "2020": 1717
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "43",
+          "Deaths": "1"
+        }
       },
       "1583712000": {
         "domesticFlights": {
@@ -12202,7 +12406,10 @@
           "2020": 1734
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "67",
+          "Deaths": "0"
+        }
       },
       "1583798400": {
         "domesticFlights": {
@@ -12214,7 +12421,10 @@
           "2020": 1422
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "48",
+          "Deaths": "1"
+        }
       },
       "1583884800": {
         "domesticFlights": {
@@ -12226,7 +12436,10 @@
           "2020": 1371
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "52",
+          "Deaths": "4"
+        }
       },
       "1583971200": {
         "domesticFlights": {
@@ -12238,7 +12451,10 @@
           "2020": 1567
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "83",
+          "Deaths": "0"
+        }
       },
       "1584057600": {
         "domesticFlights": {
@@ -12250,7 +12466,10 @@
           "2020": 1695
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "134",
+          "Deaths": "2"
+        }
       },
       "1584144000": {
         "domesticFlights": {
@@ -12262,7 +12481,10 @@
           "2020": 1434
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "117",
+          "Deaths": "1"
+        }
       },
       "1584230400": {
         "domesticFlights": {
@@ -12274,7 +12496,10 @@
           "2020": 1511
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "433",
+          "Deaths": "18"
+        }
       },
       "1584316800": {
         "domesticFlights": {
@@ -12286,7 +12511,10 @@
           "2020": 1388
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "251",
+          "Deaths": "15"
+        }
       },
       "1584403200": {
         "domesticFlights": {
@@ -12298,7 +12526,10 @@
           "2020": 1027
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "152",
+          "Deaths": "22"
+        }
       },
       "1584489600": {
         "domesticFlights": {
@@ -12310,7 +12541,10 @@
           "2020": 937
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "407",
+          "Deaths": "16"
+        }
       },
       "1584576000": {
         "domesticFlights": {
@@ -12322,7 +12556,10 @@
           "2020": 917
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "680",
+          "Deaths": "34"
+        }
       },
       "1584662400": {
         "domesticFlights": {
@@ -12334,7 +12571,10 @@
           "2020": 939
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "647",
+          "Deaths": "43"
+        }
       },
       "1584748800": {
         "domesticFlights": {
@@ -12346,7 +12586,10 @@
           "2020": 591
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "706",
+          "Deaths": "36"
+        }
       },
       "1584835200": {
         "domesticFlights": {
@@ -12358,7 +12601,10 @@
           "2020": 609
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "1035",
+          "Deaths": "56"
+        }
       },
       "1584921600": {
         "domesticFlights": {
@@ -12370,7 +12616,10 @@
           "2020": 472
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "665",
+          "Deaths": "35"
+        }
       },
       "1585008000": {
         "domesticFlights": {
@@ -12382,7 +12631,10 @@
           "2020": 390
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "967",
+          "Deaths": "74"
+        }
       },
       "1585094400": {
         "domesticFlights": {
@@ -12394,7 +12646,10 @@
           "2020": 315
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "1427",
+          "Deaths": "149"
+        }
       },
       "1585180800": {
         "domesticFlights": {
@@ -12406,7 +12661,10 @@
           "2020": 320
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "1452",
+          "Deaths": "186"
+        }
       },
       "1585267200": {
         "domesticFlights": {
@@ -12418,7 +12676,10 @@
           "2020": 296
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "2129",
+          "Deaths": "183"
+        }
       },
       "1585353600": {
         "domesticFlights": {
@@ -12430,7 +12691,10 @@
           "2020": 232
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "2885",
+          "Deaths": "284"
+        }
       },
       "1585440000": {
         "domesticFlights": {
@@ -12442,7 +12706,10 @@
           "2020": 225
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "2546",
+          "Deaths": "294"
+        }
       },
       "1585522800": {
         "domesticFlights": {
@@ -12466,7 +12733,10 @@
           "2020": 194
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "2433",
+          "Deaths": "214"
+        }
       },
       "1585609200": {
         "domesticFlights": {
@@ -12490,7 +12760,10 @@
           "2020": 181
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "2619",
+          "Deaths": "374"
+        }
       },
       "1585699200": {
         "domesticFlights": {
@@ -12502,7 +12775,10 @@
           "2020": 180
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "3009",
+          "Deaths": "382"
+        }
       },
       "1585785600": {
         "domesticFlights": {
@@ -12514,7 +12790,10 @@
           "2020": 183
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4324",
+          "Deaths": "670"
+        }
       },
       "1585872000": {
         "domesticFlights": {
@@ -12526,7 +12805,10 @@
           "2020": 188
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4244",
+          "Deaths": "652"
+        }
       },
       "1585958400": {
         "domesticFlights": {
@@ -12538,7 +12820,10 @@
           "2020": 153
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4450",
+          "Deaths": "714"
+        }
       },
       "1586044800": {
         "domesticFlights": {
@@ -12550,7 +12835,10 @@
           "2020": 145
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "3735",
+          "Deaths": "760"
+        }
       },
       "1586131200": {
         "domesticFlights": {
@@ -12562,7 +12850,10 @@
           "2020": 148
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "5903",
+          "Deaths": "644"
+        }
       },
       "1586217600": {
         "domesticFlights": {
@@ -12574,7 +12865,10 @@
           "2020": 140
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "3802",
+          "Deaths": "568"
+        }
       },
       "1586304000": {
         "domesticFlights": {
@@ -12586,7 +12880,10 @@
           "2020": 144
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "3634",
+          "Deaths": "1038"
+        }
       },
       "1586390400": {
         "domesticFlights": {
@@ -12598,7 +12895,10 @@
           "2020": 143
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "5491",
+          "Deaths": "1034"
+        }
       },
       "1586476800": {
         "domesticFlights": {
@@ -12610,7 +12910,10 @@
           "2020": 129
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4344",
+          "Deaths": "1103"
+        }
       },
       "1586563200": {
         "domesticFlights": {
@@ -12622,7 +12925,10 @@
           "2020": 106
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "5195",
+          "Deaths": "1152"
+        }
       },
       "1586649600": {
         "domesticFlights": {
@@ -12634,7 +12940,10 @@
           "2020": 89
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "8719",
+          "Deaths": "839"
+        }
       },
       "1586736000": {
         "domesticFlights": {
@@ -12646,7 +12955,10 @@
           "2020": 103
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "5288",
+          "Deaths": "686"
+        }
       },
       "1586822400": {
         "domesticFlights": {
@@ -12658,7 +12970,10 @@
           "2020": 116
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4342",
+          "Deaths": "744"
+        }
       },
       "1586908800": {
         "domesticFlights": {
@@ -12670,7 +12985,10 @@
           "2020": 129
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "5252",
+          "Deaths": "1044"
+        }
       },
       "1586995200": {
         "domesticFlights": {
@@ -12682,7 +13000,10 @@
           "2020": 147
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4603",
+          "Deaths": "842"
+        }
       },
       "1587081600": {
         "domesticFlights": {
@@ -12694,7 +13015,10 @@
           "2020": 155
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4617",
+          "Deaths": "1029"
+        }
       },
       "1587168000": {
         "domesticFlights": {
@@ -12706,7 +13030,10 @@
           "2020": 118
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "5599",
+          "Deaths": "935"
+        }
       },
       "1587254400": {
         "domesticFlights": {
@@ -12718,7 +13045,10 @@
           "2020": 115
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "5525",
+          "Deaths": "1115"
+        }
       },
       "1587340800": {
         "domesticFlights": {
@@ -12730,7 +13060,10 @@
           "2020": 130
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "5850",
+          "Deaths": "498"
+        }
       },
       "1587427200": {
         "domesticFlights": {
@@ -12742,7 +13075,10 @@
           "2020": 128
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4676",
+          "Deaths": "559"
+        }
       },
       "1587513600": {
         "domesticFlights": {
@@ -12754,7 +13090,10 @@
           "2020": 142
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4301",
+          "Deaths": "1172"
+        }
       },
       "1587600000": {
         "domesticFlights": {
@@ -12766,7 +13105,10 @@
           "2020": 145
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4451",
+          "Deaths": "837"
+        }
       },
       "1587686400": {
         "domesticFlights": {
@@ -12778,7 +13120,10 @@
           "2020": 166
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4583",
+          "Deaths": "727"
+        }
       },
       "1587772800": {
         "domesticFlights": {
@@ -12790,7 +13135,10 @@
           "2020": 112
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "5386",
+          "Deaths": "1005"
+        }
       },
       "1587859200": {
         "domesticFlights": {
@@ -12802,7 +13150,10 @@
           "2020": 123
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4913",
+          "Deaths": "843"
+        }
       },
       "1587945600": {
         "domesticFlights": {
@@ -12814,7 +13165,10 @@
           "2020": 141
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4463",
+          "Deaths": "420"
+        }
       },
       "1588032000": {
         "domesticFlights": {
@@ -12826,7 +13180,10 @@
           "2020": 131
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4309",
+          "Deaths": "338"
+        }
       },
       "1588118400": {
         "domesticFlights": {
@@ -12838,7 +13195,10 @@
           "2020": 163
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "3996",
+          "Deaths": "909"
+        }
       },
       "1588204800": {
         "domesticFlights": {
@@ -12850,7 +13210,10 @@
           "2020": 164
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4076",
+          "Deaths": "795"
+        }
       },
       "1588291200": {
         "domesticFlights": {
@@ -12862,7 +13225,10 @@
           "2020": 139
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "6032",
+          "Deaths": "674"
+        }
       },
       "1588377600": {
         "domesticFlights": {
@@ -12874,7 +13240,10 @@
           "2020": 116
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "6201",
+          "Deaths": "739"
+        }
       },
       "1588464000": {
         "domesticFlights": {
@@ -12886,7 +13255,10 @@
           "2020": 134
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4806",
+          "Deaths": "621"
+        }
       },
       "1588550400": {
         "domesticFlights": {
@@ -12898,7 +13270,10 @@
           "2020": 155
         },
         "coronaEvents": {},
-        "coronaCases": {}
+        "coronaCases": {
+          "Cases": "4339",
+          "Deaths": "315"
+        }
       }
     }
   },
@@ -155261,7 +155636,7 @@
     }
   },
   "CW": {
-    "countryName": "Cura├ºao",
+    "countryName": "CuraÔö£┬║ao",
     "continent": "NA",
     "dates": {
       "1578009600": {

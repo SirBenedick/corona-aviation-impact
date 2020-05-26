@@ -1,7 +1,7 @@
 require 'json'
 require 'date'
 
-data_flights = File.open('../flights2.json')
+data_flights = File.open('../flights.json')
 flights = JSON.load data_flights
 
 File.open("./covid.csv", 'r+') do |file|
