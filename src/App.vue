@@ -23,6 +23,11 @@
           :country-code="selectedCountryCode"
           :type-of-flights="toogleTypeOfFlights"
         />
+        <CoronaLineChart
+          :country-name="selectedCountry"
+          :country-code="selectedCountryCode"
+          :type-of-flights="toogleTypeOfFlights"
+        />
       </el-col>
     </el-row>
   </div>
@@ -32,13 +37,15 @@
 import RadialHeatMap from "./components/RadialHeatMap.vue";
 import SelectedCountryTitle from "./components/SelectedCountryTitle.vue";
 import LineChart from "./components/LineChart.vue";
+import CoronaLineChart from "./components/CoronaLineChart.vue";
 
 export default {
   name: "App",
   components: {
     RadialHeatMap,
     SelectedCountryTitle,
-    LineChart
+    LineChart,
+    CoronaLineChart
   },
   data() {
     return {

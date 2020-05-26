@@ -2,8 +2,7 @@
   <div>
     <b>{{ countryName }}</b>
     {{countryCode}}
-    {{ typeOfFlights }}
-    <div id="my_dataviz"></div>
+    <div id="corona_chart"></div>
   </div>
 </template>
 
@@ -14,12 +13,7 @@ import FlightService from "../services/FlightService";
 export default {
   props: {
     countryName: { default: "World", type: String, required: true },
-    countryCode: { default: "", type: String, required: true },
-    typeOfFlights: {
-      default: "internationalFlights",
-      type: String,
-      required: true
-    }
+    countryCode: { default: "", type: String, required: true }
   },
   data() {
     return {};
@@ -30,42 +24,47 @@ export default {
     },
     countryName: function(newQuestion, oldQuestion) {
       this.createLineChart();
-    },
+    }
   },
   methods: {
     createLineChart() {
-      let flightData = FlightService.getFlightDataByCountryCode(
+      let countryData = FlightService.getFlightDataByCountryCode(
         this.countryCode
       );
 
-      let dataset = flightData.map((element, i) => {
-        let average2019 = 0;
-        let average2020 = 0;
+      let dataset = countryData.map((element, i) => {
+        let average = 0;
 
         if (i < 3) {
           for (let j = i; j <= i + 6; j++) {
-            average2019 += flightData[j][this.typeOfFlights]["2019"];
-            average2020 += flightData[j][this.typeOfFlights]["2020"];
+            let cases = parseInt(countryData[j]["coronaCases"]["Cases"]);
+            cases = cases ? cases : 0;
+            average += cases;
           }
-        } else if (i >= flightData.length - 3) {
+        } else if (i >= countryData.length - 3) {
           for (let j = i; j <= i - 6; j--) {
-            average2019 += flightData[j][this.typeOfFlights]["2019"];
-            average2020 += flightData[j][this.typeOfFlights]["2020"];
+            let cases = parseInt(countryData[j]["coronaCases"]["Cases"]);
+            cases = cases ? cases : 0;
+            average += cases;
           }
         } else {
           for (let j = i - 3; j <= i + 3; j++) {
-            average2019 += flightData[j][this.typeOfFlights]["2019"];
-            average2020 += flightData[j][this.typeOfFlights]["2020"];
+            let cases = parseInt(countryData[j]["coronaCases"]["Cases"]);
+            cases = cases ? cases : 0;
+            average += cases;
           }
-          average2019 = average2019 / 7;
-          average2020 = average2020 / 7;
+          average = average / 7;
         }
+        console.log(average);
 
-        if (average2019 === 0) {
+        if (average === 0) {
           return { y: 0, x: element["timestamp"] * 1000 };
         }
-        let delta = (average2020 / average2019) * 100 - 100;
-        return { y: delta, x: element["timestamp"] * 1000 };
+        // let cases = parseInt(countryData[i]["coronaCases"]["Cases"])
+
+        // console.log(cases ? cases : 0)
+        // console.log(parseInt(countryData[i]["coronaCases"]["Cases"]))
+        return { y: average, x: element["timestamp"] * 1000 };
       });
       let minMaxYAxis = d3.extent(dataset, function(d) {
         return d.y;
@@ -73,18 +72,10 @@ export default {
       let minMaxXAxis = d3.extent(dataset, function(d) {
         return d.x;
       });
-
-      // Fix, not nice, fix this!
-      dataset.push({ y: 0, x: 0 });
-      dataset.unshift({ y: 0, x: 1577836800000 });
-      dataset.unshift({ y: 100, x: 0 });
-      dataset.unshift({ y: -100, x: 0 });
-      dataset.unshift({ y: 0, x: 0 });
-
       // Use the margin convention practice
       var margin = { top: 50, right: 50, bottom: 50, left: 50 },
         width = window.innerWidth / 2 - margin.left - margin.right, // Use the window's width
-        height = window.innerHeight / 2 - margin.top - margin.bottom; // Use the window's height
+        height = window.innerHeight / 3 - margin.top - margin.bottom; // Use the window's height
 
       // The number of datapoints
       var n = dataset.length;
@@ -96,10 +87,10 @@ export default {
         .domain(minMaxXAxis) // input
         .range([0, width]); // output
 
-      // Y scale will use the randomly generate number
+      // Y scale
       var yScale = d3
         .scaleLinear()
-        .domain([-100, minMaxYAxis[1]]) // input
+        .domain([0, minMaxYAxis[1]]) // input
         .range([height, 0]); // output
 
       // d3's line generator
@@ -113,13 +104,13 @@ export default {
         }) // set the y values for the line generator
         .curve(d3.curveMonotoneX); // apply smoothing to the line
 
-      d3.select("#linechart").remove();
+      d3.select("#corona_linechart").remove();
       // Add the SVG to the page and employ #2
       var svg = d3
         .create("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
-        .attr("id", "linechart");
+        .attr("id", "corona_linechart");
 
       svg
         .append("g")
@@ -130,12 +121,7 @@ export default {
         .select("g")
         .append("g")
         .attr("class", "x axis")
-        .attr(
-          "transform",
-          "translate(0," +
-            (height * minMaxYAxis[1]) / (minMaxYAxis[1] + 100) +
-            ")"
-        )
+        .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(xScale).tickFormat(d3.timeFormat("%U CW")))
         .selectAll("text")
         .style("text-anchor", "end")
@@ -150,26 +136,6 @@ export default {
         .attr("class", "y axis")
         .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
 
-      var areaGradient = svg
-        .select("g")
-        .append("defs")
-        .append("linearGradient")
-        .attr("id", "areaGradient")
-        .attr("x1", "0%")
-        .attr("y1", "0%")
-        .attr("x2", "0%")
-        .attr("y2", "100%");
-
-      // Sets the gradient color from -100%to100%
-      const mapColor = (value, x1, y1, x2, y2) =>
-        ((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
-      for (let i = 0; i <= 100; i += 10) {
-        areaGradient
-          .append("stop")
-          .attr("offset", i + "%")
-          .attr("stop-color", color(mapColor(i, 0, 100, 100, -100)))
-          .attr("stop-opacity", 0.9);
-      }
 
       // Append the path, bind the data, and call the line generator
       svg
@@ -177,8 +143,7 @@ export default {
         .append("path")
         .datum(dataset) // 10. Binds data to the line
         .attr("class", "line") // Assign a class for styling
-        .attr("d", line) // 11. Calls the line generator
-        .style("fill", "url(#areaGradient)");
+        .attr("d", line); // 11. Calls the line generator
 
       var focus = svg
         .select("g")
@@ -189,15 +154,13 @@ export default {
         .attr("r", 8.5)
         .style("opacity", 0);
 
-      document.getElementById("my_dataviz").appendChild(svg.node());
+      document.getElementById("corona_chart").appendChild(svg.node());
       return svg.node();
     },
     getFlightData() {}
   },
   mounted() {
     this.createLineChart();
-    // let chart = this.createLineChart();
-    // document.getElementById("my_dataviz").appendChild(chart);
   }
 };
 </script>
