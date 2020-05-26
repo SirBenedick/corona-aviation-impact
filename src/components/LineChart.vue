@@ -46,23 +46,23 @@ export default {
         let average2019 = 0;
         let average2020 = 0;
 
-        if (i === 0) {
-          average2019 = element[this.typeOfFlights]["2019"];
-          average2020 = element[this.typeOfFlights]["2020"];
-        } else if (i === flightData.length - 1) {
-          average2019 = element[this.typeOfFlights]["2019"];
-          average2020 = element[this.typeOfFlights]["2020"];
+        if (i < 3) {
+          for (let j = i; j <= i + 6; j++) {
+            average2019 += flightData[j][this.typeOfFlights]["2019"];
+            average2020 += flightData[j][this.typeOfFlights]["2020"];
+          }
+        } else if (i >= flightData.length - 3) {
+          for (let j = i; j <= i - 6; j--) {
+            average2019 += flightData[j][this.typeOfFlights]["2019"];
+            average2020 += flightData[j][this.typeOfFlights]["2020"];
+          }
         } else {
-          average2019 =
-            (flightData[i - 1][this.typeOfFlights]["2019"] +
-              flightData[i][this.typeOfFlights]["2019"] +
-              flightData[i + 1][this.typeOfFlights]["2019"]) /
-            3;
-          average2020 =
-            (flightData[i - 1][this.typeOfFlights]["2020"] +
-              flightData[i][this.typeOfFlights]["2020"] +
-              flightData[i + 1][this.typeOfFlights]["2020"]) /
-            3;
+          for (let j = i - 3; j <= i + 3; j++) {
+            average2019 += flightData[j][this.typeOfFlights]["2019"];
+            average2020 += flightData[j][this.typeOfFlights]["2020"];
+          }
+          average2019 = average2019 / 7;
+          average2020 = average2020 / 7;
         }
 
         if (average2019 === 0) {
@@ -71,12 +71,12 @@ export default {
         let delta = (average2020 / average2019) * 100 - 100;
         return { y: delta, x: element["timestamp"] * 1000 };
       });
-      let minMaxYAxis  = d3.extent(dataset, function(d){
-        return d.y
-      })
-      let minMaxXAxis  = d3.extent(dataset, function(d){
-        return d.x
-      })
+      let minMaxYAxis = d3.extent(dataset, function(d) {
+        return d.y;
+      });
+      let minMaxXAxis = d3.extent(dataset, function(d) {
+        return d.x;
+      });
 
       // Fix, not nice, fix this!
       dataset.push({ y: 0, x: 0 });
@@ -134,8 +134,13 @@ export default {
         .select("g")
         .append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + height * minMaxYAxis[1]/(minMaxYAxis[1]+100) + ")")
-        .call(d3.axisBottom(xScale).tickFormat(d3.timeFormat("%B %d")))
+        .attr(
+          "transform",
+          "translate(0," +
+            (height * minMaxYAxis[1]) / (minMaxYAxis[1] + 100) +
+            ")"
+        )
+        .call(d3.axisBottom(xScale).tickFormat(d3.timeFormat("%U CW")))
         .selectAll("text")
         .style("text-anchor", "end")
         .attr("dx", "-.8em")

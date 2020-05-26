@@ -35,6 +35,10 @@ export default {
           countryDisplayedName: "Austria"
         },
         {
+          countryCode: "ES",
+          countryDisplayedName: "Spain"
+        },
+        {
           countryCode: "IS",
           countryDisplayedName: "Iceland"
         },
