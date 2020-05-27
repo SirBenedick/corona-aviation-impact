@@ -1,8 +1,7 @@
 <template>
   <div>
-    <b>{{ countryName }}</b>
-    {{countryCode}}
-    <div id="corona_chart"></div>
+    <b> Corona infected </b>
+    <div id="corona_chart" />
   </div>
 </template>
 
@@ -55,7 +54,6 @@ export default {
           }
           average = average / 7;
         }
-        console.log(average);
 
         if (average === 0) {
           return { y: 0, x: element["timestamp"] * 1000 };

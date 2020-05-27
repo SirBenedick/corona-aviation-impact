@@ -1,9 +1,7 @@
 <template>
   <div>
-    <b>{{ countryName }}</b>
-    {{countryCode}}
-    {{ typeOfFlights }}
-    <div id="my_dataviz"></div>
+    <b> Aviation flight traffic </b>
+    <div id="my_dataviz" />
   </div>
 </template>
 
@@ -83,8 +81,8 @@ export default {
 
       // Use the margin convention practice
       var margin = { top: 50, right: 50, bottom: 50, left: 50 },
-        width = window.innerWidth / 2 - margin.left - margin.right, // Use the window's width
-        height = window.innerHeight / 2 - margin.top - margin.bottom; // Use the window's height
+        width = window.innerWidth / 2 - margin.left - margin.right - 100, // Use the window's width
+        height = window.innerHeight / 2 - margin.top - margin.bottom -100 ; // Use the window's height
 
       // The number of datapoints
       var n = dataset.length;

@@ -1,12 +1,15 @@
 <template>
   <div>
-    <div id="arc" />
     <el-row>
+      <el-col align="middle">
+        <div
+          class="heatmap_diagram"
+          id="arc"
+        />
+      </el-col>
+
       <el-col :span="12">
         <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-      </el-col>
-      <el-col :span="12">
-        <RadialHeatMapLabel />
       </el-col>
     </el-row>
   </div>
@@ -19,7 +22,6 @@ import RadialHeatMapLabel from "../components/RadialHeatMapLabel";
 
 export default {
   components: {
-    RadialHeatMapLabel
   },
   props: {
     typeOfFlights: {
@@ -542,7 +544,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 path:hover {
   fill: #37a561;
 }
@@ -564,5 +566,9 @@ path:hover {
 
 .title {
   font-size: 16px;
+}
+
+.heatmap_diagram {
+  margin-top:70px;
 }
 </style>
