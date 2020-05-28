@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <SelectedCountryTitle :country-name="selectedCountry" :country-code="selectedCountryCode" />
+    <SelectedCountryTitle
+      :country-name="selectedCountry"
+      :country-code="selectedCountryCode"
+    />
     <el-row>
       <el-col :span="12">
         <el-switch

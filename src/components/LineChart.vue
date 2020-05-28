@@ -1,9 +1,9 @@
 <template>
   <div>
     <b>{{ countryName }}</b>
-    {{countryCode}}
+    {{ countryCode }}
     {{ typeOfFlights }}
-    <div id="my_dataviz"></div>
+    <div id="my_dataviz" />
   </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
     },
     countryName: function(newQuestion, oldQuestion) {
       this.createLineChart();
-    },
+    }
   },
   methods: {
     createLineChart() {
@@ -74,12 +74,12 @@ export default {
         return d.x;
       });
 
-      // Fix, not nice, fix this!
-      dataset.push({ y: 0, x: 0 });
-      dataset.unshift({ y: 0, x: 1577836800000 });
-      dataset.unshift({ y: 100, x: 0 });
-      dataset.unshift({ y: -100, x: 0 });
-      dataset.unshift({ y: 0, x: 0 });
+      // Fix, not nice, fix this! Only needed for the gradient to "fake" work
+      // dataset.push({ y: 0, x: 0 });
+      // dataset.unshift({ y: 0, x: 1577836800000 });
+      // dataset.unshift({ y: 100, x: 0 });
+      // dataset.unshift({ y: -100, x: 0 });
+      // dataset.unshift({ y: 0, x: 0 });
 
       // Use the margin convention practice
       var margin = { top: 50, right: 50, bottom: 50, left: 50 },
@@ -150,35 +150,38 @@ export default {
         .attr("class", "y axis")
         .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
 
-      var areaGradient = svg
-        .select("g")
-        .append("defs")
-        .append("linearGradient")
-        .attr("id", "areaGradient")
-        .attr("x1", "0%")
-        .attr("y1", "0%")
-        .attr("x2", "0%")
-        .attr("y2", "100%");
+      // Gradient
+      // var areaGradient = svg
+      //   .select("g")
+      //   .append("defs")
+      //   .append("linearGradient")
+      //   .attr("id", "areaGradient")
+      //   .attr("x1", "0%")
+      //   .attr("y1", "0%")
+      //   .attr("x2", "0%")
+      //   .attr("y2", "100%");
 
-      // Sets the gradient color from -100%to100%
-      const mapColor = (value, x1, y1, x2, y2) =>
-        ((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
-      for (let i = 0; i <= 100; i += 10) {
-        areaGradient
-          .append("stop")
-          .attr("offset", i + "%")
-          .attr("stop-color", color(mapColor(i, 0, 100, 100, -100)))
-          .attr("stop-opacity", 0.9);
-      }
+      // // Sets the gradient color from -100%to100%
+      // const mapColor = (value, x1, y1, x2, y2) =>
+      //   ((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
+      // for (let i = 0; i <= 100; i += 10) {
+      //   areaGradient
+      //     .append("stop")
+      //     .attr("offset", i + "%")
+      //     .attr("stop-color", color(mapColor(i, 0, 100, 100, -100)))
+      //     .attr("stop-opacity", 0.9);
+      // }
 
       // Append the path, bind the data, and call the line generator
       svg
         .select("g")
         .append("path")
         .datum(dataset) // 10. Binds data to the line
-        .attr("class", "line") // Assign a class for styling
-        .attr("d", line) // 11. Calls the line generator
-        .style("fill", "url(#areaGradient)");
+        .attr("stroke", "steelblue")
+        .attr("stroke-width", 3)
+        .attr("fill", "none")
+        .attr("d", line); // 11. Calls the line generator
+      // .style("fill", "url(#areaGradient)");
 
       var focus = svg
         .select("g")
@@ -196,20 +199,11 @@ export default {
   },
   mounted() {
     this.createLineChart();
-    // let chart = this.createLineChart();
-    // document.getElementById("my_dataviz").appendChild(chart);
   }
 };
 </script>
 
 <style>
-/* Style the lines by removing the fill and applying a stroke */
-.line {
-  fill: none;
-  stroke: #ffab00;
-  stroke-width: 1;
-}
-
 .overlay {
   fill: none;
   pointer-events: all;

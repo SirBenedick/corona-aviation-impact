@@ -1,8 +1,8 @@
 <template>
   <div>
     <b>{{ countryName }}</b>
-    {{countryCode}}
-    <div id="corona_chart"></div>
+    {{ countryCode }}
+    <div id="corona_chart" />
   </div>
 </template>
 
@@ -55,15 +55,11 @@ export default {
           }
           average = average / 7;
         }
-        console.log(average);
 
         if (average === 0) {
           return { y: 0, x: element["timestamp"] * 1000 };
         }
-        // let cases = parseInt(countryData[i]["coronaCases"]["Cases"])
 
-        // console.log(cases ? cases : 0)
-        // console.log(parseInt(countryData[i]["coronaCases"]["Cases"]))
         return { y: average, x: element["timestamp"] * 1000 };
       });
       let minMaxYAxis = d3.extent(dataset, function(d) {
@@ -136,14 +132,15 @@ export default {
         .attr("class", "y axis")
         .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
 
-
       // Append the path, bind the data, and call the line generator
       svg
         .select("g")
         .append("path")
         .datum(dataset) // 10. Binds data to the line
-        .attr("class", "line") // Assign a class for styling
-        .attr("d", line); // 11. Calls the line generator
+        .attr("stroke", "steelblue")
+        .attr("stroke-width", 3)
+        .attr("fill", "none")
+        .attr("d", line);
 
       var focus = svg
         .select("g")
@@ -166,13 +163,6 @@ export default {
 </script>
 
 <style>
-/* Style the lines by removing the fill and applying a stroke */
-.line {
-  fill: none;
-  stroke: #ffab00;
-  stroke-width: 1;
-}
-
 .overlay {
   fill: none;
   pointer-events: all;
