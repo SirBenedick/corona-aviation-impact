@@ -148,7 +148,7 @@ export default {
         .select("g")
         .append("g")
         .attr("class", "y axis")
-        .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
+        .call(d3.axisLeft(yScale).tickFormat(d => d + "%"));
 
       // Append the path, bind the data, and call the line generator
       svg
