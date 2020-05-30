@@ -150,28 +150,6 @@ export default {
         .attr("class", "y axis")
         .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
 
-      // Gradient
-      // var areaGradient = svg
-      //   .select("g")
-      //   .append("defs")
-      //   .append("linearGradient")
-      //   .attr("id", "areaGradient")
-      //   .attr("x1", "0%")
-      //   .attr("y1", "0%")
-      //   .attr("x2", "0%")
-      //   .attr("y2", "100%");
-
-      // // Sets the gradient color from -100%to100%
-      // const mapColor = (value, x1, y1, x2, y2) =>
-      //   ((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
-      // for (let i = 0; i <= 100; i += 10) {
-      //   areaGradient
-      //     .append("stop")
-      //     .attr("offset", i + "%")
-      //     .attr("stop-color", color(mapColor(i, 0, 100, 100, -100)))
-      //     .attr("stop-opacity", 0.9);
-      // }
-
       // Append the path, bind the data, and call the line generator
       svg
         .select("g")
@@ -183,6 +161,9 @@ export default {
         .attr("d", line); // 11. Calls the line generator
       // .style("fill", "url(#areaGradient)");
 
+      var bisect = d3.bisector(function(d) {
+        return d.x;
+      }).left;
       var focus = svg
         .select("g")
         .append("g")
@@ -191,6 +172,58 @@ export default {
         .attr("stroke", "black")
         .attr("r", 8.5)
         .style("opacity", 0);
+      var focusText = svg
+        .select("g")
+        .append("g")
+        .append("text")
+        .style("opacity", 0)
+        .attr("text-anchor", "middle")
+        .attr("alignment-baseline", "middle");
+      svg
+        .select("g")
+        .append("rect")
+        .style("fill", "none")
+        .style("pointer-events", "all")
+        .attr("width", width)
+        .attr("height", height)
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseout", mouseout);
+
+      function mouseover() {
+        focus.style("opacity", 1);
+        focusText.style("opacity", 1);
+      }
+
+      function mousemove() {
+        var x0 = xScale.invert(d3.mouse(this)[0]);
+        var i = bisect(dataset, x0, 1);
+        var selectedData = dataset[i];
+
+        let date = new Date(selectedData.x);
+        let xPositionDelta = selectedData.x < 1583107200000 ? +90 : -90;
+        let yPositionDelta = 0;
+        focus
+          .attr("cx", xScale(selectedData.x))
+          .attr("cy", yScale(selectedData.y));
+        focusText
+          .html(
+            date.getUTCDate() +
+              1 +
+              ".0" +
+              (date.getUTCMonth() + 1) +
+              " - " +
+              "Change: " +
+              Math.round(selectedData.y) +
+              "%"
+          )
+          .attr("x", xScale(selectedData.x) + xPositionDelta)
+          .attr("y", yScale(selectedData.y) + yPositionDelta);
+      }
+      function mouseout() {
+        focus.style("opacity", 0);
+        focusText.style("opacity", 0);
+      }
 
       document.getElementById("my_dataviz").appendChild(svg.node());
       return svg.node();

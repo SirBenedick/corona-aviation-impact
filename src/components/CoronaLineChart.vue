@@ -142,6 +142,11 @@ export default {
         .attr("fill", "none")
         .attr("d", line);
 
+      // Tooltip
+      // This allows to find the closest X index of the mouse:
+      var bisect = d3.bisector(function(d) {
+        return d.x;
+      }).left;
       var focus = svg
         .select("g")
         .append("g")
@@ -150,61 +155,15 @@ export default {
         .attr("stroke", "black")
         .attr("r", 8.5)
         .style("opacity", 0);
-
-      //   const { x, y, width: w, height: h } = text.node().getBBox();
-
-      //   text.attr("transform", `translate(${-w / 2},${15 - y})`);
-      //   path.attr(
-      //     "d",
-      //     `M${-w / 2 - 10},5H-5l5,-5l5,5H${w / 2 + 10}v${h + 20}h-${w + 20}z`
-      //   );
-      // };
-      // const formatValue = value => {
-      //   return "value.toString()"
-      //   // return value.toLocaleString("en", {
-      //   //   style: "currency",
-      //   //   currency: "USD"
-      //   // });
-      // };
-      // const bisect = d3.bisector(function(d) {
-      //   console.log("bisect")
-      //   console.log(d)
-      //   return d.x;
-      // }).left;
-
-      // const tooltip = svg.append("g");
-
-      // svg.on("touchmove mousemove", function() {
-      //   console.log("touchmove mouse");
-      //   console.log(d3.mouse(this))
-      //   const { date, value } = bisect(d3.mouse(this)[0]);
-
-      //   tooltip
-      //     .attr("transform", `translate(${xScale(date)},${yScale(value)})`)
-      //     .call(callout, `${123},${312}`);
-      // });
-
-      // svg.on("touchend mouseleave", () => tooltip.call(callout, null));
-
-      // Tooltip
-      // This allows to find the closest X index of the mouse:
-      var bisect = d3.bisector(function(d) {
-        return d.x;
-      }).left;
-      var focus = svg
-        .append("g")
-        .append("circle")
-        .style("fill", "none")
-        .attr("stroke", "black")
-        .attr("r", 8.5)
-        .style("opacity", 0);
       var focusText = svg
+        .select("g")
         .append("g")
         .append("text")
         .style("opacity", 0)
-        .attr("text-anchor", "left")
+        .attr("text-anchor", "middle")
         .attr("alignment-baseline", "middle");
       svg
+        .select("g")
         .append("rect")
         .style("fill", "none")
         .style("pointer-events", "all")
@@ -220,17 +179,28 @@ export default {
       }
 
       function mousemove() {
-        // recover coordinate we need
         var x0 = xScale.invert(d3.mouse(this)[0]);
         var i = bisect(dataset, x0, 1);
         var selectedData = dataset[i];
+
+        let date = new Date(selectedData.x);
+        let xPositionDelta = selectedData.x < 1583107200000 ? +90 : -100;
+        let yPositionDelta = selectedData.y < 30 ? -30 : 0;
         focus
           .attr("cx", xScale(selectedData.x))
           .attr("cy", yScale(selectedData.y));
         focusText
-          .html("x:" + selectedData.x + "  -  " + "y:" + selectedData.y)
-          .attr("x", xScale(selectedData.x))
-          .attr("y", yScale(selectedData.y));
+          .html(
+            date.getUTCDate() +
+              1 +
+              ".0" +
+              (date.getUTCMonth() + 1) +
+              " - " +
+              "New Cases: " +
+              Math.round(selectedData.y)
+          )
+          .attr("x", xScale(selectedData.x) + xPositionDelta)
+          .attr("y", yScale(selectedData.y) + yPositionDelta);
       }
       function mouseout() {
         focus.style("opacity", 0);
