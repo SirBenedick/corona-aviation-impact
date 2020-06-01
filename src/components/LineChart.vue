@@ -1,6 +1,12 @@
 <template>
   <div>
+<<<<<<< HEAD
     <b> Aviation flight traffic </b>
+=======
+    <b>{{ countryName }}</b>
+    {{ countryCode }}
+    {{ typeOfFlights }}
+>>>>>>> 19edc4be19cc2d2be154700684cd6b5990155e3f
     <div id="my_dataviz" />
   </div>
 </template>
@@ -28,7 +34,7 @@ export default {
     },
     countryName: function(newQuestion, oldQuestion) {
       this.createLineChart();
-    },
+    }
   },
   methods: {
     createLineChart() {
@@ -72,12 +78,12 @@ export default {
         return d.x;
       });
 
-      // Fix, not nice, fix this!
-      dataset.push({ y: 0, x: 0 });
-      dataset.unshift({ y: 0, x: 1577836800000 });
-      dataset.unshift({ y: 100, x: 0 });
-      dataset.unshift({ y: -100, x: 0 });
-      dataset.unshift({ y: 0, x: 0 });
+      // Fix, not nice, fix this! Only needed for the gradient to "fake" work
+      // dataset.push({ y: 0, x: 0 });
+      // dataset.unshift({ y: 0, x: 1577836800000 });
+      // dataset.unshift({ y: 100, x: 0 });
+      // dataset.unshift({ y: -100, x: 0 });
+      // dataset.unshift({ y: 0, x: 0 });
 
       // Use the margin convention practice
       var margin = { top: 50, right: 50, bottom: 50, left: 50 },
@@ -146,38 +152,22 @@ export default {
         .select("g")
         .append("g")
         .attr("class", "y axis")
-        .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
-
-      var areaGradient = svg
-        .select("g")
-        .append("defs")
-        .append("linearGradient")
-        .attr("id", "areaGradient")
-        .attr("x1", "0%")
-        .attr("y1", "0%")
-        .attr("x2", "0%")
-        .attr("y2", "100%");
-
-      // Sets the gradient color from -100%to100%
-      const mapColor = (value, x1, y1, x2, y2) =>
-        ((value - x1) * (y2 - x2)) / (y1 - x1) + x2;
-      for (let i = 0; i <= 100; i += 10) {
-        areaGradient
-          .append("stop")
-          .attr("offset", i + "%")
-          .attr("stop-color", color(mapColor(i, 0, 100, 100, -100)))
-          .attr("stop-opacity", 0.9);
-      }
+        .call(d3.axisLeft(yScale).tickFormat(d => d + "%"));
 
       // Append the path, bind the data, and call the line generator
       svg
         .select("g")
         .append("path")
         .datum(dataset) // 10. Binds data to the line
-        .attr("class", "line") // Assign a class for styling
-        .attr("d", line) // 11. Calls the line generator
-        .style("fill", "url(#areaGradient)");
+        .attr("stroke", "steelblue")
+        .attr("stroke-width", 3)
+        .attr("fill", "none")
+        .attr("d", line); // 11. Calls the line generator
+      // .style("fill", "url(#areaGradient)");
 
+      var bisect = d3.bisector(function(d) {
+        return d.x;
+      }).left;
       var focus = svg
         .select("g")
         .append("g")
@@ -186,6 +176,58 @@ export default {
         .attr("stroke", "black")
         .attr("r", 8.5)
         .style("opacity", 0);
+      var focusText = svg
+        .select("g")
+        .append("g")
+        .append("text")
+        .style("opacity", 0)
+        .attr("text-anchor", "middle")
+        .attr("alignment-baseline", "middle");
+      svg
+        .select("g")
+        .append("rect")
+        .style("fill", "none")
+        .style("pointer-events", "all")
+        .attr("width", width)
+        .attr("height", height)
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseout", mouseout);
+
+      function mouseover() {
+        focus.style("opacity", 1);
+        focusText.style("opacity", 1);
+      }
+
+      function mousemove() {
+        var x0 = xScale.invert(d3.mouse(this)[0]);
+        var i = bisect(dataset, x0, 1);
+        var selectedData = dataset[i];
+
+        let date = new Date(selectedData.x);
+        let xPositionDelta = selectedData.x < 1583107200000 ? +90 : -90;
+        let yPositionDelta = 0;
+        focus
+          .attr("cx", xScale(selectedData.x))
+          .attr("cy", yScale(selectedData.y));
+        focusText
+          .html(
+            date.getUTCDate() +
+              1 +
+              ".0" +
+              (date.getUTCMonth() + 1) +
+              " - " +
+              "Change: " +
+              Math.round(selectedData.y) +
+              "%"
+          )
+          .attr("x", xScale(selectedData.x) + xPositionDelta)
+          .attr("y", yScale(selectedData.y) + yPositionDelta);
+      }
+      function mouseout() {
+        focus.style("opacity", 0);
+        focusText.style("opacity", 0);
+      }
 
       document.getElementById("my_dataviz").appendChild(svg.node());
       return svg.node();
@@ -194,20 +236,11 @@ export default {
   },
   mounted() {
     this.createLineChart();
-    // let chart = this.createLineChart();
-    // document.getElementById("my_dataviz").appendChild(chart);
   }
 };
 </script>
 
 <style>
-/* Style the lines by removing the fill and applying a stroke */
-.line {
-  fill: none;
-  stroke: #ffab00;
-  stroke-width: 1;
-}
-
 .overlay {
   fill: none;
   pointer-events: all;

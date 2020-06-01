@@ -1,6 +1,11 @@
 <template>
   <div>
+<<<<<<< HEAD
     <b> Corona infected </b>
+=======
+    <b>{{ countryName }}</b>
+    {{ countryCode }}
+>>>>>>> 19edc4be19cc2d2be154700684cd6b5990155e3f
     <div id="corona_chart" />
   </div>
 </template>
@@ -58,10 +63,7 @@ export default {
         if (average === 0) {
           return { y: 0, x: element["timestamp"] * 1000 };
         }
-        // let cases = parseInt(countryData[i]["coronaCases"]["Cases"])
 
-        // console.log(cases ? cases : 0)
-        // console.log(parseInt(countryData[i]["coronaCases"]["Cases"]))
         return { y: average, x: element["timestamp"] * 1000 };
       });
       let minMaxYAxis = d3.extent(dataset, function(d) {
@@ -134,15 +136,21 @@ export default {
         .attr("class", "y axis")
         .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
 
-
       // Append the path, bind the data, and call the line generator
       svg
         .select("g")
         .append("path")
         .datum(dataset) // 10. Binds data to the line
-        .attr("class", "line") // Assign a class for styling
-        .attr("d", line); // 11. Calls the line generator
+        .attr("stroke", "steelblue")
+        .attr("stroke-width", 3)
+        .attr("fill", "none")
+        .attr("d", line);
 
+      // Tooltip
+      // This allows to find the closest X index of the mouse:
+      var bisect = d3.bisector(function(d) {
+        return d.x;
+      }).left;
       var focus = svg
         .select("g")
         .append("g")
@@ -151,6 +159,57 @@ export default {
         .attr("stroke", "black")
         .attr("r", 8.5)
         .style("opacity", 0);
+      var focusText = svg
+        .select("g")
+        .append("g")
+        .append("text")
+        .style("opacity", 0)
+        .attr("text-anchor", "middle")
+        .attr("alignment-baseline", "middle");
+      svg
+        .select("g")
+        .append("rect")
+        .style("fill", "none")
+        .style("pointer-events", "all")
+        .attr("width", width)
+        .attr("height", height)
+        .on("mouseover", mouseover)
+        .on("mousemove", mousemove)
+        .on("mouseout", mouseout);
+
+      function mouseover() {
+        focus.style("opacity", 1);
+        focusText.style("opacity", 1);
+      }
+
+      function mousemove() {
+        var x0 = xScale.invert(d3.mouse(this)[0]);
+        var i = bisect(dataset, x0, 1);
+        var selectedData = dataset[i];
+
+        let date = new Date(selectedData.x);
+        let xPositionDelta = selectedData.x < 1583107200000 ? +90 : -100;
+        let yPositionDelta = selectedData.y < 30 ? -30 : 0;
+        focus
+          .attr("cx", xScale(selectedData.x))
+          .attr("cy", yScale(selectedData.y));
+        focusText
+          .html(
+            date.getUTCDate() +
+              1 +
+              ".0" +
+              (date.getUTCMonth() + 1) +
+              " - " +
+              "New Cases: " +
+              Math.round(selectedData.y)
+          )
+          .attr("x", xScale(selectedData.x) + xPositionDelta)
+          .attr("y", yScale(selectedData.y) + yPositionDelta);
+      }
+      function mouseout() {
+        focus.style("opacity", 0);
+        focusText.style("opacity", 0);
+      }
 
       document.getElementById("corona_chart").appendChild(svg.node());
       return svg.node();
@@ -164,13 +223,6 @@ export default {
 </script>
 
 <style>
-/* Style the lines by removing the fill and applying a stroke */
-.line {
-  fill: none;
-  stroke: #ffab00;
-  stroke-width: 1;
-}
-
 .overlay {
   fill: none;
   pointer-events: all;

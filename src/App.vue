@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div
     id="app"
   >
@@ -66,6 +67,42 @@
         </el-col>
       </el-row>
     </div>
+=======
+  <div id="app">
+    <SelectedCountryTitle
+      :country-name="selectedCountry"
+      :country-code="selectedCountryCode"
+    />
+    <el-row>
+      <el-col :span="12">
+        <el-switch
+          v-model="toogleTypeOfFlights"
+          active-color="#13ce66"
+          inactive-color="#ff4949"
+          active-value="internationalFlights"
+          inactive-value="domesticFlights"
+          active-text="international"
+          inactive-text="domestic"
+        />
+        <RadialHeatMap
+          @selectCountry="setSelectedCountry"
+          :type-of-flights="toogleTypeOfFlights"
+        />
+      </el-col>
+      <el-col :span="12">
+        <LineChart
+          :country-name="selectedCountry"
+          :country-code="selectedCountryCode"
+          :type-of-flights="toogleTypeOfFlights"
+        />
+        <CoronaLineChart
+          :country-name="selectedCountry"
+          :country-code="selectedCountryCode"
+          :type-of-flights="toogleTypeOfFlights"
+        />
+      </el-col>
+    </el-row>
+>>>>>>> 19edc4be19cc2d2be154700684cd6b5990155e3f
   </div>
 </template>
 
