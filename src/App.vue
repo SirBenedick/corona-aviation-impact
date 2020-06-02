@@ -67,8 +67,8 @@ export default {
   },
   data() {
     return {
-      selectedCountry: "World",
-      selectedCountryCode: "World",
+      selectedCountry: "Germany",
+      selectedCountryCode: "DE",
       selectedTimeStamp: "",
       toogleTypeOfFlights: "internationalFlights",
       selectedCountries: [
