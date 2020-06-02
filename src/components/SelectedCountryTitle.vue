@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h1 style="display:inline">
-      {{ countryName }}
-    </h1>({{ countryCode }})
+    <h1 style="display:inline">{{ countryName }}</h1>
   </div>
 </template>
 

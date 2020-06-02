@@ -1,4 +1,5 @@
 import flightData from "../data/flights.json";
+import FlightService from "./FlightService";
 
 class SelectedCountriesService {
   getSumOf(selectedCountries) {
@@ -39,6 +40,11 @@ class SelectedCountriesService {
     })
     return values
   }
+
+  getSelectedCountriesDataForHeatmap(selectedCountries, type) {
+    const countryData = FlightService.getFlights
+  }
 }
+
 
 export default new SelectedCountriesService()
