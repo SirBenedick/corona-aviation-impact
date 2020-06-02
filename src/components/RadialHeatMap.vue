@@ -1,11 +1,20 @@
 <template>
   <div>
-    <div id="arc" />
     <el-row>
-      <el-col :span="12">
+      <el-col align="middle">
+        <div
+          class="heatmap_diagram"
+          id="arc"
+        />
+      </el-col>
+
+      <el-col :span="9">
         <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
       </el-col>
-      <el-col :span="12">
+      <el-col
+        :push="7"
+        :span="7"
+      >
         <RadialHeatMapLabel />
       </el-col>
     </el-row>
@@ -211,7 +220,12 @@ export default {
           tooltip.style("display", "block");
           tooltip.style("opacity", 2);
           tooltip.style("position", "absolute");
+          this.parentNode.appendChild(this); //the path group is on the top with in its parent group
+          this.parentNode.parentNode.appendChild(this.parentNode); //the parent group is on the top with in its parent group
+          d3.select(this).style("stroke", "black");
+          d3.select(this).style("stroke-width", "3px");
         })
+
         .on("mousemove", function(d) {
           tooltip
             .style("top", d3.event.layerY + 10 + "px")
@@ -220,6 +234,9 @@ export default {
         .on("mouseout", function(d) {
           tooltip.style("display", "none");
           tooltip.style("opacity", 0);
+          d3.select(this)
+            .style("stroke", "#4f5b69")
+            .style("stroke-width", "1");
         });
     },
     circularHeatChart() {
@@ -241,7 +258,7 @@ export default {
         segmentLabels = [], // Value assigned only for init
         radialLabels = (segmentLabels = []); // Value assigned only for init
 
-      const freeSpaceSizeInPercent = 0.169;
+      const freeSpaceSizeInPercent = 0.16;
       const emptySpaceAngleInRad = freeSpaceSizeInPercent * 2 * Math.PI;
       const segementSapceAngleInRad = 2 * Math.PI - emptySpaceAngleInRad;
       const singleSegmentAngle = segementSapceAngleInRad / numSegments;
@@ -264,13 +281,13 @@ export default {
         );
       };
       let ea = function(d, i) {
-        if (
-          Math.floor(
-            (singleSegmentAngle * (i + 1)) % segementSapceAngleInRad
-          ) === 0
-        ) {
+        const diff = Math.abs(
+          0 - ((singleSegmentAngle * (i + 1)) % segementSapceAngleInRad)
+        );
+        if (diff < 0.1) {
           return 2 * Math.PI;
         }
+
         return (
           emptySpaceAngleInRad +
           ((singleSegmentAngle * (i + 1)) % segementSapceAngleInRad)
@@ -331,9 +348,7 @@ export default {
             .attr("fill", function(d) {
               return color(accessor(d));
             })
-            .attr("class", function(d) {
-              return accessorSegment(d);
-            })
+            .attr("class", "path-border")
             .on("click", function(d) {
               that.emitSelectCountry({
                 countryName: accessorSegment(d),
@@ -543,10 +558,6 @@ export default {
 </script>
 
 <style>
-path:hover {
-  fill: #37a561;
-}
-
 .tooltip {
   background: #eee;
   box-shadow: 0 0 5px #999999;
@@ -565,4 +576,6 @@ path:hover {
 .title {
   font-size: 16px;
 }
+
+
 </style>
