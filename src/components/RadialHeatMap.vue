@@ -2,19 +2,13 @@
   <div>
     <el-row>
       <el-col align="middle">
-        <div
-          class="heatmap_diagram"
-          id="arc"
-        />
+        <div class="heatmap_diagram" id="arc" />
       </el-col>
 
       <el-col :span="9">
         <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
       </el-col>
-      <el-col
-        :push="7"
-        :span="7"
-      >
+      <el-col :push="7" :span="7">
         <RadialHeatMapLabel />
       </el-col>
     </el-row>
@@ -35,81 +29,14 @@ export default {
       default: "internationalFlights",
       type: String,
       required: true
+    },
+    selectedCountries: {
+      required: true
     }
   },
   data() {
     return {
       radial_labels: ["January", "Feburary", "March", "April"],
-      segment_labels: [
-        {
-          countryCode: "AT",
-          countryDisplayedName: "Austria"
-        },
-        {
-          countryCode: "ES",
-          countryDisplayedName: "Spain"
-        },
-        {
-          countryCode: "IS",
-          countryDisplayedName: "Iceland"
-        },
-        {
-          countryCode: "BR",
-          countryDisplayedName: "Brazil"
-        },
-        {
-          countryCode: "CA",
-          countryDisplayedName: "Canada"
-        },
-        {
-          countryCode: "CN",
-          countryDisplayedName: "China"
-        },
-        {
-          countryCode: "FR",
-          countryDisplayedName: "France"
-        },
-        {
-          countryCode: "DE",
-          countryDisplayedName: "Germany"
-        },
-        {
-          countryCode: "IN",
-          countryDisplayedName: "India"
-        },
-        {
-          countryCode: "IT",
-          countryDisplayedName: "Italy"
-        },
-        {
-          countryCode: "JP",
-          countryDisplayedName: "Japan"
-        },
-        // {
-        //   countryCode: "SN",
-        //   countryDisplayedName: "Senegal"
-        // },
-        {
-          countryCode: "RU",
-          countryDisplayedName: "Russia"
-        },
-        {
-          countryCode: "SA",
-          countryDisplayedName: "Saudi Arabia"
-        },
-        {
-          countryCode: "UK",
-          countryDisplayedName: "UK"
-        },
-        {
-          countryCode: "US",
-          countryDisplayedName: "USA"
-        },
-        {
-          countryCode: "SE",
-          countryDisplayedName: "Sweden"
-        }
-      ],
       inputData: [],
       colorScale: d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu)
     };
@@ -242,7 +169,7 @@ export default {
     circularHeatChart() {
       var margin = { top: 20, right: 20, bottom: 20, left: 20 },
         innerRadius = 20, // Value assigned only for init
-        numSegments = this.segment_labels.length,
+        numSegments = this.selectedCountries.length,
         segmentHeight = 200, // Value assigned only for init
         domain = null,
         range = ["white", "red"], // Value assigned only for init
@@ -539,7 +466,7 @@ export default {
     },
     createHeatmap() {
       this.inputData = FlightService.getFlights(
-        this.segment_labels,
+        this.selectedCountries,
         this.typeOfFlights
       );
 
@@ -547,7 +474,7 @@ export default {
         this.inputData,
         "#arc",
         this.radial_labels,
-        this.segment_labels
+        this.selectedCountries
       );
     }
   },
@@ -576,6 +503,4 @@ export default {
 .title {
   font-size: 16px;
 }
-
-
 </style>

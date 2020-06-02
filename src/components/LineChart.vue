@@ -8,6 +8,7 @@
 <script>
 import * as d3 from "d3";
 import FlightService from "../services/FlightService";
+import SelectedCountriesService from "../services/SelectedCountriesService";
 
 export default {
   props: {
@@ -16,6 +17,9 @@ export default {
     typeOfFlights: {
       default: "internationalFlights",
       type: String,
+      required: true
+    },
+    selectedCountries: {
       required: true
     }
   },
@@ -32,9 +36,12 @@ export default {
   },
   methods: {
     createLineChart() {
-      let flightData = FlightService.getFlightDataByCountryCode(
-        this.countryCode
-      );
+      let flightData;
+      if (this.countryCode === "World") {
+        flightData = SelectedCountriesService.getSumOf(this.selectedCountries);
+      } else {
+        flightData = FlightService.getFlightDataByCountryCode(this.countryCode);
+      }
 
       let dataset = flightData.map((element, i) => {
         let average2019 = 0;
@@ -82,7 +89,7 @@ export default {
       // Use the margin convention practice
       var margin = { top: 50, right: 50, bottom: 50, left: 50 },
         width = window.innerWidth / 2 - margin.left - margin.right - 100, // Use the window's width
-        height = window.innerHeight / 2 - margin.top - margin.bottom - 150 ; // Use the window's height
+        height = window.innerHeight / 2 - margin.top - margin.bottom - 150; // Use the window's height
 
       // The number of datapoints
       var n = dataset.length;

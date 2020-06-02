@@ -32,7 +32,12 @@ class SelectedCountriesService {
         if (country.dates[date].coronaCases.Deaths) summedData[date].coronaCases.Deaths += parseInt(country.dates[date].coronaCases.Deaths)
       })
     })
-    return Object.values(summedData)
+    const timestamps = Object.keys(summedData)
+    const values = Object.values(summedData)
+    timestamps.forEach((timestamp, index) => {
+      values[index].timestamp = timestamp
+    })
+    return values
   }
 }
 
