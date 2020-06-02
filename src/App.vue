@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div
     id="app"
   >
@@ -10,13 +9,19 @@
       />
       <el-row
         type="flex"
-        class="head_label"
+        class="head_label head_label_box"
         align="middle"
       >
         <el-col
-          :span="3"
-          :push="6"
+          :span="10"
+          :push="7"
+          class="header_label "
         >
+          <SelectedCountryTitle
+          
+            :country-name="selectedCountry"
+            :country-code="selectedCountryCode"
+          />
           <el-switch
             v-model="toogleTypeOfFlights"
             active-color="#13ce66"
@@ -28,16 +33,9 @@
             class="switcher"
           />
         </el-col>
-        <el-col
-          :span="6"
-          :push="6"
-        >
-          <SelectedCountryTitle
-          
-            :country-name="selectedCountry"
-            :country-code="selectedCountryCode"
-          />
-        </el-col>
+      </el-row>
+      <el-row class="heading">
+        <h1>How have the limitations of the SARS-CoV-2 virus affected global air traffic? </h1>
       </el-row>
       <el-row class="diagram_wrap">
         <el-col
@@ -62,47 +60,8 @@
             :type-of-flights="toogleTypeOfFlights"
           />
         </el-col>
-        <el-col :span="4">
-          <RadialHeatMapLabel class="diagram_label" />
-        </el-col>
       </el-row>
     </div>
-=======
-  <div id="app">
-    <SelectedCountryTitle
-      :country-name="selectedCountry"
-      :country-code="selectedCountryCode"
-    />
-    <el-row>
-      <el-col :span="12">
-        <el-switch
-          v-model="toogleTypeOfFlights"
-          active-color="#13ce66"
-          inactive-color="#ff4949"
-          active-value="internationalFlights"
-          inactive-value="domesticFlights"
-          active-text="international"
-          inactive-text="domestic"
-        />
-        <RadialHeatMap
-          @selectCountry="setSelectedCountry"
-          :type-of-flights="toogleTypeOfFlights"
-        />
-      </el-col>
-      <el-col :span="12">
-        <LineChart
-          :country-name="selectedCountry"
-          :country-code="selectedCountryCode"
-          :type-of-flights="toogleTypeOfFlights"
-        />
-        <CoronaLineChart
-          :country-name="selectedCountry"
-          :country-code="selectedCountryCode"
-          :type-of-flights="toogleTypeOfFlights"
-        />
-      </el-col>
-    </el-row>
->>>>>>> 19edc4be19cc2d2be154700684cd6b5990155e3f
   </div>
 </template>
 
@@ -117,7 +76,6 @@ export default {
   name: "App",
   components: {
     RadialHeatMap,
-    RadialHeatMapLabel,
     SelectedCountryTitle,
     LineChart,
     CoronaLineChart
@@ -160,11 +118,6 @@ body {
   min-height:100%;
 }
 
-.diagram_label{
-  position: fixed;
-  bottom:50px;
-  left:100px;
-}
 
 .diagram_wrap {
   margin: 50px 50px 50px 50px;
@@ -173,12 +126,19 @@ body {
 
 .head_label {
   height:90px;
-  width:100%;
   text-align:center;
-  border-bottom: solid 1px;
+  width:700px;
+  margin-left:auto;
+  margin-right: auto;
 -webkit-box-shadow: -40px 20px 40px -30px rgba(0,0,0,0.75);
 -moz-box-shadow: -40px 20px 40px -30px rgba(0,0,0,0.75);
-box-shadow: -40px 20px 40px -30px rgba(0,0,0,0.75);
+    box-shadow: 0px 20px 20px -25px #111;  
+  
 }
+
+.heading {
+  text-align:center;
+}
+
 
 </style>

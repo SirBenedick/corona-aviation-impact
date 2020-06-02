@@ -8,8 +8,14 @@
         />
       </el-col>
 
-      <el-col :span="12">
+      <el-col :span="9">
         <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
+      </el-col>
+      <el-col
+        :push="7"
+        :span="7"
+      >
+        <RadialHeatMapLabel />
       </el-col>
     </el-row>
   </div>
@@ -22,6 +28,7 @@ import RadialHeatMapLabel from "../components/RadialHeatMapLabel";
 
 export default {
   components: {
+    RadialHeatMapLabel
   },
   props: {
     typeOfFlights: {
@@ -550,15 +557,7 @@ export default {
 };
 </script>
 
-<<<<<<< HEAD
-<style >
-path:hover {
-  fill: #37a561;
-}
-
-=======
 <style>
->>>>>>> 19edc4be19cc2d2be154700684cd6b5990155e3f
 .tooltip {
   background: #eee;
   box-shadow: 0 0 5px #999999;
@@ -578,7 +577,5 @@ path:hover {
   font-size: 16px;
 }
 
-.heatmap_diagram {
-  margin-top:70px;
-}
+
 </style>
