@@ -1,7 +1,8 @@
 <template>
   <div>
-    <h3>How did SARS-CoV-2 Virus restrictions impact the global aviation traffic?</h3>
-    <h1>{{ countryName }}</h1>{{ countryCode }}
+    <h1 style="display:inline">
+      {{ countryName }}
+    </h1>({{ countryCode }})
   </div>
 </template>
 

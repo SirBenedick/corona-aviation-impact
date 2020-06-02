@@ -1,11 +1,20 @@
 <template>
   <div>
-    <div id="arc" />
     <el-row>
-      <el-col :span="12">
+      <el-col align="middle">
+        <div
+          class="heatmap_diagram"
+          id="arc"
+        />
+      </el-col>
+
+      <el-col :span="9">
         <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
       </el-col>
-      <el-col :span="12">
+      <el-col
+        :push="7"
+        :span="7"
+      >
         <RadialHeatMapLabel />
       </el-col>
     </el-row>
@@ -567,4 +576,6 @@ export default {
 .title {
   font-size: 16px;
 }
+
+
 </style>
