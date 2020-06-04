@@ -24,7 +24,9 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      datasetWorldRAW: []
+    };
   },
   watch: {
     typeOfFlights: function(newQuestion, oldQuestion) {
@@ -36,31 +38,28 @@ export default {
   },
   methods: {
     createLineChart() {
-      let flightData;
-      if (this.countryCode === "World") {
-        flightData = SelectedCountriesService.getSumOf(this.selectedCountries);
-      } else {
-        flightData = FlightService.getFlightDataByCountryCode(this.countryCode);
-      }
+      let flightData = FlightService.getFlightDataByCountryCode(
+        this.countryCode
+      );
 
-      let dataset = flightData.map((element, i) => {
+      let datasetDomestic = flightData.map((element, i) => {
         let average2019 = 0;
         let average2020 = 0;
 
         if (i < 3) {
           for (let j = i; j <= i + 6; j++) {
-            average2019 += flightData[j][this.typeOfFlights]["2019"];
-            average2020 += flightData[j][this.typeOfFlights]["2020"];
+            average2019 += flightData[j]["domesticFlights"]["2019"];
+            average2020 += flightData[j]["domesticFlights"]["2020"];
           }
         } else if (i >= flightData.length - 3) {
           for (let j = i; j <= i - 6; j--) {
-            average2019 += flightData[j][this.typeOfFlights]["2019"];
-            average2020 += flightData[j][this.typeOfFlights]["2020"];
+            average2019 += flightData[j]["domesticFlights"]["2019"];
+            average2020 += flightData[j]["domesticFlights"]["2020"];
           }
         } else {
           for (let j = i - 3; j <= i + 3; j++) {
-            average2019 += flightData[j][this.typeOfFlights]["2019"];
-            average2020 += flightData[j][this.typeOfFlights]["2020"];
+            average2019 += flightData[j]["domesticFlights"]["2019"];
+            average2020 += flightData[j]["domesticFlights"]["2020"];
           }
           average2019 = average2019 / 7;
           average2020 = average2020 / 7;
@@ -72,19 +71,97 @@ export default {
         let delta = (average2020 / average2019) * 100 - 100;
         return { y: delta, x: element["timestamp"] * 1000 };
       });
-      let minMaxYAxis = d3.extent(dataset, function(d) {
+      let datasetInternational = flightData.map((element, i) => {
+        let average2019 = 0;
+        let average2020 = 0;
+
+        if (i < 3) {
+          for (let j = i; j <= i + 6; j++) {
+            average2019 += flightData[j]["internationalFlights"]["2019"];
+            average2020 += flightData[j]["internationalFlights"]["2020"];
+          }
+        } else if (i >= flightData.length - 3) {
+          for (let j = i; j <= i - 6; j--) {
+            average2019 += flightData[j]["internationalFlights"]["2019"];
+            average2020 += flightData[j]["internationalFlights"]["2020"];
+          }
+        } else {
+          for (let j = i - 3; j <= i + 3; j++) {
+            average2019 += flightData[j]["internationalFlights"]["2019"];
+            average2020 += flightData[j]["internationalFlights"]["2020"];
+          }
+          average2019 = average2019 / 7;
+          average2020 = average2020 / 7;
+        }
+
+        if (average2019 === 0) {
+          return { y: 0, x: element["timestamp"] * 1000 };
+        }
+        let delta = (average2020 / average2019) * 100 - 100;
+        return { y: delta, x: element["timestamp"] * 1000 };
+      });
+      let datasetWorld = this.datasetWorldRAW.map((element, i) => {
+        let average2019 = 0;
+        let average2020 = 0;
+
+        if (i < 3) {
+          for (let j = i; j <= i + 6; j++) {
+            average2019 += flightData[j]["domesticFlights"]["2019"];
+            average2020 += flightData[j]["domesticFlights"]["2020"];
+          }
+        } else if (i >= flightData.length - 3) {
+          for (let j = i; j <= i - 6; j--) {
+            average2019 += flightData[j]["domesticFlights"]["2019"];
+            average2020 += flightData[j]["domesticFlights"]["2020"];
+          }
+        } else {
+          for (let j = i - 3; j <= i + 3; j++) {
+            average2019 += flightData[j]["domesticFlights"]["2019"];
+            average2020 += flightData[j]["domesticFlights"]["2020"];
+          }
+          average2019 = average2019 / 7;
+          average2020 = average2020 / 7;
+        }
+
+        if (average2019 === 0) {
+          return { y: 0, x: element["timestamp"] * 1000 };
+        }
+        let delta = (average2020 / average2019) * 100 - 100;
+        return { y: delta, x: element["timestamp"] * 1000 };
+      });
+      let minMaxYAxisInternational = d3.extent(datasetInternational, function(
+        d
+      ) {
         return d.y;
       });
-      let minMaxXAxis = d3.extent(dataset, function(d) {
+      let minMaxXAxisInternational = d3.extent(datasetInternational, function(
+        d
+      ) {
+        return d.x;
+      });
+      let minMaxYAxisDomestic = d3.extent(datasetDomestic, function(d) {
+        return d.y;
+      });
+      let minMaxXAxisDomestic = d3.extent(datasetDomestic, function(d) {
+        return d.x;
+      });
+      let minMaxYAxisWorld = d3.extent(datasetWorld, function(d) {
+        return d.y;
+      });
+      let minMaxXAxisWorld = d3.extent(datasetWorld, function(d) {
         return d.x;
       });
 
-      // Fix, not nice, fix this! Only needed for the gradient to "fake" work
-      // dataset.push({ y: 0, x: 0 });
-      // dataset.unshift({ y: 0, x: 1577836800000 });
-      // dataset.unshift({ y: 100, x: 0 });
-      // dataset.unshift({ y: -100, x: 0 });
-      // dataset.unshift({ y: 0, x: 0 });
+      let allMinMaxY = minMaxYAxisInternational;
+      allMinMaxY = allMinMaxY.concat(minMaxYAxisDomestic);
+      allMinMaxY = allMinMaxY.concat(minMaxYAxisWorld);
+
+      let allMinMaxX = minMaxXAxisInternational;
+      allMinMaxX = allMinMaxX.concat(minMaxXAxisDomestic);
+      allMinMaxX = allMinMaxX.concat(minMaxXAxisWorld);
+
+      let minMaxYAxis = d3.extent(allMinMaxY);
+      let minMaxXAxis = d3.extent(allMinMaxX);
 
       // Use the margin convention practice
       var margin = { top: 50, right: 50, bottom: 50, left: 50 },
@@ -92,7 +169,7 @@ export default {
         height = window.innerHeight / 2 - margin.top - margin.bottom - 150; // Use the window's height
 
       // The number of datapoints
-      var n = dataset.length;
+      var n = datasetInternational.length;
 
       var color = d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu);
       // X scale will use the index of our data
@@ -159,12 +236,33 @@ export default {
       svg
         .select("g")
         .append("path")
-        .datum(dataset) // 10. Binds data to the line
+        .datum(datasetInternational) // 10. Binds data to the line
         .attr("stroke", "steelblue")
         .attr("stroke-width", 3)
         .attr("fill", "none")
-        .attr("d", line); // 11. Calls the line generator
+        .attr("d", line)
+        .attr("class", "datasetInternational"); // 11. Calls the line generator
       // .style("fill", "url(#areaGradient)");
+
+      svg
+        .select("g")
+        .append("path")
+        .datum(datasetDomestic) // 10. Binds data to the line
+        .attr("stroke", "red")
+        .attr("stroke-width", 3)
+        .attr("fill", "none")
+        .attr("d", line)
+        .attr("class", "datasetDomestic");
+
+      svg
+        .select("g")
+        .append("path")
+        .datum(datasetWorld) // 10. Binds data to the line
+        .attr("stroke", "green")
+        .attr("stroke-width", 3)
+        .attr("fill", "none")
+        .attr("d", line)
+        .attr("class", "datasetWorld");
 
       var bisect = d3.bisector(function(d) {
         return d.x;
@@ -202,8 +300,8 @@ export default {
 
       function mousemove() {
         var x0 = xScale.invert(d3.mouse(this)[0]);
-        var i = bisect(dataset, x0, 1);
-        var selectedData = dataset[i];
+        var i = bisect(datasetInternational, x0, 1);
+        var selectedData = datasetInternational[i];
 
         let date = new Date(selectedData.x);
         let xPositionDelta = selectedData.x < 1583107200000 ? +90 : -90;
@@ -236,6 +334,9 @@ export default {
     getFlightData() {}
   },
   mounted() {
+    this.datasetWorldRAW = SelectedCountriesService.getSumOf(
+      this.selectedCountries
+    );
     this.createLineChart();
   }
 };
