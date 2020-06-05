@@ -106,18 +106,18 @@ export default {
 
         if (i < 3) {
           for (let j = i; j <= i + 6; j++) {
-            average2019 += flightData[j]["domesticFlights"]["2019"];
-            average2020 += flightData[j]["domesticFlights"]["2020"];
+            average2019 += this.datasetWorldRAW[j]["internationalFlights"]["2019"];
+            average2020 += this.datasetWorldRAW[j]["internationalFlights"]["2020"];
           }
-        } else if (i >= flightData.length - 3) {
+        } else if (i >= this.datasetWorldRAW.length - 3) {
           for (let j = i; j <= i - 6; j--) {
-            average2019 += flightData[j]["domesticFlights"]["2019"];
-            average2020 += flightData[j]["domesticFlights"]["2020"];
+            average2019 += this.datasetWorldRAW[j]["internationalFlights"]["2019"];
+            average2020 += this.datasetWorldRAW[j]["internationalFlights"]["2020"];
           }
         } else {
           for (let j = i - 3; j <= i + 3; j++) {
-            average2019 += flightData[j]["domesticFlights"]["2019"];
-            average2020 += flightData[j]["domesticFlights"]["2020"];
+            average2019 += this.datasetWorldRAW[j]["internationalFlights"]["2019"];
+            average2020 += this.datasetWorldRAW[j]["internationalFlights"]["2020"];
           }
           average2019 = average2019 / 7;
           average2020 = average2020 / 7;
