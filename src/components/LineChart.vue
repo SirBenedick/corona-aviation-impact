@@ -284,13 +284,15 @@ export default {
         .attr("stroke", "black")
         .style("opacity", 0);
 
-      var focusText = svg
-        .select("g")
-        .append("g")
-        .append("text")
-        .style("opacity", 0)
-        .attr("text-anchor", "middle")
-        .attr("alignment-baseline", "middle");
+      var tooltip = d3
+        .create("div")
+        .attr("id", "tooltip")
+        .style("position", "absolute")
+        .style("background-color", "#D3D3D3")
+        .style("padding", 6)
+        .style("display", "none");
+      document.body.appendChild(tooltip.node());
+
       svg
         .select("g")
         .append("rect")
@@ -308,7 +310,7 @@ export default {
 
       function mouseover() {
         focus.style("opacity", 1);
-        focusText.style("opacity", 1);
+        tooltip.style("display", "block");
       }
 
       function mousemove() {
@@ -330,23 +332,31 @@ export default {
               selectedDataInternational.x
             )},${height},${xScale(selectedDataInternational.x)},0`;
           });
-        focusText
+
+        tooltip
+          .style("display", "block")
+          .style("left", d3.event.pageX + 20 + "px")
+          .style("top", d3.event.pageY - 20 + "px")
           .html(
             date.getUTCDate() +
               1 +
               ".0" +
               (date.getUTCMonth() + 1) +
-              " - " +
-              "Change: " +
+              " </br> " +
+              "Innternational: " +
               Math.round(selectedDataInternational.y) +
-              "%"
-          )
-          .attr("x", xScale(selectedDataInternational.x) + xPositionDelta)
-          .attr("y", yScale(selectedDataInternational.y) + yPositionDelta);
+              "%" + "</br>" +
+              "Domestic: " +
+              Math.round(selectedDataDomestic.y) +
+              "%" + "</br>" +
+              "World: " +
+              Math.round(selectedDataWorld.y) +
+              "% </br>"
+          );
       }
       function mouseout() {
         focus.style("opacity", 0);
-        focusText.style("opacity", 0);
+        tooltip.style("display", "none");
       }
 
       document.getElementById("my_dataviz").appendChild(svg.node());
