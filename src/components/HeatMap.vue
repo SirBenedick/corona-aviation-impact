@@ -56,7 +56,7 @@ export default {
         this.typeOfFlights
       );
 
-      const padding = 0.1;
+      const padding = 0.15;
 
       // set the dimensions and margins of the graph
       let margin = { top: 30, right: 30, bottom: 30, left: 80 },
@@ -81,7 +81,7 @@ export default {
         .scaleBand()
         .range([0, width])
         .domain(this.months)
-        .padding(padding);
+        .padding(padding / 2);
       svg
         .append("g")
         .attr("transform", "translate(0," + height + ")")
