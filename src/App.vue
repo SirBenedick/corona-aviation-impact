@@ -25,7 +25,7 @@
       </el-row>
       <el-row class="diagram_wrap">
         <el-col :span="12">
-          <RadialHeatMap
+          <HeatMap
             @selectCountry="setSelectedCountry"
             :type-of-flights="toogleTypeOfFlights"
             :selected-countries="selectedCountries"
@@ -51,16 +51,15 @@
 </template>
 
 <script>
-import RadialHeatMap from "./components/RadialHeatMap.vue";
+import HeatMap from "./components/HeatMap.vue";
 import SelectedCountryTitle from "./components/SelectedCountryTitle.vue";
 import LineChart from "./components/LineChart.vue";
 import CoronaLineChart from "./components/CoronaLineChart.vue";
-import RadialHeatMapLabel from "./components/RadialHeatMapLabel.vue";
 
 export default {
   name: "App",
   components: {
-    RadialHeatMap,
+    HeatMap,
     SelectedCountryTitle,
     LineChart,
     CoronaLineChart

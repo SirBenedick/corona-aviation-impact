@@ -9,7 +9,7 @@
         <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
       </el-col>
       <el-col :push="7" :span="7">
-        <RadialHeatMapLabel />
+        <HeatMapLabel />
       </el-col>
     </el-row>
   </div>
@@ -18,11 +18,11 @@
 <script>
 import * as d3 from "d3";
 import FlightService from "../services/FlightService";
-import RadialHeatMapLabel from "../components/RadialHeatMapLabel";
+import HeatMapLabel from "../components/HeatMapLabel";
 
 export default {
   components: {
-    RadialHeatMapLabel
+    HeatMapLabel
   },
   props: {
     typeOfFlights: {
