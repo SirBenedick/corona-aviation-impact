@@ -106,18 +106,30 @@ export default {
 
         if (i < 3) {
           for (let j = i; j <= i + 6; j++) {
-            average2019 += this.datasetWorldRAW[j]["internationalFlights"]["2019"];
-            average2020 += this.datasetWorldRAW[j]["internationalFlights"]["2020"];
+            average2019 += this.datasetWorldRAW[j]["internationalFlights"][
+              "2019"
+            ];
+            average2020 += this.datasetWorldRAW[j]["internationalFlights"][
+              "2020"
+            ];
           }
         } else if (i >= this.datasetWorldRAW.length - 3) {
           for (let j = i; j <= i - 6; j--) {
-            average2019 += this.datasetWorldRAW[j]["internationalFlights"]["2019"];
-            average2020 += this.datasetWorldRAW[j]["internationalFlights"]["2020"];
+            average2019 += this.datasetWorldRAW[j]["internationalFlights"][
+              "2019"
+            ];
+            average2020 += this.datasetWorldRAW[j]["internationalFlights"][
+              "2020"
+            ];
           }
         } else {
           for (let j = i - 3; j <= i + 3; j++) {
-            average2019 += this.datasetWorldRAW[j]["internationalFlights"]["2019"];
-            average2020 += this.datasetWorldRAW[j]["internationalFlights"]["2020"];
+            average2019 += this.datasetWorldRAW[j]["internationalFlights"][
+              "2019"
+            ];
+            average2020 += this.datasetWorldRAW[j]["internationalFlights"][
+              "2020"
+            ];
           }
           average2019 = average2019 / 7;
           average2020 = average2020 / 7;
@@ -264,17 +276,14 @@ export default {
         .attr("d", line)
         .attr("class", "datasetWorld");
 
-      var bisect = d3.bisector(function(d) {
-        return d.x;
-      }).left;
       var focus = svg
         .select("g")
         .append("g")
-        .append("circle")
-        .style("fill", "none")
+        .append("path")
+        .style("stroke-width", "1px")
         .attr("stroke", "black")
-        .attr("r", 8.5)
         .style("opacity", 0);
+
       var focusText = svg
         .select("g")
         .append("g")
@@ -293,6 +302,10 @@ export default {
         .on("mousemove", mousemove)
         .on("mouseout", mouseout);
 
+      var bisect = d3.bisector(function(d) {
+        return d.x;
+      }).left;
+
       function mouseover() {
         focus.style("opacity", 1);
         focusText.style("opacity", 1);
@@ -301,14 +314,22 @@ export default {
       function mousemove() {
         var x0 = xScale.invert(d3.mouse(this)[0]);
         var i = bisect(datasetInternational, x0, 1);
-        var selectedData = datasetInternational[i];
+        var selectedDataInternational = datasetInternational[i];
+        var selectedDataDomestic = datasetDomestic[i];
+        var selectedDataWorld = datasetWorld[i];
 
-        let date = new Date(selectedData.x);
-        let xPositionDelta = selectedData.x < 1583107200000 ? +90 : -90;
+        let date = new Date(selectedDataInternational.x);
+        let xPositionDelta =
+          selectedDataInternational.x < 1583107200000 ? +90 : -90;
         let yPositionDelta = 0;
         focus
-          .attr("cx", xScale(selectedData.x))
-          .attr("cy", yScale(selectedData.y));
+          .attr("cx", xScale(selectedDataInternational.x))
+          .attr("cy", yScale(selectedDataInternational.y))
+          .attr("d", function(d) {
+            return `M${xScale(
+              selectedDataInternational.x
+            )},${height},${xScale(selectedDataInternational.x)},0`;
+          });
         focusText
           .html(
             date.getUTCDate() +
@@ -317,11 +338,11 @@ export default {
               (date.getUTCMonth() + 1) +
               " - " +
               "Change: " +
-              Math.round(selectedData.y) +
+              Math.round(selectedDataInternational.y) +
               "%"
           )
-          .attr("x", xScale(selectedData.x) + xPositionDelta)
-          .attr("y", yScale(selectedData.y) + yPositionDelta);
+          .attr("x", xScale(selectedDataInternational.x) + xPositionDelta)
+          .attr("y", yScale(selectedDataInternational.y) + yPositionDelta);
       }
       function mouseout() {
         focus.style("opacity", 0);
