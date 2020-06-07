@@ -109,6 +109,7 @@ export default {
         .style("display", "none")
         .attr("class", "tooltip")
         .style("background-color", "white")
+        .style("z-index", 10)
         .style("border", "solid")
         .style("border-width", "2px")
         .style("border-radius", "5px")
