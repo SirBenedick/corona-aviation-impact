@@ -117,7 +117,7 @@ class FlightService {
         case 1:
           data.push({
             countryCode: element[1].countryCode,
-            displayedCountryName: element[1].countryName,
+            displayedCountryName: element[1].countryDisplayedName,
             month: "February",
             numericMonth: index,
             value2020: february2020,
@@ -127,7 +127,7 @@ class FlightService {
         case 2:
           data.push({
             countryCode: element[1].countryCode,
-            displayedCountryName: element[1].countryName,
+            displayedCountryName: element[1].countryDisplayedName,
             month: "March",
             numericMonth: index,
             value2020: march2020,
@@ -137,7 +137,7 @@ class FlightService {
         case 3:
           data.push({
             countryCode: element[1].countryCode,
-            displayedCountryName: element[1].countryName,
+            displayedCountryName: element[1].countryDisplayedName,
             month: "April",
             numericMonth: index,
             value2020: april2020,
@@ -147,7 +147,7 @@ class FlightService {
         case 4:
           data.push({
             countryCode: element[1].countryCode,
-            displayedCountryName: element[1].countryName,
+            displayedCountryName: element[1].countryDisplayedName,
             month: "May",
             numericMonth: index,
             value2020: may2020,
@@ -157,7 +157,7 @@ class FlightService {
         case 5:
           data.push({
             countryCode: element[1].countryCode,
-            displayedCountryName: element[1].countryName,
+            displayedCountryName: element[1].countryDisplayedName,
             month: "June",
             numericMonth: index,
             value2020: june2020,
@@ -167,7 +167,7 @@ class FlightService {
         case 6:
           data.push({
             countryCode: element[1].countryCode,
-            displayedCountryName: element[1].countryName,
+            displayedCountryName: element[1].countryDisplayedName,
             month: "July",
             numericMonth: index,
             value2020: july2020,
@@ -177,7 +177,7 @@ class FlightService {
         case 7:
           data.push({
             countryCode: element[1].countryCode,
-            displayedCountryName: element[1].countryName,
+            displayedCountryName: element[1].countryDisplayedName,
             month: "August",
             numericMonth: index,
             value2020: august2020,
@@ -187,7 +187,7 @@ class FlightService {
         case 8:
           data.push({
             countryCode: element[1].countryCode,
-            displayedCountryName: element[1].countryName,
+            displayedCountryName: element[1].countryDisplayedName,
             month: "September",
             numericMonth: index,
             value2020: september2020,
@@ -197,7 +197,7 @@ class FlightService {
         case 9:
           data.push({
             countryCode: element[1].countryCode,
-            displayedCountryName: element[1].countryName,
+            displayedCountryName: element[1].countryDisplayedName,
             month: "October",
             numericMonth: index,
             value2020: october2020,
@@ -207,7 +207,7 @@ class FlightService {
         case 10:
           data.push({
             countryCode: element[1].countryCode,
-            displayedCountryName: element[1].countryName,
+            displayedCountryName: element[1].countryDisplayedName,
             month: "November",
             numericMonth: index,
             value2020: november2020,
@@ -217,7 +217,7 @@ class FlightService {
         case 11:
           data.push({
             countryCode: element[1].countryCode,
-            displayedCountryName: element[1].countryName,
+            displayedCountryName: element[1].countryDisplayedName,
             month: "December",
             numericMonth: index,
             value2020: december2020,
