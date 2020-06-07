@@ -156,18 +156,20 @@ export default {
       var focus = svg
         .select("g")
         .append("g")
-        .append("circle")
-        .style("fill", "none")
+        .append("path")
+        .style("stroke-width", "1px")
         .attr("stroke", "black")
-        .attr("r", 8.5)
         .style("opacity", 0);
-      var focusText = svg
-        .select("g")
-        .append("g")
-        .append("text")
-        .style("opacity", 0)
-        .attr("text-anchor", "middle")
-        .attr("alignment-baseline", "middle");
+
+      var tooltip = d3
+        .create("div")
+        .attr("id", "tooltip-corona")
+        .style("position", "absolute")
+        .style("background-color", "#D3D3D3")
+        .style("padding", 6)
+        .style("display", "none");
+      document.body.appendChild(tooltip.node());
+
       svg
         .select("g")
         .append("rect")
@@ -181,7 +183,7 @@ export default {
 
       function mouseover() {
         focus.style("opacity", 1);
-        focusText.style("opacity", 1);
+        tooltip.style("display", "block");
       }
 
       function mousemove() {
@@ -194,23 +196,30 @@ export default {
         let yPositionDelta = selectedData.y < 30 ? -30 : 0;
         focus
           .attr("cx", xScale(selectedData.x))
-          .attr("cy", yScale(selectedData.y));
-        focusText
+          .attr("cy", yScale(selectedData.y))
+          .attr("d", function(d) {
+            return `M${xScale(
+              selectedData.x
+            )},${height},${xScale(selectedData.x)},0`;
+          });
+
+        tooltip
+          .style("display", "block")
+          .style("left", d3.event.pageX + 20 + "px")
+          .style("top", d3.event.pageY - 20 + "px")
           .html(
             date.getUTCDate() +
               1 +
               ".0" +
               (date.getUTCMonth() + 1) +
-              " - " +
+              " </br>" +
               "New Cases: " +
               Math.round(selectedData.y)
-          )
-          .attr("x", xScale(selectedData.x) + xPositionDelta)
-          .attr("y", yScale(selectedData.y) + yPositionDelta);
+          );
       }
       function mouseout() {
         focus.style("opacity", 0);
-        focusText.style("opacity", 0);
+        tooltip.style("display", "none");
       }
 
       document.getElementById("corona_chart").appendChild(svg.node());
