@@ -104,7 +104,11 @@ export default {
       svg.selectAll("g>.tick>text").style("font-size", "15px");
 
       // Build color scale
-      let color = d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu);
+      let color = d3.scaleThreshold(
+        [-75, -45, -15, 15, 45, 75],
+        d3.schemeRdBu[7]
+      );
+      // let color = d3.scaleDiverging([-100, 0, 100], d3.schemeSpectral[7]);
 
       let tooltip = d3
         .select("#heatmap-diagram")
