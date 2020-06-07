@@ -59,7 +59,7 @@ export default {
       const padding = 0.15;
 
       // set the dimensions and margins of the graph
-      let margin = { top: 30, right: 30, bottom: 30, left: 80 },
+      let margin = { top: 30, right: 30, bottom: 30, left: 100 },
         width = 500 - margin.left - margin.right,
         height = 600 - margin.top - margin.bottom;
 
@@ -100,6 +100,9 @@ export default {
         .padding(padding);
       svg.append("g").call(d3.axisLeft(y));
 
+      // Set font size for axis labels
+      svg.selectAll("g>.tick>text").style("font-size", "15px");
+
       // Build color scale
       let color = d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu);
 
@@ -135,7 +138,7 @@ export default {
               d.month
             }</b> 2019.`
           )
-          .style("left", d3.mouse(this)[0] + 270 + "px")
+          .style("left", d3.mouse(this)[0] + 280 + "px")
           .style("top", d3.mouse(this)[1] + "px");
       };
       var mouseleave = function(d) {
