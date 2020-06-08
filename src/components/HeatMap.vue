@@ -144,7 +144,6 @@ export default {
           )
           .style("left", d3.mouse(this)[0] + 0.16 * window.innerWidth + "px")
           .style("top", d3.mouse(this)[1] + "px");
-        console.log(d3.mouse(this)[0], window.innerWidth);
       };
       var mouseleave = function(d) {
         d3.select(this).style("stroke-width", 1);
