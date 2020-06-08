@@ -36,7 +36,7 @@ export default {
   },
   data() {
     return {
-      months: ["January", "February", "March", "April"],
+      months: ["January", "February", "March", "April", "May"],
       inputData: [],
       colorScale: d3.scaleDiverging([-100, 0, 100], d3.interpolateRdBu)
     };
