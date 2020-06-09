@@ -339,7 +339,6 @@ export default {
           .style("top", d3.event.pageY - 20 + "px")
           .html(
             date.getUTCDate() +
-              1 +
               ".0" +
               (date.getUTCMonth() + 1) +
               " </br> " +
