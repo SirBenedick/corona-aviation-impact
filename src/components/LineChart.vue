@@ -333,21 +333,6 @@ export default {
             )},${height},${xScale(selectedDataInternational.x)},0`;
           });
 
-        const changes = [
-          {
-            type: "International",
-            value: Math.round(selectedDataInternational.y)
-          },
-          { type: "Domestic", value: Math.round(selectedDataDomestic.y) },
-          { type: "World", value: Math.round(selectedDataWorld.y) }
-        ];
-
-        changes.sort((a, b) => (a.value > b.value ? -1 : 1));
-
-        const html = changes
-          .map(change => change.type + ": " + change.value + "%</br>")
-          .join("");
-
         tooltip
           .style("display", "block")
           .style("left", d3.event.pageX + 20 + "px")
@@ -358,7 +343,17 @@ export default {
               ".0" +
               (date.getUTCMonth() + 1) +
               " </br> " +
-              html
+              "International: " +
+              Math.round(selectedDataInternational.y) +
+              "%" +
+              "</br>" +
+              "Domestic: " +
+              Math.round(selectedDataDomestic.y) +
+              "%" +
+              "</br>" +
+              "World: " +
+              Math.round(selectedDataWorld.y) +
+              "%"
           );
       }
       function mouseout() {
