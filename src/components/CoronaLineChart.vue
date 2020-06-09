@@ -41,19 +41,7 @@ export default {
       let dataset = countryData.map((element, i) => {
         let average = 0;
 
-        if (i < 3) {
-          for (let j = i; j <= i + 6; j++) {
-            let cases = parseInt(countryData[j]["coronaCases"]["Cases"]);
-            cases = cases ? cases : 0;
-            average += cases;
-          }
-        } else if (i >= countryData.length - 3) {
-          for (let j = i; j <= i - 6; j--) {
-            let cases = parseInt(countryData[j]["coronaCases"]["Cases"]);
-            cases = cases ? cases : 0;
-            average += cases;
-          }
-        } else {
+        if (i > 2 && i < countryData.length - 3) {
           for (let j = i - 3; j <= i + 3; j++) {
             let cases = parseInt(countryData[j]["coronaCases"]["Cases"]);
             cases = cases ? cases : 0;
@@ -68,6 +56,9 @@ export default {
 
         return { y: average, x: element["timestamp"] * 1000 };
       });
+      dataset.splice(0, 3);
+      dataset.splice(dataset.length - 3, 3);
+
       let minMaxYAxis = d3.extent(dataset, function(d) {
         return d.y;
       });
@@ -209,7 +200,6 @@ export default {
           .style("top", d3.event.pageY - 20 + "px")
           .html(
             date.getUTCDate() +
-              1 +
               ".0" +
               (date.getUTCMonth() + 1) +
               " </br>" +
