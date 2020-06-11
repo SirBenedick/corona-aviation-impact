@@ -98,10 +98,18 @@ export default {
             .reverse()
         )
         .padding(padding);
+
       svg.append("g").call(d3.axisLeft(y));
 
       // Set font size for axis labels
-      svg.selectAll("g>.tick>text").style("font-size", "15px");
+      svg
+        .selectAll("g>.tick>text")
+        .style("font-size", "15px")
+        .style("font-weight", "normal")
+        .attr("id", function(d) {
+          // Returns the countryDisplayedName
+          return d.toLowerCase().replace(" ", "-");
+        });
 
       // Build color scale
       let color = d3.scaleThreshold(
@@ -180,6 +188,12 @@ export default {
             countryName: d.displayedCountryName,
             countryCode: d.countryCode
           });
+
+          svg.selectAll(`g>.tick>text`).style("font-weight", "normal");
+          const textLabelOfCountry = svg.selectAll(
+            `g>.tick>#${d.displayedCountryName.toLowerCase().replace(" ", "-")}`
+          );
+          textLabelOfCountry.style("font-weight", "bold");
         });
     }
   },
