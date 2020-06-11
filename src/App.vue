@@ -1,52 +1,55 @@
 <template>
   <div id="app">
-    <div class="app_container">
-      <el-row type="flex" align="middle" />
-      <el-row type="flex" class="head_label head_label_box" align="middle">
-        <el-col :span="10" :push="7" class="header_label">
-          <SelectedCountryTitle
-            :country-name="selectedCountry"
-            :country-code="selectedCountryCode"
-          />
-          <el-switch
-            v-model="toogleTypeOfFlights"
-            active-color="#13ce66"
-            inactive-color="#ff4949"
-            active-value="internationalFlights"
-            inactive-value="domesticFlights"
-            active-text="international"
-            inactive-text="domestic"
-            class="switcher"
-          />
-        </el-col>
-      </el-row>
-      <el-row class="heading">
-        <h1>How have the limitations of the SARS-CoV-2 virus affected global air traffic?</h1>
-      </el-row>
-      <el-row class="diagram_wrap">
-        <el-col :span="12">
-          <HeatMap
-            @selectCountry="setSelectedCountry"
-            :type-of-flights="toogleTypeOfFlights"
-            :selected-countries="selectedCountries"
-          />
-        </el-col>
-        <el-col :span="12">
-          <LineChart
-            :country-name="selectedCountry"
-            :country-code="selectedCountryCode"
-            :type-of-flights="toogleTypeOfFlights"
-            :selected-countries="selectedCountries"
-          />
-          <CoronaLineChart
-            :country-name="selectedCountry"
-            :country-code="selectedCountryCode"
-            :type-of-flights="toogleTypeOfFlights"
-            :selected-countries="selectedCountries"
-          />
-        </el-col>
-      </el-row>
-    </div>
+    <section class="fullpage">
+        <el-row type="flex" align="middle" />
+        <el-row type="flex" class="head_label head_label_box" align="middle">
+          <el-col :span="10" :push="7" class="header_label">
+            <SelectedCountryTitle
+              :country-name="selectedCountry"
+              :country-code="selectedCountryCode"
+            />
+            <el-switch
+              v-model="toogleTypeOfFlights"
+              active-color="#13ce66"
+              inactive-color="#ff4949"
+              active-value="internationalFlights"
+              inactive-value="domesticFlights"
+              active-text="international"
+              inactive-text="domestic"
+              class="switcher"
+            />
+          </el-col>
+        </el-row>
+        <el-row class="heading">
+          <h1>How have the limitations of the SARS-CoV-2 virus affected global air traffic?</h1>
+        </el-row>
+        <el-row class="diagram_wrap">
+          <el-col :span="12">
+            <HeatMap
+              @selectCountry="setSelectedCountry"
+              :type-of-flights="toogleTypeOfFlights"
+              :selected-countries="selectedCountries"
+            />
+          </el-col>
+          <el-col :span="12">
+            <LineChart
+              :country-name="selectedCountry"
+              :country-code="selectedCountryCode"
+              :type-of-flights="toogleTypeOfFlights"
+              :selected-countries="selectedCountries"
+            />
+            <CoronaLineChart
+              :country-name="selectedCountry"
+              :country-code="selectedCountryCode"
+              :type-of-flights="toogleTypeOfFlights"
+              :selected-countries="selectedCountries"
+            />
+          </el-col>
+        </el-row>
+    </section>
+    <section class="documentation">
+      <example-documentation/>
+    </section>
   </div>
 </template>
 
@@ -55,6 +58,7 @@ import HeatMap from "./components/HeatMap.vue";
 import SelectedCountryTitle from "./components/SelectedCountryTitle.vue";
 import LineChart from "./components/LineChart.vue";
 import CoronaLineChart from "./components/CoronaLineChart.vue";
+import ExampleDocumentation from "./components/ExampleDocumentation.vue";
 
 export default {
   name: "App",
@@ -62,7 +66,8 @@ export default {
     HeatMap,
     SelectedCountryTitle,
     LineChart,
-    CoronaLineChart
+    CoronaLineChart,
+    ExampleDocumentation
   },
   data() {
     return {
@@ -188,5 +193,11 @@ body {
 
 .heading {
   text-align: center;
+}
+
+.fullpage {
+  height: 100vh;
+  width: 100%;
+  /* background: #111; */
 }
 </style>

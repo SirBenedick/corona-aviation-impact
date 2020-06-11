@@ -6,7 +6,7 @@
       </el-col>
 
       <el-col :span="9">
-        <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
+        <p>Lorem ipsumLorem ipsum ipsum</p>
       </el-col>
       <el-col :push="7" :span="7">
         <HeatMapLabel />
