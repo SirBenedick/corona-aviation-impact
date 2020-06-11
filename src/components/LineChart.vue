@@ -7,6 +7,7 @@
 
 <script>
 import * as d3 from "d3";
+import moment from "moment";
 import FlightService from "../services/FlightService";
 import SelectedCountriesService from "../services/SelectedCountriesService";
 
@@ -311,9 +312,7 @@ export default {
           .style("left", d3.event.pageX + 20 + "px")
           .style("top", d3.event.pageY - 20 + "px")
           .html(
-            date.getUTCDate() +
-              ".0" +
-              (date.getUTCMonth() + 1) +
+            moment(date).format("[Day <b>]D[</b>  of week <b>]W[</b>]") +
               " </br> " +
               "International: " +
               Math.round(selectedDataInternational.y) +
