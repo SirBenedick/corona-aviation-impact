@@ -29,6 +29,7 @@
               @selectCountry="setSelectedCountry"
               :type-of-flights="toogleTypeOfFlights"
               :selected-countries="selectedCountries"
+              :country-name="selectedCountry"
             />
           </el-col>
           <el-col :span="12">

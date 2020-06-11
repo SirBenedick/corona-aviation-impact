@@ -7,6 +7,7 @@
 
 <script>
 import * as d3 from "d3";
+import moment from "moment";
 import FlightService from "../services/FlightService";
 import SelectedCountriesService from "../services/SelectedCountriesService";
 
@@ -46,17 +47,7 @@ export default {
         let average2019 = 0;
         let average2020 = 0;
 
-        if (i < 3) {
-          for (let j = i; j <= i + 6; j++) {
-            average2019 += flightData[j]["domesticFlights"]["2019"];
-            average2020 += flightData[j]["domesticFlights"]["2020"];
-          }
-        } else if (i >= flightData.length - 3) {
-          for (let j = i; j <= i - 6; j--) {
-            average2019 += flightData[j]["domesticFlights"]["2019"];
-            average2020 += flightData[j]["domesticFlights"]["2020"];
-          }
-        } else {
+        if (i > 2 && i < flightData.length - 3) {
           for (let j = i - 3; j <= i + 3; j++) {
             average2019 += flightData[j]["domesticFlights"]["2019"];
             average2020 += flightData[j]["domesticFlights"]["2020"];
@@ -71,21 +62,14 @@ export default {
         let delta = (average2020 / average2019) * 100 - 100;
         return { y: delta, x: element["timestamp"] * 1000 };
       });
+      datasetDomestic.splice(0, 3);
+      datasetDomestic.splice(datasetDomestic.length - 3, 3);
+
       let datasetInternational = flightData.map((element, i) => {
         let average2019 = 0;
         let average2020 = 0;
 
-        if (i < 3) {
-          for (let j = i; j <= i + 6; j++) {
-            average2019 += flightData[j]["internationalFlights"]["2019"];
-            average2020 += flightData[j]["internationalFlights"]["2020"];
-          }
-        } else if (i >= flightData.length - 3) {
-          for (let j = i; j <= i - 6; j--) {
-            average2019 += flightData[j]["internationalFlights"]["2019"];
-            average2020 += flightData[j]["internationalFlights"]["2020"];
-          }
-        } else {
+        if (i > 2 && i < flightData.length - 3) {
           for (let j = i - 3; j <= i + 3; j++) {
             average2019 += flightData[j]["internationalFlights"]["2019"];
             average2020 += flightData[j]["internationalFlights"]["2020"];
@@ -100,29 +84,16 @@ export default {
         let delta = (average2020 / average2019) * 100 - 100;
         return { y: delta, x: element["timestamp"] * 1000 };
       });
+      datasetInternational.splice(0, 3);
+      datasetInternational.splice(datasetInternational.length - 3, 3);
+
+      console.log(datasetDomestic);
+
       let datasetWorld = this.datasetWorldRAW.map((element, i) => {
         let average2019 = 0;
         let average2020 = 0;
 
-        if (i < 3) {
-          for (let j = i; j <= i + 6; j++) {
-            average2019 += this.datasetWorldRAW[j]["internationalFlights"][
-              "2019"
-            ];
-            average2020 += this.datasetWorldRAW[j]["internationalFlights"][
-              "2020"
-            ];
-          }
-        } else if (i >= this.datasetWorldRAW.length - 3) {
-          for (let j = i; j <= i - 6; j--) {
-            average2019 += this.datasetWorldRAW[j]["internationalFlights"][
-              "2019"
-            ];
-            average2020 += this.datasetWorldRAW[j]["internationalFlights"][
-              "2020"
-            ];
-          }
-        } else {
+        if (i > 2 && i < flightData.length - 3) {
           for (let j = i - 3; j <= i + 3; j++) {
             average2019 += this.datasetWorldRAW[j]["internationalFlights"][
               "2019"
@@ -141,6 +112,9 @@ export default {
         let delta = (average2020 / average2019) * 100 - 100;
         return { y: delta, x: element["timestamp"] * 1000 };
       });
+      datasetWorld.splice(0, 3);
+      datasetWorld.splice(datasetWorld.length - 3, 3);
+
       let minMaxYAxisInternational = d3.extent(datasetInternational, function(
         d
       ) {
@@ -338,9 +312,7 @@ export default {
           .style("left", d3.event.pageX + 20 + "px")
           .style("top", d3.event.pageY - 20 + "px")
           .html(
-            date.getUTCDate() +
-              ".0" +
-              (date.getUTCMonth() + 1) +
+            moment(date).format("[Day <b>]D[</b>  of week <b>]W[</b>]") +
               " </br> " +
               "International: " +
               Math.round(selectedDataInternational.y) +

@@ -7,6 +7,7 @@
 
 <script>
 import * as d3 from "d3";
+import moment from "moment";
 import FlightService from "../services/FlightService";
 import SelectedCountriesService from "../services/SelectedCountriesService";
 
@@ -41,19 +42,7 @@ export default {
       let dataset = countryData.map((element, i) => {
         let average = 0;
 
-        if (i < 3) {
-          for (let j = i; j <= i + 6; j++) {
-            let cases = parseInt(countryData[j]["coronaCases"]["Cases"]);
-            cases = cases ? cases : 0;
-            average += cases;
-          }
-        } else if (i >= countryData.length - 3) {
-          for (let j = i; j <= i - 6; j--) {
-            let cases = parseInt(countryData[j]["coronaCases"]["Cases"]);
-            cases = cases ? cases : 0;
-            average += cases;
-          }
-        } else {
+        if (i > 2 && i < countryData.length - 3) {
           for (let j = i - 3; j <= i + 3; j++) {
             let cases = parseInt(countryData[j]["coronaCases"]["Cases"]);
             cases = cases ? cases : 0;
@@ -68,6 +57,9 @@ export default {
 
         return { y: average, x: element["timestamp"] * 1000 };
       });
+      dataset.splice(0, 3);
+      dataset.splice(dataset.length - 3, 3);
+
       let minMaxYAxis = d3.extent(dataset, function(d) {
         return d.y;
       });
@@ -208,10 +200,9 @@ export default {
           .style("left", d3.event.pageX + 20 + "px")
           .style("top", d3.event.pageY - 20 + "px")
           .html(
-            date.getUTCDate() +
-              1 +
-              ".0" +
-              (date.getUTCMonth() + 1) +
+            moment(date).format(
+              "[Day <b>]D[</b>  of week <b>]W[</b>(]DD.MM.YYYY[)]"
+            ) +
               " </br>" +
               "New Cases: " +
               Math.round(selectedData.y)
