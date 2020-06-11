@@ -1,14 +1,29 @@
 <template>
-  <div>
-    <el-row type="flex" align="middle">
-      <el-col :span="12" type="flex" align="middle" class="left">
-        <p>Image</p>
-        <img src="@/assets/china_example.png" />
-      </el-col>
-      <el-col :span="12" type="flex" align="middle" class="right">
-        <p>text</p>
-      </el-col>
-    </el-row>
+  <div class="parent">
+    <div class="item left">
+      <div class="left-content">
+        <h1>China</h1>
+        <img src="@/assets/china_example.png" class="image" />
+      </div>
+    </div>
+    <div class="item right">
+      <p>kjdfndlsakkjd fndlsakkjdfndlsakkjdf ndlsakkjdfndlsa kkjdfn dlsak kjdf ndlsak kjdfnd lsakkjdf ndlsak</p>
+      <br />
+      <p>kjdfndlsakkjd fndlsakkjdfndlsakkjdf ndlsakkjdfndlsa kkjdfn dlsak kjdf ndlsak kjdfnd lsakkjdf ndlsak</p>
+      <br />
+      <p>kjdfndlsakkjd fndlsakkjdfndlsakkjdf ndlsakkjdfndlsa kkjdfn dlsak kjdf ndlsak kjdfnd lsakkjdf ndlsak</p>
+      <br />
+      <p>kjdfndlsakkjd fndlsakkjdfndlsakkjdf ndlsakkjdfndlsa kkjdfn dlsak kjdf ndlsak kjdfnd lsakkjdf ndlsak</p>
+      <br />
+      <p>kjdfndlsakkjd fndlsakkjdfndlsakkjdf ndlsakkjdfndlsa kkjdfn dlsak kjdf ndlsak kjdfnd lsakkjdf ndlsak</p>
+      <br />
+      <p>kjdfndlsakkjd fndlsakkjdfndlsakkjdf ndlsakkjdfndlsa kkjdfn dlsak kjdf ndlsak kjdfnd lsakkjdf ndlsak</p>
+      <br />
+      <p>kjdfndlsakkjd fndlsakkjdfndlsakkjdf ndlsakkjdfndlsa kkjdfn dlsak kjdf ndlsak kjdfnd lsakkjdf ndlsak</p>
+      <br />
+      <p>kjdfndlsakkjd fndlsakkjdfndlsakkjdf ndlsakkjdfndlsa kkjdfn dlsak kjdf ndlsak kjdfnd lsakkjdf ndlsak</p>
+      <br />
+    </div>
   </div>
 </template>
 
@@ -24,10 +39,39 @@ export default {
 </script>
 
 <style>
+.parent {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  padding: 20px;
+}
+.parent > div {
+  flex: 1;
+}
+
+.container {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.item {
+  padding: 10px;
+}
 .left {
-  background-color: green;
+  margin-right: 10px;
+  background-color: lightgrey;
 }
 .right {
-  background-color: blue;
+  margin-left: 10px;
+  background-color: lightblue;
+}
+.left-content {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+}
+.image {
+  max-width: 100%;
 }
 </style>
