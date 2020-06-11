@@ -32,6 +32,9 @@ export default {
     },
     selectedCountries: {
       required: true
+    },
+    countryName: {
+      required: true
     }
   },
   data() {
@@ -110,6 +113,11 @@ export default {
           // Returns the countryDisplayedName
           return d.toLowerCase().replace(" ", "-");
         });
+      // First time the label is  generated the default country will be made bold
+      const textLabelOfCountry = svg.selectAll(
+        `g>.tick>#${this.countryName.toLowerCase().replace(" ", "-")}`
+      );
+      textLabelOfCountry.style("font-weight", "bold");
 
       // Build color scale
       let color = d3.scaleThreshold(
