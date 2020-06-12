@@ -218,12 +218,16 @@ export default {
         .attr("class", "y axis")
         .call(d3.axisLeft(yScale).tickFormat(d => d + "%"));
 
+
+      let lineColorWorld = "#083d77";
+      let lineColorInternational = "#f95738";
+      let lineColorDomestic = "#f4d35e";
       // Append the path, bind the data, and call the line generator
       svg
         .select("g")
         .append("path")
         .datum(datasetInternational) // 10. Binds data to the line
-        .attr("stroke", "steelblue")
+        .attr("stroke", lineColorInternational)
         .attr("stroke-width", 3)
         .attr("fill", "none")
         .attr("d", line)
@@ -234,7 +238,7 @@ export default {
         .select("g")
         .append("path")
         .datum(datasetDomestic) // 10. Binds data to the line
-        .attr("stroke", "red")
+        .attr("stroke", lineColorDomestic)
         .attr("stroke-width", 3)
         .attr("fill", "none")
         .attr("d", line)
@@ -244,7 +248,7 @@ export default {
         .select("g")
         .append("path")
         .datum(datasetWorld) // 10. Binds data to the line
-        .attr("stroke", "green")
+        .attr("stroke", lineColorWorld)
         .attr("stroke-width", 3)
         .attr("fill", "none")
         .attr("d", line)

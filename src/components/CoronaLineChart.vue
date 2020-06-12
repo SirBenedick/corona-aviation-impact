@@ -135,7 +135,7 @@ export default {
         .select("g")
         .append("path")
         .datum(dataset) // 10. Binds data to the line
-        .attr("stroke", "steelblue")
+        .attr("stroke", "#083d77")
         .attr("stroke-width", 3)
         .attr("fill", "none")
         .attr("d", line);
