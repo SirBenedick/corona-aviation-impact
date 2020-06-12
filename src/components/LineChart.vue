@@ -294,7 +294,7 @@ export default {
         var selectedDataDomestic = datasetDomestic[i];
         var selectedDataWorld = datasetWorld[i];
 
-        let date = new Date(selectedDataInternational.x);
+        let date = moment(new Date(selectedDataInternational.x));
         let xPositionDelta =
           selectedDataInternational.x < 1583107200000 ? +90 : -90;
         let yPositionDelta = 0;
@@ -312,7 +312,10 @@ export default {
           .style("left", d3.event.pageX + 20 + "px")
           .style("top", d3.event.pageY - 20 + "px")
           .html(
-            moment(date).format("[Day <b>]D[</b>  of week <b>]W[</b>]") +
+            "Day " +
+              date.isoWeekday() +
+              " of week " +
+              date.isoWeek() +
               " </br> " +
               "International: " +
               Math.round(selectedDataInternational.y) +

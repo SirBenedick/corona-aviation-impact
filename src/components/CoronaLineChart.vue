@@ -183,7 +183,7 @@ export default {
         var i = bisect(dataset, x0, 1);
         var selectedData = dataset[i];
 
-        let date = new Date(selectedData.x);
+        let date = moment(new Date(selectedData.x));
         let xPositionDelta = selectedData.x < 1583107200000 ? +90 : -100;
         let yPositionDelta = selectedData.y < 30 ? -30 : 0;
         focus
@@ -200,9 +200,10 @@ export default {
           .style("left", d3.event.pageX + 20 + "px")
           .style("top", d3.event.pageY - 20 + "px")
           .html(
-            moment(date).format(
-              "[Day <b>]D[</b>  of week <b>]W[</b>(]DD.MM.YYYY[)]"
-            ) +
+            "Day " +
+              date.isoWeekday() +
+              " of week " +
+              date.isoWeek() +
               " </br>" +
               "New Cases: " +
               Math.round(selectedData.y)
