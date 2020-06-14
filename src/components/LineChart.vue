@@ -195,14 +195,19 @@ export default {
       svg
         .select("g")
         .append("g")
-        .attr("class", "x axis")
+        .attr("class", "x-axis")
         .attr(
           "transform",
           "translate(0," +
             (height * minMaxYAxis[1]) / (minMaxYAxis[1] + 100) +
             ")"
         )
-        .call(d3.axisBottom(xScale).tickFormat(d3.timeFormat("%U CW")))
+        .call(
+          d3
+            .axisBottom(xScale)
+            .ticks(20)
+            .tickFormat(d3.timeFormat("%V CW"))
+        )
         .selectAll("text")
         .style("text-anchor", "end")
         .attr("dx", "-.8em")
@@ -215,7 +220,6 @@ export default {
         .append("g")
         .attr("class", "y axis")
         .call(d3.axisLeft(yScale).tickFormat(d => d + "%"));
-
       let lineColorWorld = "#083d77";
       let lineColorInternational = "#f95738";
       let lineColorDomestic = "#f4d35e";
@@ -368,5 +372,9 @@ export default {
 .focus circle {
   fill: none;
   stroke: steelblue;
+}
+
+.x-axis > :nth-child(2) > text {
+  display: none;
 }
 </style>
