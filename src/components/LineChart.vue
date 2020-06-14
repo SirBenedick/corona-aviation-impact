@@ -206,7 +206,7 @@ export default {
           d3
             .axisBottom(xScale)
             .ticks(20)
-            .tickFormat(d3.timeFormat("%V CW"))
+            .tickFormat(d3.timeFormat("W%V"))
         )
         .selectAll("text")
         .style("text-anchor", "end")
