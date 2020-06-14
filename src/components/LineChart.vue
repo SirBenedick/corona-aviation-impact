@@ -161,7 +161,7 @@ export default {
       // Use the margin convention practice
       var margin = { top: 20, right: 50, bottom: 5, left: 50 },
         width = window.innerWidth / 2 - margin.left - margin.right - 100, // Use the window's width
-        height = window.innerHeight / 2 - margin.top - margin.bottom - 200; // Use the window's height
+        height = window.innerHeight / 2 - margin.top - margin.bottom - 150; // Use the window's height
 
       // The number of datapoints
       var n = datasetInternational.length;
@@ -236,7 +236,7 @@ export default {
       let lineColorDomestic = "#f4d35e";
 
       // axis lable size
-      svg.selectAll("g>.tick>text").style("font-size", "12px");
+      svg.selectAll("g>.tick>text").style("font-size", "11px");
 
       // Append the path, bind the data, and call the line generator
       svg

@@ -69,7 +69,7 @@ export default {
       // Use the margin convention practice
       var margin = { top: 50, right: 50, bottom: 50, left: 50 },
         width = window.innerWidth / 2 - margin.left - margin.right - 100, // Use the window's width
-        height = window.innerHeight / 3 - margin.top - margin.bottom - 50; // Use the window's height
+        height = window.innerHeight / 3 - margin.top - margin.bottom - 20; // Use the window's height
 
       // The number of datapoints
       var n = dataset.length;
@@ -136,7 +136,7 @@ export default {
         .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
 
       // axis lable size
-      svg.selectAll("g>.tick>text").style("font-size", "12px");
+      svg.selectAll("g>.tick>text").style("font-size", "11px");
 
       // Append the path, bind the data, and call the line generator
       svg
