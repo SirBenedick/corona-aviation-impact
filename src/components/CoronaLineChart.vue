@@ -135,6 +135,9 @@ export default {
         .attr("class", "y axis")
         .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
 
+      // axis lable size
+      svg.selectAll("g>.tick>text").style("font-size", "12px");
+
       // Append the path, bind the data, and call the line generator
       svg
         .select("g")

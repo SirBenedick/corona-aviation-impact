@@ -2,6 +2,17 @@
   <div>
     Air traffic compared to previous year
     <div id="my_dataviz" />
+    <div class="legend">
+      <div>
+        <div class="international-legend"></div>International
+      </div>
+      <div>
+        <div class="domestic-legend"></div>Domestic
+      </div>
+      <div>
+        <div class="world-legend"></div>World
+      </div>
+    </div>
   </div>
 </template>
 
@@ -148,9 +159,9 @@ export default {
       let minMaxXAxis = d3.extent(allMinMaxX);
 
       // Use the margin convention practice
-      var margin = { top: 50, right: 50, bottom: 50, left: 50 },
+      var margin = { top: 20, right: 50, bottom: 5, left: 50 },
         width = window.innerWidth / 2 - margin.left - margin.right - 100, // Use the window's width
-        height = window.innerHeight / 2 - margin.top - margin.bottom - 150; // Use the window's height
+        height = window.innerHeight / 2 - margin.top - margin.bottom - 200; // Use the window's height
 
       // The number of datapoints
       var n = datasetInternational.length;
@@ -223,6 +234,10 @@ export default {
       let lineColorWorld = "#083d77";
       let lineColorInternational = "#f95738";
       let lineColorDomestic = "#f4d35e";
+
+      // axis lable size
+      svg.selectAll("g>.tick>text").style("font-size", "12px");
+
       // Append the path, bind the data, and call the line generator
       svg
         .select("g")
@@ -325,15 +340,15 @@ export default {
               " of week " +
               date.isoWeek() +
               " </br> " +
-              "International: " +
+              `<span class="international"> International: </span>` +
               Math.round(selectedDataInternational.y) +
               "%" +
               "</br>" +
-              "Domestic: " +
+              `<span class="domestic"> Domestic: </span>` +
               Math.round(selectedDataDomestic.y) +
               "%" +
               "</br>" +
-              "World: " +
+              `<span class="world"> World: </span>` +
               Math.round(selectedDataWorld.y) +
               "%"
           );
@@ -365,7 +380,7 @@ export default {
 
 /* Style the dots by assigning a fill and stroke */
 .dot {
-  fill: #ffab00;
+  fill: #f4d35e;
   stroke: #fff;
 }
 
@@ -376,5 +391,46 @@ export default {
 
 .x-axis > :nth-child(2) > text {
   display: none;
+}
+
+.domestic {
+  color: #f4d35e;
+}
+
+.international {
+  color: #f95738;
+}
+
+.world {
+  color: #083d77;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.legend > div {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.legend > div > div {
+  margin-right: 5px;
+  height: 10px;
+  width: 10px;
+}
+
+.international-legend {
+  background-color: #f95738;
+}
+.domestic-legend {
+  background-color: #f4d35e;
+}
+.world-legend {
+  background-color: #083d77;
 }
 </style>
