@@ -156,10 +156,13 @@ export default {
       var tooltip = d3
         .create("div")
         .attr("id", "tooltip-corona")
-        .style("position", "absolute")
-        .style("background-color", "#D3D3D3")
-        .style("padding", 6)
-        .style("display", "none");
+        .style("background-color", "white")
+        .style("z-index", 10)
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px")
+        .style("position", "absolute");
       document.body.appendChild(tooltip.node());
 
       svg

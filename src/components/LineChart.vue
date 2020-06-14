@@ -87,8 +87,6 @@ export default {
       datasetInternational.splice(0, 3);
       datasetInternational.splice(datasetInternational.length - 3, 3);
 
-      console.log(datasetDomestic);
-
       let datasetWorld = this.datasetWorldRAW.map((element, i) => {
         let average2019 = 0;
         let average2020 = 0;
@@ -218,7 +216,6 @@ export default {
         .attr("class", "y axis")
         .call(d3.axisLeft(yScale).tickFormat(d => d + "%"));
 
-
       let lineColorWorld = "#083d77";
       let lineColorInternational = "#f95738";
       let lineColorDomestic = "#f4d35e";
@@ -265,10 +262,13 @@ export default {
       var tooltip = d3
         .create("div")
         .attr("id", "tooltip")
-        .style("position", "absolute")
-        .style("background-color", "#D3D3D3")
-        .style("padding", 6)
-        .style("display", "none");
+        .style("background-color", "white")
+        .style("z-index", 10)
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px")
+        .style("position", "absolute");
       document.body.appendChild(tooltip.node());
 
       svg

@@ -158,9 +158,10 @@ export default {
               d.month
             }</b> 2019.`
           )
-          .style("left", d3.mouse(this)[0] + 0.16 * window.innerWidth + "px")
+          .style("left", d3.mouse(this)[0] + 0.17 * window.innerWidth + "px")
           .style("top", d3.mouse(this)[1] + "px");
       };
+
       var mouseleave = function(d) {
         d3.select(this).style("stroke-width", 1);
         tooltip.style("display", "none");
