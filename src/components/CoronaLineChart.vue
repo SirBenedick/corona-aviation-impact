@@ -1,6 +1,17 @@
 <template>
   <div>
     Corona infections
+    <el-tooltip
+      effect="light"
+      placement="top"
+    >
+      <div slot="content">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <br>
+        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br>
+        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </div>
+      <i class="el-icon-question" />
+    </el-tooltip>
     <div id="corona_chart" />
   </div>
 </template>

@@ -4,6 +4,7 @@
 
 <script>
 import * as d3 from "d3";
+import {StringDecoder} from "string_decoder";
 
 export default {
   data() {
@@ -41,8 +42,7 @@ export default {
         .attr("viewBox", [0, 0, width, height])
         .style("overflow", "visible")
         .style("display", "block")
-        .style("margin-right", "30px")
-        .style("margin-left", "auto");
+        .style("margin-left", "30px");
 
       let tickAdjust = g =>
         g.selectAll(".tick line").attr("y1", marginTop + marginBottom - height);
@@ -195,12 +195,12 @@ export default {
     let legend = this.legend({
       color: d3.scaleOrdinal(
         [
-          "<(-75)",
-          "(-75)-(-46)",
-          "(-45) - (-16)",
-          "(-15) - 14",
-          "15-44",
-          "45-74",
+          "< -75",
+          "-75 – -46",
+          "-45 – -16",
+          "-15 – 14",
+          "15 – 44",
+          "45 – 74",
           "≥75"
         ],
         d3.schemeRdBu[7]

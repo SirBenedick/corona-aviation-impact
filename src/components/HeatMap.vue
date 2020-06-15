@@ -4,11 +4,7 @@
       <el-col align="middle">
         <div id="heatmap-diagram" />
       </el-col>
-
-      <el-col :span="9">
-        <p>Lorem ipsumLorem ipsum ipsum</p>
-      </el-col>
-      <el-col :push="7" :span="7">
+      <el-col align="middle">
         <HeatMapLabel />
       </el-col>
     </el-row>
@@ -131,20 +127,24 @@ export default {
         .append("div")
         .style("display", "none")
         .attr("class", "tooltip")
-        .style("background-color", "white")
+        .style("width", "270px")
+        .style("text-align", "center")
+        .style("background-color", "rgb(245,245,245,.8)")
+        .style("color","black")
         .style("z-index", 10)
         .style("border", "solid")
-        .style("border-width", "2px")
-        .style("border-radius", "5px")
+        .style("border-width", "1px")
         .style("padding", "5px")
         .style("position", "absolute");
+
 
       // Three function that change the tooltip when user hover / move / leave a cell
       var mouseover = function(d) {
         tooltip.style("display", "block");
         d3.select(this)
-          .style("stroke-width", 5)
-          .style("stroke", "black");
+          .style("stroke-width", 3)
+          .style("stroke", "black")
+          .style("cursor", "pointer");
       };
 
       var mousemove = function(d) {

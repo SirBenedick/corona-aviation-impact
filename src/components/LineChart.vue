@@ -1,16 +1,27 @@
 <template>
   <div>
-    Air traffic compared to previous year
+    Air traffic compared from 2020 to 2019 
+    <el-tooltip
+      effect="light"
+      placement="top"
+    >
+      <div slot="content">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <br>
+        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br>
+        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </div>
+      <i class="el-icon-question" />
+    </el-tooltip>
     <div id="my_dataviz" />
     <div class="legend">
       <div>
-        <div class="international-legend"></div>International
+        <div class="international-legend" />International
       </div>
       <div>
-        <div class="domestic-legend"></div>Domestic
+        <div class="domestic-legend" />Domestic
       </div>
       <div>
-        <div class="world-legend"></div>World
+        <div class="world-legend" />World
       </div>
     </div>
   </div>
@@ -281,11 +292,15 @@ export default {
       var tooltip = d3
         .create("div")
         .attr("id", "tooltip")
-        .style("background-color", "white")
+        .style("display", "none")
+        .attr("class", "tooltip")
+        .style("width", "150px")
+        .style("text-align", "center")
+        .style("background-color", "rgb(245,245,245,.8)")
+        .style("color","black")
         .style("z-index", 10)
         .style("border", "solid")
-        .style("border-width", "2px")
-        .style("border-radius", "5px")
+        .style("border-width", "1px")
         .style("padding", "5px")
         .style("position", "absolute");
       document.body.appendChild(tooltip.node());
@@ -339,7 +354,7 @@ export default {
               date.isoWeekday() +
               " of week " +
               date.isoWeek() +
-              " </br> " +
+              " </br></br> " +
               `<span class="international"> International: </span>` +
               Math.round(selectedDataInternational.y) +
               "%" +
@@ -395,14 +410,19 @@ export default {
 
 .domestic {
   color: #f4d35e;
+  font-weight: bolder;
 }
 
 .international {
   color: #f95738;
+  font-weight: bolder;
+
 }
 
 .world {
   color: #083d77;
+  font-weight: bolder;
+
 }
 
 .legend {
