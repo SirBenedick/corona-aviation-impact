@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: "/gdv-blue-circle/",
+  publicPath: "/corona-aviation-impact/",
 };
