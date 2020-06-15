@@ -31,10 +31,14 @@ Diese Visualisierung sollte dabei folgende Frage zu beantworten:
 Für die Umsetzung des Dashboards entschieden wir uns für *D3*, eine JavaScript Library zum erstellen von Visualisierungen. Darüber 
 Hinaus entschieden wir uns für das Front-End Framework *Vue*.
 
-#Daten / Auswertung / Prozess
-- Daten: Quellen, Scraping, DataPrep, Aggregation, Auswertung, ...
-- EDA: Exploratory Data Analysis. Was haben Sie wie untersucht?
-- Visualisierungen: Sinnvolle Auswahl relevanter Experimente, PaperPrototypen, Mock-Ups.
+#Daten
+Unsere Datenquellen waren die Flugdaten des OpenSky Networks und die Coronadaten des Robert Koch-Instituts. Das OpenSky Network ist ein Unternehmen in der Schweiz, die Flugdaten aufzeichnen. Die Flugdaten werden durch ca. 1000 Sensoren aufgezeichnet, die Weltweit verstreut sind. Die meisten dieser 1000 Sensoren befinden sich in Europa und USA. Das Robert Koch-Institut ist eine deutsche Bundesbehörde, die sich mit Infektionskrankheiten und nicht übertragbaren Krankheiten beschäftigt. Damit wir auf unserer Website auf die Daten zugreifen können, haben wir uns dazu entschieden, die Daten in ein JSON zu exportieren. Da jedoch viele Daten für uns unbrauchbar waren, mussten wir zunächst die Datensätze bereinigen und haben danach die für uns relevanten Daten zusammen mit den Coronadaten des Robert Koch-Instituts in ein JSON importiert. [[Screenshot vom JSON]]
+
+#Auswertung
+Die Flugdaten des OpenSky Networks fasst über 20 Billionen Datensätze, durch die wir uns erstmal durcharbeiten mussten. Schnell konnte man sehen, wie stark die Flugzahlen in den letzten Wochen und Monaten abgenommen haben. Auf unseren Visualisierungen konnte man klar erkennen, dass die Flugzahlen zeitgleich mit dem Anstieg der Coronafälle stark gefallen sind. [[Visualisierung]] Zusätzlich haben wir die Flugdaten von diesem Jahr mit den Flugdaten vom letzten Jahr vergleichen, damit wir sicherstellen können, dass die Einbrüche der Flugzahlen mit dem Anstieg der Coronafälle zusammen hängen. [[Visualisierung]]
+
+#Prozess
+
 
 #Prototyp / Ergebnisse
 - Visualisierung: Vorstellung des Prototypens. Beschreiben Sie die eingesetzten Visualisierungs- und Interaktionstechniken. Begründen Sie die Wahl (siehe unten).
