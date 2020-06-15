@@ -87,7 +87,7 @@
         class="highlights_heading "
         id="highlights"
       >
-        HIGHLIGHTS
+        HIGHLIGHTS2
       </h1>
       <HighlightChinaRight />
       <HighlightIcelandLeft />
