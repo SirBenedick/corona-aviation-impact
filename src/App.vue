@@ -236,7 +236,7 @@ body {
 .head_label {
   height: 80px;
   text-align: center;
-  width: 1000px;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
 
