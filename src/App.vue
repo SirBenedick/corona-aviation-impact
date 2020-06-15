@@ -89,11 +89,13 @@
       >
         HIGHLIGHTS
       </h1>
-      <ExampleDocumentationRight />
-      <ExampleDocumentationLeft />
-      <ExampleDocumentationRight />
-      <ExampleDocumentationLeft />
-      <ExampleDocumentationRight />
+      <HighlightChinaRight />
+      <HighlightIcelandLeft />
+      <HighlightItalyRight />
+      <HighlightAustriaLeft />
+      <HighlightJapanRight />
+      <HighlightSwedenLeft />
+      <HighlightUSARight />
     </section>
   </div>
 </template>
@@ -103,9 +105,13 @@ import HeatMap from "./components/HeatMap.vue";
 import SelectedCountryTitle from "./components/SelectedCountryTitle.vue";
 import LineChart from "./components/LineChart.vue";
 import CoronaLineChart from "./components/CoronaLineChart.vue";
-import ExampleDocumentationRight from "./components/ExampleDocumentationContentRight.vue";
-import ExampleDocumentationLeft from "./components/ExampleDocumentationContentLeft.vue";
-
+import HighlightChinaRight from "./components/HighlightChinaRight.vue";
+import HighlightIcelandLeft from "./components/HighlightIcelandLeft.vue";
+import HighlightItalyRight from "./components/HighlightItalyRight.vue";
+import HighlightAustriaLeft from "./components/HighlightAustriaLeft.vue";
+import HighlightJapanRight from "./components/HighlightJapanRight.vue";
+import HighlightSwedenLeft from "./components/HighlightSwedenLeft.vue";
+import HighlightUSARight from "./components/HighlightUSARight.vue";
 
 export default {
   name: "App",
@@ -114,8 +120,13 @@ export default {
     SelectedCountryTitle,
     LineChart,
     CoronaLineChart,
-    ExampleDocumentationRight,
-    ExampleDocumentationLeft
+    HighlightChinaRight,
+    HighlightIcelandLeft,
+    HighlightItalyRight,
+    HighlightAustriaLeft,
+    HighlightJapanRight,
+    HighlightSwedenLeft,
+    HighlightUSARight,
   },
   data() {
     return {
