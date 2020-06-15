@@ -175,11 +175,15 @@ export default {
       var tooltip = d3
         .create("div")
         .attr("id", "tooltip-corona")
-        .style("background-color", "white")
+        .style("display", "none")
+        .attr("class", "tooltip")
+        .style("width", "150px")
+        .style("text-align", "center")
+        .style("background-color", "rgb(245,245,245,.8)")
+        .style("color","black")
         .style("z-index", 10)
         .style("border", "solid")
-        .style("border-width", "2px")
-        .style("border-radius", "5px")
+        .style("border-width", "1px")
         .style("padding", "5px")
         .style("position", "absolute");
       document.body.appendChild(tooltip.node());
