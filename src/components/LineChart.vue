@@ -5,10 +5,10 @@
       effect="light"
       placement="top"
     >
-      <div slot="content">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <br>
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br>
-        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      <div slot="content" style="width: 500px;">
+        This chart displays three-line charts related to the country selected in the heatmap. The <span class="world">blue</span> one represents the aviation traffic of the world, this line stays the same for every selected country. It shows the average of all countries' international flight data. The <span class="domestic">yellow</span> line tracks the changes of the domestic flights and the <span class="international">red</span> line the changes of international flights.<br/>
+        The x-axis shows the calendar week. On the y-axis, the percentage change of aviation traffic in 2020 compared to 2019 is displayed.<br/>
+        The values displayed are calculated using a 7-day window so that each value point represents the average from 3 days in the past to 3 days in the future. This is done to account for statistical outliers and errors in the dataset.
       </div>
       <i class="el-icon-question" />
     </el-tooltip>

@@ -5,10 +5,10 @@
       effect="light"
       placement="top"
     >
-      <div slot="content">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <br>
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br>
-        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      <div slot="content" style="width: 500px;">
+        The chart below shows the daily infection numbers for the selected country. 
+        It shows how the infection rate of COVID-19 has developed in 2020. The x-axis shows the weeks of the year 2020. The values are averaged using a 7-day window like the aviation traffic chart as well to account for weekly variations in the data due to authorities not reporting during weekends and to decrease the chance of indication wrong trends towards the end of the chart. <br/>
+        The case numbers are provided by the <a href="https://data.europa.eu/euodp/de/data/dataset/covid-19-coronavirus-data" target="_blank">EU Open Data Portal</a>.
       </div>
       <i class="el-icon-question" />
     </el-tooltip>
