@@ -4,11 +4,9 @@
       <div class="left-content-cl">
         <h1>Iceland doemstic flights</h1>
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-          aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-          sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-          magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem 
-          ipsum dolor sit amet.
+          As Iceland is an island, there is basically very little domestic air traffic. In simple terms, if there are normally 5 flights
+          on the day and then at a time of 25 there is an increase of 500%. However, one can only speculate about the cause of the increase. A
+          Announcement of travel restrictions could trigger the urge to get home quickly when you have been somewhere else.
         </p>
       </div>
     </div>

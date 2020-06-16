@@ -15,16 +15,10 @@
       <div class="right-content">
         <h1>Italy early lock down</h1>
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-          aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-          sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-          magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem 
-          ipsum dolor sit amet.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-          aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-          sanctus est Lorem ipsum dolor sit amet. 
+          The first closures took place on 21st February 2020, initially affecting only 50000 people. Already on 09th March 2020 a
+          national quarantine. This also had an impact on air traffic, which in comparison to global air traffic used to be
+          broke in. However, it was announced that it was not an absolute ban and, among other things, flights in proven
+          working conditions and emergencies are allowed, which explains the slight increase after the break-in. The national quarantine was lifted on 18th May.
         </p>
       </div>
     </div>

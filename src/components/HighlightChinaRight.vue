@@ -13,18 +13,14 @@
     </div>
     <div class="item right">
       <div class="right-content">
-        <h1>2China started early to lock down</h1>
+        <h1>China started early to lock down</h1>
         <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-          aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-          sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-          magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem 
-          ipsum dolor sit amet.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-          aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-          sanctus est Lorem ipsum dolor sit amet. 
+          China, as the trigger of the pandemic, was the first to experience the collapse of air traffic. Compared to the global average
+          air traffic had slumped significantly a few weeks earlier. Domestic air traffic, however, has relatively quickly returned to moderate
+          increased. The rise begins with the peak of newly infected persons. When the number of newly infected has dropped sharply,
+          domestic air traffic increased again. In addition, international air traffic is once again a bit below the worldwide
+          Average. One could speculate that it is because nobody wants to go to China anymore, since the origin of the pandemic took place there and the
+          pandemic is still underway worldwide.
         </p>
       </div>
     </div>
