@@ -8,7 +8,7 @@ Die Corona Pandemie hat durch die Corona-Verordnung zum Social Distancing und we
 Im Projekt *Corona Flugverkehr* wird untersucht, welche Auswirkungen die Corona-Einschränkungen auf den weltweiten
 Flugverkehr haben und wie diese im Verhältnis der positiv auf Corona getestet Personen stehen.
 Die Daten des Flugverkehrs waren im Rahmen der Forschung frei zugänglich; die Zahlen der positiv auf Corona
-getesteten Personen werden von der *World Healty Organisation* (WHO) bereitgestellt. Es konnte festgestellt
+getesteten Personen werden vom Offenen Datenportat der EU bereitgestellt. Es konnte festgestellt
 werden, dass die Zahlen der positiv getesteten Personen im Zusammenhang mit dem Einbruch des globalen Flugverkehrs stehen.
 
 # Einführung / Konzept
@@ -34,7 +34,7 @@ Hinaus entschieden wir uns für das Front-End Framework *Vue*.
 # Daten / Auswertung / Prozess
 
 ## Daten
-Unsere Datenquellen waren die Flugdaten des OpenSky Networks und die Coronadaten des Robert Koch-Instituts. Das OpenSky Network ist ein Unternehmen in der Schweiz, die Flugdaten aufzeichnen. Die Flugdaten werden durch ca. 1000 Sensoren aufgezeichnet, die Weltweit verstreut sind. Die meisten dieser 1000 Sensoren befinden sich in Europa und USA. Das Robert Koch-Institut ist eine deutsche Bundesbehörde, die sich mit Infektionskrankheiten und nicht übertragbaren Krankheiten beschäftigt. Damit wir auf unserer Website auf die Daten zugreifen können, haben wir uns dazu entschieden, die Daten in ein JSON zu exportieren. Da jedoch viele Daten für uns unbrauchbar waren, mussten wir zunächst die Datensätze bereinigen und haben danach die für uns relevanten Daten zusammen mit den Coronadaten des Robert Koch-Instituts in ein JSON importiert. [[Screenshot vom JSON]]
+Unsere Datenquellen waren die Flugdaten des OpenSky Networks und die Coronadaten des Offenen Datenportals der EU. Das OpenSky Network ist ein Unternehmen in der Schweiz, die Flugdaten aufzeichnen. Die Flugdaten werden durch ca. 1000 Sensoren aufgezeichnet, die Weltweit verstreut sind. Die meisten dieser 1000 Sensoren befinden sich in Europa und USA. Das Robert Koch-Institut ist eine deutsche Bundesbehörde, die sich mit Infektionskrankheiten und nicht übertragbaren Krankheiten beschäftigt. Damit wir auf unserer Website auf die Daten zugreifen können, haben wir uns dazu entschieden, die Daten in ein JSON zu exportieren. Da jedoch viele Daten für uns unbrauchbar waren, mussten wir zunächst die Datensätze bereinigen und haben danach die für uns relevanten Daten zusammen mit den Coronadaten des Robert Koch-Instituts in ein JSON importiert. [[Screenshot vom JSON]]
 
 ## Auswertung
 Die Flugdaten des OpenSky Networks fasst über 20 Billionen Datensätze, durch die wir uns erstmal durcharbeiten mussten. Schnell konnte man sehen, wie stark die Flugzahlen in den letzten Wochen und Monaten abgenommen haben. Auf unseren Visualisierungen konnte man klar erkennen, dass die Flugzahlen zeitgleich mit dem Anstieg der Coronafälle stark gefallen sind. [[Visualisierung]] Zusätzlich haben wir die Flugdaten von diesem Jahr mit den Flugdaten vom letzten Jahr vergleichen, damit wir sicherstellen können, dass die Einbrüche der Flugzahlen mit dem Anstieg der Coronafälle zusammen hängen. [[Visualisierung]]
