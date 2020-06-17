@@ -13,7 +13,7 @@
     </div>
     <div class="item right">
       <div class="right-content">
-        <h1>China started early to lock down</h1>
+        <h1>China: first to spread, first to lock down</h1>
         <p>
           China, as the trigger of the pandemic, was the first to experience the collapse of air traffic. Compared to the global average
           air traffic had slumped significantly a few weeks earlier. Domestic air traffic, however, has relatively quickly returned to moderate

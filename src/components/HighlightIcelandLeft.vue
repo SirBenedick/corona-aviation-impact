@@ -2,11 +2,13 @@
   <div class="parent-cl">
     <div class="item left-cl">
       <div class="left-content-cl">
-        <h1>Iceland doemstic flights</h1>
+        <h1>Iceland island effect</h1>
         <p>
           As Iceland is an island, there is basically very little domestic air traffic. In simple terms, if there are normally 5 flights
-          on the day and then at a time of 25 there is an increase of 500%. However, one can only speculate about the cause of the increase. A
-          Announcement of travel restrictions could trigger the urge to get home quickly when you have been somewhere else.
+          on the day and then at a time of 25 there is an increase of 500%. However, one can only speculate about the cause of the increase. 
+          An Announcement of travel restrictions could trigger the urge to get home quickly when you have been somewhere else. 
+          The spike in domestic traffic accures shortly before the worldwide increase in avaiation traffic change.
+          This could be due to Iceland being on of the first countries effected by the SARS-CoV-2 virus.
         </p>
       </div>
     </div>

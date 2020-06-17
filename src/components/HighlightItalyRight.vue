@@ -13,12 +13,12 @@
     </div>
     <div class="item right">
       <div class="right-content">
-        <h1>Italy early lock down</h1>
+        <h1>Italy gets hit hard</h1>
         <p>
-          The first closures took place on 21st February 2020, initially affecting only 50000 people. Already on 09th March 2020 a
-          national quarantine. This also had an impact on air traffic, which in comparison to global air traffic used to be
-          broke in. However, it was announced that it was not an absolute ban and, among other things, flights in proven
-          working conditions and emergencies are allowed, which explains the slight increase after the break-in. The national quarantine was lifted on 18th May.
+          The first closures took place on 21st February 2020, initially affecting only 50000 people. Starting on the 9th of March 2020 a
+          national quarantine is ordered. This also had an impact on air traffic, which in comparison to global air traffic used to be
+          decreased a few days earlier. However, it was announced that it was not an absolute ban and, among other things, flights in proven
+          working conditions and emergencies are allowed, which explains the slight increase after the break-in. The national quarantine was lifted on the 18th of May (W21).
         </p>
       </div>
     </div>
