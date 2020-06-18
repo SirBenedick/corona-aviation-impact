@@ -50,7 +50,7 @@ sicherstellen können, dass die Einbrüche der Flugzahlen mit dem Anstieg der Co
 ## Prozess
 Damit wir auf unserer Website aus Gründen der Perfomanz nur eine Datei laden wollten, haben wir uns dazu entschieden, die Daten in ein JSON zu exportieren. 
 Da jedoch viele Daten für uns unbrauchbar waren, mussten wir zunächst die Datensätze bereinigen und haben 
-danach die für uns relevanten Daten sowhohl die des Flugverkehrs als auch der Corona Daten in ein JSON importiert. [[Screenshot vom JSON]]
+danach die für uns relevanten Daten, sowhohl die des Flugverkehrs, als auch der Corona Daten in ein JSON importiert. ![Screenshot vom JSON](./img/JSON_screenshot.png)
 
 # Prototyp / Ergebnisse
 ## Visualisierung
@@ -60,19 +60,31 @@ sind wir auf eine radiale Heat Map gestoßen. \
 \
 ![Alt Text](./img/radialheatMapDatavisprojects.png) \
 \
-Eine solche Heat Map eignete sich gut um einzelne Länder darauf anzuordnen und sie bei jedem weiteren Monat den wir visualisieren wollten weiter wachsen zu lassen. Zusätzlich 
-inspirierten uns die Punkte in den eizelnen Feldern Corona Events anzeigen zu lassen um den Zusammenhang zwischen dem Einbruch des Flugverkehrs und dem in Kraft treten von 
+Da sich bei Länder und Monaten um nominale Merkmale und bei der Anzahl der Flieger um ein quantitatives Merkmal handelt, bot sich eine Heat Map an. Zusätzlich 
+inspirierten uns die Punkte in den eizelnen Feldern Corona Events anzeigen zu lassen, um den Zusammenhang zwischen dem Einbruch des Flugverkehrs und dem in Kraft treten von 
 Kontaktbeschränkungen zu untersuchen. Des Weiteren eignet sich eine radiala Heat Map gut um einzelne Länder und Monate miteinander zu vergleichen. \
 Abb. XY zeigt unsere erste Version eines datengestützten Prototypen. \
 \
 ![radiale Heat Map Version 1](./img/radial_prototyp_datengestuetzt.png) \
 \
 Nach dem ersten datengestützten Prototypen bemerkten wir, dass keine sinnvole Reihenfolge gewählt werden konnte nach der die Länder sortiert werden. Darüber hinaus 
-entspricht ein zeitliche Verlauf von rechts nach link -- wie es im gesamten linken Teil der Visualisierung passiert -- nicht der Erwartung nach zeitlichen Verläufen. \
-Deshalb entschieden wir uns eine lineare Heat Map für die Visualisierung der Flugdaten zu wählen. 
+entspricht ein zeitliche Verlauf von rechts nach link — wie es im gesamten linken Teil der Visualisierung passiert — nicht der Erwartung nach zeitlichen Verläufen. \
+Deshalb entschieden wir uns eine lineare Heat Map für die Visualisierung der Flugdaten zu wählen. \
+__Feedback:__ [Die Farbskala der Heat Map war zu Beginn fließend. Dies änderten wir in eine Farbskala mit 7 Bereichen. Nouancen lassen sich zwar nicht mehr erkennen, aber durch
+den gleichen Farbton lassen sich Gemeinsamkeiten beim Vergeleich mehrerer Länder besser erkennen.]
 
-[Hier noch was über das Linendiagramm und die Berechung (Gleitendes Mittel usw.)]
-- Visualisierung: Vorstellung des Prototypens. Beschreiben Sie die eingesetzten Visualisierungs- und Interaktionstechniken. Begründen Sie die Wahl (siehe unten).
+__Liniendiagramm der Flugdaten__ \
+In einem Linendiagramm wollten wir ermöglichen den Flugverkehr eines bestimmten Landes sowohl mit dem inländischen als auch mit dem weltwiten Flugverkehr zu vergleichen. Um einen 
+zeitlichen Verlauf mit mehreren quantitativen Daten zu visualisieren bot sich ein Linendiagramm an. Das Auswählen eines bestimmten Landes in der Heat Map sollte eine Detail Ansicht
+im Liniendiagramm ermöglichen. Um starke Ausreißer an einzelnen Tagen zu vermeiden, haben wir ein gleitendes Mittel von drei Tagen für die Berechnung der Kurve verwendet. Dies hatte
+den Nachteil, dass beipielsweise ein Wochenende im Jahr 2020 mit der Mitter der Woche des Jahres 2019 verglichen wird, was die Ergbnisse verfälscht hätte. Deshalb entschieden
+wir uns ein gleitendes Mittel aus sieben Tagen zu verweden und so die Kalender Wochen der beine Jahre miteinander zu vergleichen um den Antieg bzw. Einbruch des Flugverkehrs
+zum Vorjahr zu berechnen. \
+
+__Liniendiagramm der Corona Daten__ \
+Unter dem Liniendiagramm der Flugdaten visualisierten wir die Corona Daten ebenfalls in einem Liniendiagramm. Durch die äquivalente zeitliche Achse kann so im zeitlichen Verlauf
+der Zusammenhang zwischen dem Einbrechen des Flugverkehrs und dem steigen der positiven Corona Fälle beobachtet werden.
+
 
 ## Implementierung
 - Implementierung: Wie haben Sie die Visualisierung umgesetzt? Welche Tools haben Sie für welche Schritte eingesetzt? Wieso?
