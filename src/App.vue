@@ -3,9 +3,7 @@
     <section class="fullpage">
       <el-row type="flex" class="heading">
         <el-col class="head_label">
-          <h1
-            style="font-size: 30px"
-          >How have the limitations of the SARS-CoV-2 virus affected global air traffic?</h1>
+          <h1 style="font-size: 30px">SARS-CoV-2's impact on aviation traffic</h1>
         </el-col>
       </el-row>
       <el-row class="switcher_country_wrapper" type="flex">
@@ -28,7 +26,10 @@
               A flight is counted as international when the departing airport is within the country and the arriving airport outside of it. Domestic flights depart and arrive within the selected country.
               Below the heatmap, you can see a legend describing what value ranges the colors in the heatmap represent. If a cell has a blue shade it means that the aviation traffic (domestic or international depending on the switch) has increased in 2020 compared to 2019. If a cell has a red shade the traffic has decreased.
               <br />The data was taken from the
-              <a href="https://opensky-network.org" target="_blank">The OpenSky Network</a> community which is a community-driven network that collects and provides data for research and academic purposes.
+              <a
+                href="https://opensky-network.org"
+                target="_blank"
+              >The OpenSky Network</a> community which is a community-driven network that collects and provides data for research and academic purposes.
             </div>
             <i class="el-icon-question" />
           </el-tooltip>
