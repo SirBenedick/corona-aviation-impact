@@ -36,7 +36,7 @@ Hinaus entschieden wir uns für das Front-End Framework *Vue*.
 ## Daten
 Unsere Datenquellen waren die Flugdaten des OpenSky Networks und die Coronadaten des Offenen Datenportals der EU. \
 Das OpenSky Network ist ein Unternehmen in der Schweiz, die Flugdaten aufzeichnen. Die Flugdaten werden durch ca. 1000 Sensoren aufgezeichnet, die weltweit verstreut sind. Die meisten dieser 1000 Sensoren befinden sich in Europa und den USA.
-Sie stellten aufgrund des Hohen Interesses -- ausgelöst durch die Pandemie -- einen bereinigten Datensatz öffentlich zur Verfügung. Dieser Datensatz enthielt allerdings nicht den Start und das Ziel der Flugzeuge.
+Sie stellten aufgrund des Hohen Interesses — ausgelöst durch die Pandemie — einen bereinigten Datensatz öffentlich zur Verfügung. Dieser Datensatz enthielt allerdings nicht den Start und das Ziel der Flugzeuge.
 Deshalb kontaktierten wir sie und baten um den vollständigen Datensatz, der uns durch den Rahmen eines Hochschulprojektes bereitgestellt wurde. \
 Das Offene Datenportal der EU stellt die weiltweiten Fälle der Corona Infektionen bereit. 
 
@@ -50,7 +50,10 @@ sicherstellen können, dass die Einbrüche der Flugzahlen mit dem Anstieg der Co
 ## Prozess
 Damit wir auf unserer Website aus Gründen der Perfomanz nur eine Datei laden wollten, haben wir uns dazu entschieden, die Daten in ein JSON zu exportieren. 
 Da jedoch viele Daten für uns unbrauchbar waren, mussten wir zunächst die Datensätze bereinigen und haben 
-danach die für uns relevanten Daten, sowhohl die des Flugverkehrs, als auch der Corona Daten in ein JSON importiert. ![Screenshot vom JSON](./img/JSON_screenshot.png)
+danach die für uns relevanten Daten, sowhohl die des Flugverkehrs, als auch der Corona Daten in ein JSON importiert. \
+\
+ ![Screenshot vom JSON](./img/JSON_screenshot.png) \
+\
 
 # Prototyp / Ergebnisse
 ## Visualisierung
@@ -70,14 +73,16 @@ Abb. XY zeigt unsere erste Version eines datengestützten Prototypen. \
 Nach dem ersten datengestützten Prototypen bemerkten wir, dass keine sinnvole Reihenfolge gewählt werden konnte nach der die Länder sortiert werden. Darüber hinaus 
 entspricht ein zeitliche Verlauf von rechts nach link — wie es im gesamten linken Teil der Visualisierung passiert — nicht der Erwartung nach zeitlichen Verläufen. \
 Deshalb entschieden wir uns eine lineare Heat Map für die Visualisierung der Flugdaten zu wählen. \
-__Feedback:__ [Die Farbskala der Heat Map war zu Beginn fließend. Dies änderten wir in eine Farbskala mit 7 Bereichen. Nouancen lassen sich zwar nicht mehr erkennen, aber durch
-den gleichen Farbton lassen sich Gemeinsamkeiten beim Vergeleich mehrerer Länder besser erkennen.]
-
+Die Farbskala der Heat Map war zu Beginn fließend. Dies änderten wir in eine Farbskala mit 7 Bereichen. Nouancen lassen sich zwar nicht mehr erkennen, aber durch
+den gleichen Farbton lassen sich Gemeinsamkeiten beim Vergeleich mehrerer Länder besser erkennen. \
+\
+![Linendiagramme der Flugdaten und der Coronadaten](./img/liniendiagramme.png) \
+\
 __Liniendiagramm der Flugdaten__ \
 In einem Linendiagramm wollten wir ermöglichen den Flugverkehr eines bestimmten Landes sowohl mit dem inländischen als auch mit dem weltwiten Flugverkehr zu vergleichen. Um einen 
 zeitlichen Verlauf mit mehreren quantitativen Daten zu visualisieren bot sich ein Linendiagramm an. Das Auswählen eines bestimmten Landes in der Heat Map sollte eine Detail Ansicht
 im Liniendiagramm ermöglichen. Um starke Ausreißer an einzelnen Tagen zu vermeiden, haben wir ein gleitendes Mittel von drei Tagen für die Berechnung der Kurve verwendet. Dies hatte
-den Nachteil, dass beipielsweise ein Wochenende im Jahr 2020 mit der Mitter der Woche des Jahres 2019 verglichen wird, was die Ergbnisse verfälscht hätte. Deshalb entschieden
+den Nachteil, dass beipielsweise ein Wochenende im Jahr 2020 mit der Mitte der Woche des Jahres 2019 verglichen wird, was die Ergbnisse verfälscht hätte. Deshalb entschieden
 wir uns ein gleitendes Mittel aus sieben Tagen zu verweden und so die Kalender Wochen der beine Jahre miteinander zu vergleichen um den Antieg bzw. Einbruch des Flugverkehrs
 zum Vorjahr zu berechnen. \
 
@@ -85,6 +90,9 @@ __Liniendiagramm der Corona Daten__ \
 Unter dem Liniendiagramm der Flugdaten visualisierten wir die Corona Daten ebenfalls in einem Liniendiagramm. Durch die äquivalente zeitliche Achse kann so im zeitlichen Verlauf
 der Zusammenhang zwischen dem Einbrechen des Flugverkehrs und dem steigen der positiven Corona Fälle beobachtet werden.
 
+## Prototyp
+![finales Dashboard](./img/dashboard.png) \
+\
 
 ## Implementierung
 - Implementierung: Wie haben Sie die Visualisierung umgesetzt? Welche Tools haben Sie für welche Schritte eingesetzt? Wieso?
