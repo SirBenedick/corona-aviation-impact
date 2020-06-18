@@ -2,7 +2,7 @@
   <div class="parent-cl">
     <div class="item left-cl">
       <div class="left-content-cl">
-        <h1>Austria enjoys gliding</h1>
+        <h1>Austria enjoys gliding2</h1>
         <p>
           Already on 01st May 2020, the measures concerning leisure sports in Austria were relaxed. This also included gliding,
           which is why domestic flights in Austria have increased enormously.
