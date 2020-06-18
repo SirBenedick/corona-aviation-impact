@@ -34,16 +34,29 @@ Hinaus entschieden wir uns für das Front-End Framework *Vue*.
 # Daten / Auswertung / Prozess
 
 ## Daten
-Unsere Datenquellen waren die Flugdaten des OpenSky Networks und die Coronadaten des Offenen Datenportals der EU. Das OpenSky Network ist ein Unternehmen in der Schweiz, die Flugdaten aufzeichnen. Die Flugdaten werden durch ca. 1000 Sensoren aufgezeichnet, die Weltweit verstreut sind. Die meisten dieser 1000 Sensoren befinden sich in Europa und USA. Das Offene Datenportal der EU stellt die weiltweiten Fälle der Corona Infektionen bereit. Damit wir auf unserer Website auf die Daten zugreifen können, haben wir uns dazu entschieden, die Daten in ein JSON zu exportieren. Da jedoch viele Daten für uns unbrauchbar waren, mussten wir zunächst die Datensätze bereinigen und haben danach die für uns relevanten Daten zusammen mit den Coronadaten in ein JSON importiert. [[Screenshot vom JSON]]
+Unsere Datenquellen waren die Flugdaten des OpenSky Networks und die Coronadaten des Offenen Datenportals der EU. \
+Das OpenSky Network ist ein Unternehmen in der Schweiz, die Flugdaten aufzeichnen. Die Flugdaten werden durch ca. 1000 Sensoren aufgezeichnet, die weltweit verstreut sind. Die meisten dieser 1000 Sensoren befinden sich in Europa und den USA.
+Sie stellten aufgrund des Hohen Interesses -- ausgelöst durch die Pandemie -- einen bereinigten Datensatz öffentlich zur Verfügung. Dieser Datensatz enthielt allerdings nicht den Start und das Ziel der Flugzeuge.
+Deshalb kontaktierten wir sie und baten um den vollständigen Datensatz, der uns durch den Rahmen eines Hochschulprojektes bereitgestellt wurde. \
+Das Offene Datenportal der EU stellt die weiltweiten Fälle der Corona Infektionen bereit. 
+
 
 ## Auswertung
-Die Flugdaten des OpenSky Networks fasst über 20 Billionen Datensätze, durch die wir uns erstmal durcharbeiten mussten. Schnell konnte man sehen, wie stark die Flugzahlen in den letzten Wochen und Monaten abgenommen haben. Auf unseren Visualisierungen konnte man klar erkennen, dass die Flugzahlen zeitgleich mit dem Anstieg der Coronafälle stark gefallen sind. [[Visualisierung]] Zusätzlich haben wir die Flugdaten von diesem Jahr mit den Flugdaten vom letzten Jahr vergleichen, damit wir sicherstellen können, dass die Einbrüche der Flugzahlen mit dem Anstieg der Coronafälle zusammen hängen. [[Visualisierung]]
+Die Flugdaten des OpenSky Networks fasst über 20 Billionen Datensätze, durch die wir uns erstmal durcharbeiten mussten. Schnell konnte man sehen, wie stark die 
+Flugzahlen in den letzten Wochen und Monaten abgenommen haben. Auf unseren Visualisierungen konnte man klar erkennen, dass die Flugzahlen zeitgleich mit dem Anstieg 
+der Coronafälle stark gefallen sind. [[Visualisierung]] Zusätzlich haben wir die Flugdaten von diesem Jahr mit den Flugdaten vom letzten Jahr vergleichen, damit wir 
+sicherstellen können, dass die Einbrüche der Flugzahlen mit dem Anstieg der Coronafälle zusammen hängen. [[Visualisierung]]
 
 ## Prozess
-
+Damit wir auf unserer Website aus Gründen der Perfomanz nur eine Datei laden wollten, haben wir uns dazu entschieden, die Daten in ein JSON zu exportieren. 
+Da jedoch viele Daten für uns unbrauchbar waren, mussten wir zunächst die Datensätze bereinigen und haben 
+danach die für uns relevanten Daten sowhohl die des Flugverkehrs als auch der Corona Daten in ein JSON importiert. [[Screenshot vom JSON]]
 
 # Prototyp / Ergebnisse
+## Visualisierung
 - Visualisierung: Vorstellung des Prototypens. Beschreiben Sie die eingesetzten Visualisierungs- und Interaktionstechniken. Begründen Sie die Wahl (siehe unten).
+
+## Implementierung
 - Implementierung: Wie haben Sie die Visualisierung umgesetzt? Welche Tools haben Sie für welche Schritte eingesetzt? Wieso?
 
 # Erkenntnisse
