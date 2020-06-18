@@ -2,6 +2,9 @@
   <div>
     <el-row>
       <el-col align="middle">
+        <div
+          class="click-cell-hint"
+        >Click a cell to select the coresponding country for the charts on the right</div>
         <div id="heatmap-diagram" />
       </el-col>
       <el-col align="middle">
@@ -58,7 +61,7 @@ export default {
       const padding = 0.15;
 
       // set the dimensions and margins of the graph
-      let margin = { top: 30, right: 30, bottom: 30, left: 100 },
+      let margin = { top: 10, right: 30, bottom: 30, left: 100 },
         width = 500 - margin.left - margin.right,
         height = 600 - margin.top - margin.bottom;
 
@@ -130,13 +133,12 @@ export default {
         .style("width", "270px")
         .style("text-align", "center")
         .style("background-color", "rgb(245,245,245,.8)")
-        .style("color","black")
+        .style("color", "black")
         .style("z-index", 10)
         .style("border", "solid")
         .style("border-width", "1px")
         .style("padding", "5px")
         .style("position", "absolute");
-
 
       // Three function that change the tooltip when user hover / move / leave a cell
       var mouseover = function(d) {
@@ -213,4 +215,7 @@ export default {
 </script>
 
 <style>
+.click-cell-hint {
+  font-size: 12px;
+}
 </style>
