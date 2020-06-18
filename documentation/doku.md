@@ -54,14 +54,24 @@ danach die für uns relevanten Daten sowhohl die des Flugverkehrs als auch der C
 
 # Prototyp / Ergebnisse
 ## Visualisierung
+__Heat Map__ \
 Um zu entscheiden, welche Visualisierung sich für unsere Flugdaten eigneten ließen wir uns von <a href="https://datavizproject.com/" target="_blank">datavisprojects</a> inspirieren. Dabei
 sind wir auf eine radiale Heat Map gestoßen. \
 \
 ![Alt Text](./img/radialheatMapDatavisprojects.png) \
 \
-Eine solche Hear Map eignete sich gut um einzelne Länder darauf anzuordnen und sie bei jedem weiteren Monat den wir visualisieren wollten weiter wachsen zu lassen. Zusätzlich \
+Eine solche Heat Map eignete sich gut um einzelne Länder darauf anzuordnen und sie bei jedem weiteren Monat den wir visualisieren wollten weiter wachsen zu lassen. Zusätzlich 
 inspirierten uns die Punkte in den eizelnen Feldern Corona Events anzeigen zu lassen um den Zusammenhang zwischen dem Einbruch des Flugverkehrs und dem in Kraft treten von 
-Kontaktbeschränkungen zu untersuchen. Des Weiteren eignet sich eine radiala Heat Map gut um einzelne Länder und Monate miteinander zu vergleichen.
+Kontaktbeschränkungen zu untersuchen. Des Weiteren eignet sich eine radiala Heat Map gut um einzelne Länder und Monate miteinander zu vergleichen. \
+Abb. XY zeigt unsere erste Version eines datengestützten Prototypen. \
+\
+![radiale Heat Map Version 1](./img/radial_prototyp_datengestuetzt.png) \
+\
+Nach dem ersten datengestützten Prototypen bemerkten wir, dass keine sinnvole Reihenfolge gewählt werden konnte nach der die Länder sortiert werden. Darüber hinaus 
+entspricht ein zeitliche Verlauf von rechts nach link -- wie es im gesamten linken Teil der Visualisierung passiert -- nicht der Erwartung nach zeitlichen Verläufen. \
+Deshalb entschieden wir uns eine lineare Heat Map für die Visualisierung der Flugdaten zu wählen. 
+
+[Hier noch was über das Linendiagramm und die Berechung (Gleitendes Mittel usw.)]
 - Visualisierung: Vorstellung des Prototypens. Beschreiben Sie die eingesetzten Visualisierungs- und Interaktionstechniken. Begründen Sie die Wahl (siehe unten).
 
 ## Implementierung
