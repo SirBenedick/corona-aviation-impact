@@ -54,7 +54,7 @@ danach die für uns relevanten Daten sowhohl die des Flugverkehrs als auch der C
 
 # Prototyp / Ergebnisse
 ## Visualisierung
-Um zu entscheiden, welche Visualisierung sich für unsere Flugdaten eigneten ließen wir uns von <a href="https://datavizproject.com/">datavisprojects</a> inspirieren. Dabei
+Um zu entscheiden, welche Visualisierung sich für unsere Flugdaten eigneten ließen wir uns von <a href="https://datavizproject.com/" target="_blank">datavisprojects</a> inspirieren. Dabei
 sind wir auf eine radiale Heat Map gestoßen. \
 \
 ![Alt Text](./img/radialheatMapDatavisprojects.png) \
