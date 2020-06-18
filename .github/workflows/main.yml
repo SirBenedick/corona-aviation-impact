@@ -27,5 +27,13 @@ jobs:
       run: npm install
     
     # Runs a single command using the runners shell
+    - name: configure email
+      run: git config --global user.email "deploy@github.com"
+    
+    # Runs a single command using the runners shell
+    - name: configure user
+      run: git config --global user.name "ci-actions"
+    
+    # Runs a single command using the runners shell
     - name: deploy
       run: npm run deploy
