@@ -1,25 +1,15 @@
 <template>
   <div id="app">
     <section class="fullpage">
-      <el-row 
-        type="flex"
-        class="heading"
-      >
+      <el-row type="flex" class="heading">
         <el-col class="head_label">
-          <h1 style="font-size: 30px">
-            How have the limitations of the SARS-CoV-2 virus affected global air traffic?
-          </h1>
+          <h1
+            style="font-size: 30px"
+          >How have the limitations of the SARS-CoV-2 virus affected global air traffic?</h1>
         </el-col>
       </el-row>
-      <el-row
-        class="switcher_country_wrapper"
-        type="flex"
-      >
-        <el-col
-          :span="12"
-          
-          align="center"
-        >
+      <el-row class="switcher_country_wrapper" type="flex">
+        <el-col :span="12" align="center">
           <el-switch
             v-model="toogleTypeOfFlights"
             active-color="#13ce66"
@@ -30,30 +20,20 @@
             inactive-text="domestic"
             class="switcher"
           />
-          <el-tooltip
-            effect="light"
-            placement="top"
-          >
-            <div
-              slot="content"
-              style="width: 400px;"
-            >
+          <el-tooltip effect="light" placement="top">
+            <div slot="content" style="width: 400px;">
               This heatmap visualizes the change in the number of flights that accrued 2020 compared to 2019.
-              The y-axis of the heatmap lists the countries which are displayed. On the x-axis, the month is shown. 
+              The y-axis of the heatmap lists the countries which are displayed. On the x-axis, the month is shown.
               The switch above the heatmap allows you to switch from international to domestic flights.
               A flight is counted as international when the departing airport is within the country and the arriving airport outside of it. Domestic flights depart and arrive within the selected country.
-              Below the heatmap, you can see a legend describing what value ranges the colors in the heatmap represent. If a cell has a blue shade it means that the aviation traffic (domestic or international depending on the switch) has increased in 2020 compared to 2019. If a cell has a red shade the traffic has decreased.<br>
-              The data was taken from the <a
-                href="https://opensky-network.org"
-                target="_blank"
-              >The OpenSky Network</a> community which is a community-driven network that collects and provides data for research and academic purposes.
+              Below the heatmap, you can see a legend describing what value ranges the colors in the heatmap represent. If a cell has a blue shade it means that the aviation traffic (domestic or international depending on the switch) has increased in 2020 compared to 2019. If a cell has a red shade the traffic has decreased.
+              <br />The data was taken from the
+              <a href="https://opensky-network.org" target="_blank">The OpenSky Network</a> community which is a community-driven network that collects and provides data for research and academic purposes.
             </div>
             <i class="el-icon-question" />
           </el-tooltip>
         </el-col>
-        <el-col
-          :span="12"
-        >
+        <el-col :span="12">
           <SelectedCountryTitle
             :country-name="selectedCountry"
             :country-code="selectedCountryCode"
@@ -85,19 +65,11 @@
         </el-col>
       </el-row>
     </section>
-    <a 
-      class="smooth_link"     
-      href="#highlights"
-      v-smooth-scroll
-    >
-      <div class="arrow" /></a>
+    <a class="smooth_link" href="#highlights" v-smooth-scroll>
+      <div class="arrow" />
+    </a>
     <section class="documentation">
-      <h1
-        class="highlights_heading "
-        id="highlights"
-      >
-        HIGHLIGHTS
-      </h1>
+      <h1 class="highlights_heading" id="highlights">HIGHLIGHTS</h1>
       <HighlightChinaRight :selected-country="setSelectedCountry" />
       <HighlightIcelandLeft :selected-country="setSelectedCountry" />
       <HighlightItalyRight :selected-country="setSelectedCountry" />
@@ -135,7 +107,7 @@ export default {
     HighlightAustriaLeft,
     HighlightJapanRight,
     HighlightSwedenLeft,
-    HighlightUSARight,
+    HighlightUSARight
   },
   data() {
     return {
@@ -219,7 +191,7 @@ export default {
     setSelectedCountry(newCountry) {
       this.selectedCountry = newCountry.countryName;
       this.selectedCountryCode = newCountry.countryCode;
-      console.log(newCountry)
+      console.log(newCountry);
     }
   }
 };
@@ -243,11 +215,11 @@ body {
 
 .switcher {
   min-height: 100%;
-  margin-right:20px;
+  margin-right: 20px;
 }
 
 .switcher_country_wrapper {
-  margin-top:70px;
+  margin-top: 70px;
 }
 
 .diagram_wrap {
@@ -255,7 +227,6 @@ body {
 }
 
 .head_label {
-  height: 80px;
   text-align: center;
   width: 70%;
   margin-left: auto;
@@ -269,13 +240,12 @@ body {
 }
 
 h1 {
-  color:#282828;
+  color: #282828;
 }
 
 .heading {
   text-align: center;
-  background-color:  	#282828;
-
+  background-color: #282828;
 }
 
 .fullpage {
@@ -284,8 +254,8 @@ h1 {
 }
 
 .highlights_heading {
-  padding-top:40px;
-  padding-bottom:50px;
+  padding-top: 40px;
+  padding-bottom: 50px;
   text-align: center;
   font-size: 60px;
   letter-spacing: 12px;
@@ -293,9 +263,8 @@ h1 {
   margin-bottom: 0px;
 }
 
-
 .smooth_link {
-    position: absolute;
+  position: absolute;
   left: 50%;
   bottom: 20px;
 }
@@ -341,5 +310,4 @@ div.arrow:hover::before {
   border-color: orange;
   transform: scale(0.8);
 }
-
 </style>
