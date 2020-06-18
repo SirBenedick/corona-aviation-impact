@@ -3,7 +3,7 @@
     <div class="item left">
       <div class="left-content">
         <h1 class="image-title">
-          USA USA USA USA USA
+          USA
         </h1>
         <img
           src="@/assets/usa.png"
