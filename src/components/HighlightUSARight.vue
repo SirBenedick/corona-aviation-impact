@@ -15,7 +15,8 @@
       <div class="right-content">
         <h1>USA</h1>
         <p>
-          Die USA haben den Flugverkehr erst ein paar Wochen nach anderen Ländern ihren Flugverkehr eingeschränkt. Man kann sehen, dass bei Woche 11 bis 12 die internationalen Flüge stark abnehmen, wenn die ersten Coronafälle in der USA registriert wurden. Die internationalen Flüge haben in der USA wurden jedoch nicht komplett eingestellt. Bei den Inlandflügen hat man bei den USA nur geringe Abweichungen zum Vorjahr. Beide Graphen laufen hier, wie auch bei anderen Ländern, fast Parallel zu den weltweiten Zahlen.
+            The USA has only restricted air traffic to other countries a few weeks ago. One can see that at week 11 to 12, international flights decrease sharply when the first corona cases are registered in the USA. The international flights have been discontinued in the USA but not completely. In terms of domestic flights, there were only minor deviations from the previous year in the USA. Both graphs run here, as in other countries, almost parallel to the global figures.
+
         </p>
         <a 
           href="#app"

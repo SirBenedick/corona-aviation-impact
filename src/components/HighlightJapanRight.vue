@@ -18,8 +18,7 @@
       <div class="right-content">
         <h1>Japan</h1>
         <p>
-          Bei den Flugzahlen von Japan kann man erkennen, dass der internationale Flugverkehr zum weltweiten Lockdown einbricht. Nur bei Woche 9-11 gibt es eine kleine Abweichung. Die Inlandflüge haben jedoch erst 1 Monat später abgenommen, als die registrierten Coronafälle stark gestiegen waren.   
-        </p>
+When you look at Japan's flight figures, you can see that international air traffic is collapsing into a worldwide lockdown. Only week 9-11 shows a small deviation. However, domestic flights did not decrease until 1 month later, when the registered corona falls had increased sharply.        </p>
         <a 
           href="#app"
           v-smooth-scroll
