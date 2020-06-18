@@ -10,6 +10,16 @@
           The spike in domestic traffic accures shortly before the worldwide increase in avaiation traffic change.
           This could be due to Iceland being on of the first countries effected by the SARS-CoV-2 virus.
         </p>
+        <a 
+          href="#app"
+          v-smooth-scroll
+        >
+          <el-button
+            @click="changeCountry()"
+          >
+            SEE IN DIAGRAM
+          </el-button>
+        </a>
       </div>
     </div>
     <div class="item right-cl">
@@ -28,12 +38,22 @@
 
 <script>
 export default {
-  props: {},
+  props: {
+    selectedCountry: {type: Function},
+  },
   data() {
     return {};
   },
-  methods: {},
-  mounted() {}
+  methods: {
+    changeCountry() {
+      this.selectedCountry( 
+        {
+          countryName: "Iceland",
+          countryCode: "IS"
+
+        })
+    }
+  },
 };
 </script>
 

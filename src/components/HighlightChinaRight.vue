@@ -22,6 +22,16 @@
           Average. One could speculate that it is because nobody wants to go to China anymore, since the origin of the pandemic took place there and the
           pandemic is still underway worldwide.
         </p>
+        <a 
+          href="#app"
+          v-smooth-scroll
+        >
+          <el-button
+            @click="changeCountry()"
+          >
+            SEE IN DIAGRAM
+          </el-button>
+        </a>
       </div>
     </div>
   </div>
@@ -29,11 +39,22 @@
 
 <script>
 export default {
-  props: {},
+  props: {
+    selectedCountry: {type: Function},
+  },
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    changeCountry() {
+      this.selectedCountry( 
+        {
+          countryName: "China",
+          countryCode: "CN"
+
+        })
+    }
+  },
   mounted() {}
 };
 </script>

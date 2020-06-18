@@ -20,6 +20,16 @@
           decreased a few days earlier. However, it was announced that it was not an absolute ban and, among other things, flights in proven
           working conditions and emergencies are allowed, which explains the slight increase after the break-in. The national quarantine was lifted on the 18th of May (W21).
         </p>
+        <a 
+          href="#app"
+          v-smooth-scroll
+        >
+          <el-button
+            @click="changeCountry()"
+          >
+            SEE IN DIAGRAM
+          </el-button>
+        </a>
       </div>
     </div>
   </div>
@@ -27,11 +37,22 @@
 
 <script>
 export default {
-  props: {},
+  props: {
+    selectedCountry: {type: Function},
+  },
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    changeCountry() {
+      this.selectedCountry( 
+        {
+          countryName: "Italy",
+          countryCode: "IT"
+
+        })
+    }
+  },
   mounted() {}
 };
 </script>

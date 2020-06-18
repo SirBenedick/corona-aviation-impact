@@ -7,6 +7,16 @@
           Already on 01st May 2020, the measures concerning leisure sports in Austria were relaxed. This also included gliding,
           which is why domestic flights in Austria have increased enormously.
         </p>
+        <a 
+          href="#app"
+          v-smooth-scroll
+        >
+          <el-button
+            @click="changeCountry()"
+          >
+            SEE IN DIAGRAM
+          </el-button>
+        </a>
       </div>
     </div>
     <div class="item right-cl">
@@ -25,11 +35,22 @@
 
 <script>
 export default {
-  props: {},
+  props: {
+    selectedCountry: {type: Function},
+  },
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    changeCountry() {
+      this.selectedCountry( 
+        {
+          countryName: "Austria",
+          countryCode: "AT"
+
+        })
+    }
+  },
   mounted() {}
 };
 </script>

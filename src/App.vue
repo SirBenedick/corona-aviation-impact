@@ -34,13 +34,19 @@
             effect="light"
             placement="top"
           >
-            <div slot="content" style="width: 400px;">
+            <div
+              slot="content"
+              style="width: 400px;"
+            >
               This heatmap visualizes the change in the number of flights that accrued 2020 compared to 2019.
               The y-axis of the heatmap lists the countries which are displayed. On the x-axis, the month is shown. 
               The switch above the heatmap allows you to switch from international to domestic flights.
               A flight is counted as international when the departing airport is within the country and the arriving airport outside of it. Domestic flights depart and arrive within the selected country.
-              Below the heatmap, you can see a legend describing what value ranges the colors in the heatmap represent. If a cell has a blue shade it means that the aviation traffic (domestic or international depending on the switch) has increased in 2020 compared to 2019. If a cell has a red shade the traffic has decreased.<br />
-              The data was taken from the <a href="https://opensky-network.org" target="_blank">The OpenSky Network</a> community which is a community-driven network that collects and provides data for research and academic purposes.
+              Below the heatmap, you can see a legend describing what value ranges the colors in the heatmap represent. If a cell has a blue shade it means that the aviation traffic (domestic or international depending on the switch) has increased in 2020 compared to 2019. If a cell has a red shade the traffic has decreased.<br>
+              The data was taken from the <a
+                href="https://opensky-network.org"
+                target="_blank"
+              >The OpenSky Network</a> community which is a community-driven network that collects and provides data for research and academic purposes.
             </div>
             <i class="el-icon-question" />
           </el-tooltip>
@@ -92,13 +98,13 @@
       >
         HIGHLIGHTS
       </h1>
-      <HighlightChinaRight />
-      <HighlightIcelandLeft />
-      <HighlightItalyRight />
-      <HighlightAustriaLeft />
-      <HighlightJapanRight />
-      <HighlightSwedenLeft />
-      <HighlightUSARight />
+      <HighlightChinaRight :selected-country="setSelectedCountry" />
+      <HighlightIcelandLeft :selected-country="setSelectedCountry" />
+      <HighlightItalyRight :selected-country="setSelectedCountry" />
+      <HighlightAustriaLeft :selected-country="setSelectedCountry" />
+      <HighlightJapanRight :selected-country="setSelectedCountry" />
+      <HighlightSwedenLeft :selected-country="setSelectedCountry" />
+      <HighlightUSARight :selected-country="setSelectedCountry" />
     </section>
   </div>
 </template>
@@ -213,6 +219,7 @@ export default {
     setSelectedCountry(newCountry) {
       this.selectedCountry = newCountry.countryName;
       this.selectedCountryCode = newCountry.countryCode;
+      console.log(newCountry)
     }
   }
 };

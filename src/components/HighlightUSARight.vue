@@ -24,6 +24,16 @@
           aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
           sanctus est Lorem ipsum dolor sit amet. 
         </p>
+        <a 
+          href="#app"
+          v-smooth-scroll
+        >
+          <el-button
+            @click="changeCountry()"
+          >
+            SEE IN DIAGRAM
+          </el-button>
+        </a>
       </div>
     </div>
   </div>
@@ -31,11 +41,22 @@
 
 <script>
 export default {
-  props: {},
+  props: {
+    selectedCountry: {type: Function},
+  },
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    changeCountry() {
+      this.selectedCountry( 
+        {
+          countryName: "USA",
+          countryCode: "US"
+
+        })
+    }
+  },
   mounted() {}
 };
 </script>
