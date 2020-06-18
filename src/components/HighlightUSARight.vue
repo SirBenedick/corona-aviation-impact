@@ -13,16 +13,9 @@
     </div>
     <div class="item right">
       <div class="right-content">
-        <h1>USA USA USA USA</h1>
+        <h1>USA</h1>
         <p>
-          USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA 
-          USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA
-          USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA USA 
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 
-          aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-          sanctus est Lorem ipsum dolor sit amet. 
+          Die USA haben den Flugverkehr erst ein paar Wochen nach anderen Ländern ihren Flugverkehr eingeschränkt. Man kann sehen, dass bei Woche 11 bis 12 die internationalen Flüge stark abnehmen, wenn die ersten Coronafälle in der USA registriert wurden. Die internationalen Flüge haben in der USA wurden jedoch nicht komplett eingestellt. Bei den Inlandflügen hat man bei den USA nur geringe Abweichungen zum Vorjahr. Beide Graphen laufen hier, wie auch bei anderen Ländern, fast Parallel zu den weltweiten Zahlen.
         </p>
         <a 
           href="#app"
