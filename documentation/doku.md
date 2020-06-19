@@ -34,7 +34,7 @@ Hinaus entschieden wir uns für das Front-End Framework *Vue*.
 # Daten / Auswertung / Prozess
 
 ## Daten
-Unsere Datenquellen waren die Flugdaten des OpenSky Networks und die Coronadaten des Offenen Datenportals der EU. \
+Unsere Datenquellen waren die Flugdaten des OpenSky Networks und die Coronadaten des Offenen Datenportals der EU.
 Das OpenSky Network ist ein Unternehmen in der Schweiz, die Flugdaten aufzeichnen. Die Flugdaten werden durch ca. 1000 Sensoren aufgezeichnet, die weltweit verstreut sind. Die meisten dieser 1000 Sensoren befinden sich in Europa und den USA.
 Sie stellten aufgrund des Hohen Interesses — ausgelöst durch die Pandemie — einen bereinigten Datensatz öffentlich zur Verfügung. Dieser Datensatz enthielt allerdings nicht den Start und das Ziel der Flugzeuge.
 Deshalb kontaktierten wir sie und baten um den vollständigen Datensatz, der uns durch den Rahmen eines Hochschulprojektes bereitgestellt wurde. \
@@ -52,11 +52,10 @@ Damit wir auf unserer Website aus Gründen der Perfomanz nur eine Datei laden wo
 Da jedoch viele Daten für uns unbrauchbar waren, mussten wir zunächst die Datensätze bereinigen und haben 
 danach die für uns relevanten Daten, sowhohl die des Flugverkehrs, als auch der Corona Daten in ein JSON importiert. \
 \
- ![Screenshot vom JSON](./img/JSON_screenshot.png) \
-\
+ ![Screenshot vom JSON](./img/JSON_screenshot.png) 
 
 # Prototyp / Ergebnisse
-## Visualisierung
+## Entstehung des Prototypen
 __Heat Map__ \
 Um zu entscheiden, welche Visualisierung sich für unsere Flugdaten eigneten ließen wir uns von <a href="https://datavizproject.com/" target="_blank">datavisprojects</a> inspirieren. Dabei
 sind wir auf eine radiale Heat Map gestoßen. \
@@ -64,8 +63,9 @@ sind wir auf eine radiale Heat Map gestoßen. \
 ![Alt Text](./img/radialheatMapDatavisprojects.png) \
 \
 Da sich bei Länder und Monaten um nominale Merkmale und bei der Anzahl der Flieger um ein quantitatives Merkmal handelt, bot sich eine Heat Map an. Zusätzlich 
-inspirierten uns die Punkte in den eizelnen Feldern Corona Events anzeigen zu lassen, um den Zusammenhang zwischen dem Einbruch des Flugverkehrs und dem in Kraft treten von 
-Kontaktbeschränkungen zu untersuchen. Des Weiteren eignet sich eine radiala Heat Map gut um einzelne Länder und Monate miteinander zu vergleichen. \
+inspirierten uns die Punkte in den einzelnen Feldern bestimmt Corona Events, wie beispielsweise die Schließung der amerikanischen Grenzen, anzeigen zu lassen. Diese
+Corona Events sollten den Zusammenhang zwischen dem Einbruch des Flugverkehrs und dem in Kraft treten von Kontaktbeschränkungen untersuchen. Des Weiteren eignet 
+sich eine radiala Heat Map gut um einzelne Länder und Monate miteinander zu vergleichen. \
 Abb. XY zeigt unsere erste Version eines datengestützten Prototypen. \
 \
 ![radiale Heat Map Version 1](./img/radial_prototyp_datengestuetzt.png) \
@@ -79,23 +79,47 @@ den gleichen Farbton lassen sich Gemeinsamkeiten beim Vergeleich mehrerer Lände
 ![Linendiagramme der Flugdaten und der Coronadaten](./img/liniendiagramme.png) \
 \
 __Liniendiagramm der Flugdaten__ \
-In einem Linendiagramm wollten wir ermöglichen den Flugverkehr eines bestimmten Landes sowohl mit dem inländischen als auch mit dem weltwiten Flugverkehr zu vergleichen. Um einen 
-zeitlichen Verlauf mit mehreren quantitativen Daten zu visualisieren bot sich ein Linendiagramm an. Das Auswählen eines bestimmten Landes in der Heat Map sollte eine Detail Ansicht
-im Liniendiagramm ermöglichen. Um starke Ausreißer an einzelnen Tagen zu vermeiden, haben wir ein gleitendes Mittel von drei Tagen für die Berechnung der Kurve verwendet. Dies hatte
+In einem Linendiagramm wollten wir ermöglichen den Flugverkehr eines bestimmten Landes sowohl mit dem inländischen als auch mit dem weltweiten Flugverkehr zu vergleichen. Um einen 
+zeitlichen Verlauf mit mehreren quantitativen Daten zu visualisieren bot sich ein Linendiagramm an. Um starke Ausreißer an einzelnen Tagen zu vermeiden, haben wir ein gleitendes Mittel von drei Tagen für die Berechnung der Kurve verwendet. Dies hatte
 den Nachteil, dass beipielsweise ein Wochenende im Jahr 2020 mit der Mitte der Woche des Jahres 2019 verglichen wird, was die Ergbnisse verfälscht hätte. Deshalb entschieden
 wir uns ein gleitendes Mittel aus sieben Tagen zu verweden und so die Kalender Wochen der beine Jahre miteinander zu vergleichen um den Antieg bzw. Einbruch des Flugverkehrs
-zum Vorjahr zu berechnen. \
+zum Vorjahr zu berechnen.
 
 __Liniendiagramm der Corona Daten__ \
 Unter dem Liniendiagramm der Flugdaten visualisierten wir die Corona Daten ebenfalls in einem Liniendiagramm. Durch die äquivalente zeitliche Achse kann so im zeitlichen Verlauf
 der Zusammenhang zwischen dem Einbrechen des Flugverkehrs und dem steigen der positiven Corona Fälle beobachtet werden.
 
 ## Prototyp
-![finales Dashboard](./img/dashboard.png) \
+![finales Dashboard](./img/dashboard.png) 
 \
+\
+Den __Prototypen__ können Sie hier __live testen__: <a href="https://sirbenedick.github.io/corona-aviation-impact/">Corona Flugverkehr</a>
+\
+\
+In unserem finalen Prototyp befindet sich die — jetzt lineare — Heat Map auf der linken Seite. Auf einem Schalter überhalb der Heat Map kann man ein Wechsel der Ansicht
+zwischen dem inländischen und internationalen Flugverkehr anstoßen. Hält man über ein Feld, wird ein beschreibender Text angezeigt. Dieser erläutert, ob es 
+im gewählten Monat einen Anstieg oder Einbruch des Flugverkehrs, verglichen mit dem Vorjahr, gegeben hat. Durch das Auswählen eines Feldes in der Heat Map bekommt man eine 
+detaillierte Darstellung im rechten Teil des Prototypen für dieses Land. \
+\
+In der Visualisierung im rechten Teil des Prototypen kann der inländische und internationale Flugverkehr eines Landes mit dem weltweiten Flugverkehr verglichen werden.
+Hält man über das Liniendiagramm wird sowohl der genaue Tag innerhalb einer Woche angezeigt als auch die konkreten Veränderungen zum Vorjahr angezeigt. \
+\
+Unter dem Liniendiagrmm des Flugverkehrs findet sich eine Visualiserung der positiv auf Covid-19 getesteten Personen. Durch die äquivalente Zeitachse kann der Flugverkehr
+mit dem Verlauf von Covid-19 verglichen werden.
 
 ## Implementierung
-- Implementierung: Wie haben Sie die Visualisierung umgesetzt? Welche Tools haben Sie für welche Schritte eingesetzt? Wieso?
+Für die Umsetzung der Visualisierung bevorzugten wir ein JavaScript-basiertes Tool, da wir unsere Visualisierung auf einer Website bereitstellen wollten. 
+Bei der Wahl der Tools kamen also D3.js und Chart.js in die nähere Auswahl. Mit Chart.js lassen sich einfache Visualisierungen einfach umsetzten. Allerdings bietet
+Chart.js keine Interaktion, weshalb es für unser Projekt nicht geeignet war. Wir entschieden und also für D3.js. Dieses bietet den Vorteil, dass sich wohl komplexe
+als auch interaktive Visualisierungen umsetzten lassen. \
+\
+Die Schwierigkeit an D3.js war die steile Lernkurve. Für die Auseinandersetzung mit D3.js wollten wir ein bestehendes Diagramm nehmen und es nach unseren Bedürfnisse anpassen.
+Dabei stellte sich heraus, dass d3.js einige Versionen hat, was dies verhinderte. Zusätzlich hat D3.js keine einheitliche Dokumentation, was die Implementierung zusätzlich
+erschwerte. Deshalb haben wir uns mit der Syntax von D3.js im Detail auseinandergesetzt, um unsere Visualisierung zu erstellen. \
+\
+Da wir unser Ergebnis auf einer Website bereitstellen wollten, entschieden wir uns für ein Web-Framework, dass das iterative Umsetzen eines Prototypen erleichtert.
+Hier fiel unsere Entscheidung auf das ebenfalls auf JavaScript basierte Framework Vue.js. Aufgrund der hohen Flexibilität ließ sich diese gut mit D3.js kombinieren. 
+Darüber hinaus hatten wir in unserem Team bereits Erfahrung mit _Element UI_, dass mit Vue.js die Gestaltung des Layouts ermöglichte.
 
 # Erkenntnisse
 
