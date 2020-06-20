@@ -9,6 +9,10 @@
           src="@/assets/italy.png"
           class="image"
         >
+        <img
+          src="@/assets/italy-corona.png"
+          class="image"
+        >
       </div>
     </div>
     <div class="item right">

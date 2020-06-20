@@ -9,6 +9,10 @@
           src="@/assets/china.png"
           class="image"
         >
+        <img
+          src="@/assets/china-corona.png"
+          class="image"
+        >
       </div>
     </div>
     <div class="item right">
@@ -19,8 +23,8 @@
           air traffic had slumped significantly a few weeks earlier. Domestic air traffic, however, has relatively quickly returned to moderate
           increased. The rise begins with the peak of newly infected persons. When the number of newly infected has dropped sharply,
           domestic air traffic increased again. In addition, international air traffic is once again a bit below the worldwide
-          Average. One could speculate that it is because nobody wants to go to China anymore, since the origin of the pandemic took place there and the
-          pandemic is still underway worldwide.
+          Average. One could speculate that it is because nobody wants to go to China anymore since the origin of the pandemic took place there and the
+          pandemic is still advancing worldwide.
         </p>
         <a 
           href="#app"

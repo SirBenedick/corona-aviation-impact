@@ -4,7 +4,7 @@
       <el-col align="middle">
         <div
           class="click-cell-hint"
-        >Click a cell to select the coresponding country for the charts on the right</div>
+        >Select a cell to view the countries data in more detail</div>
         <div id="heatmap-diagram" />
       </el-col>
       <el-col align="middle">
