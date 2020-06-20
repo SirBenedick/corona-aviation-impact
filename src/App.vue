@@ -78,6 +78,7 @@
       <HighlightJapanRight :selected-country="setSelectedCountry" />
       <HighlightSwedenLeft :selected-country="setSelectedCountry" />
       <HighlightUSARight :selected-country="setSelectedCountry" />
+      <HighlightBrazilLeft :selected-country="setSelectedCountry" />
     </section>
   </div>
 </template>
@@ -94,6 +95,7 @@ import HighlightAustriaLeft from "./components/HighlightAustriaLeft.vue";
 import HighlightJapanRight from "./components/HighlightJapanRight.vue";
 import HighlightSwedenLeft from "./components/HighlightSwedenLeft.vue";
 import HighlightUSARight from "./components/HighlightUSARight.vue";
+import HighlightBrazilLeft from "./components/HighlightBrazilLeft.vue";
 
 export default {
   name: "App",
@@ -108,7 +110,8 @@ export default {
     HighlightAustriaLeft,
     HighlightJapanRight,
     HighlightSwedenLeft,
-    HighlightUSARight
+    HighlightUSARight,
+    HighlightBrazilLeft
   },
   data() {
     return {
