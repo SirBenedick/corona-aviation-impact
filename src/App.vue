@@ -195,7 +195,6 @@ export default {
     setSelectedCountry(newCountry) {
       this.selectedCountry = newCountry.countryName;
       this.selectedCountryCode = newCountry.countryCode;
-      console.log(newCountry);
     }
   }
 };

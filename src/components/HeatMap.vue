@@ -32,9 +32,7 @@ export default {
     selectedCountries: {
       required: true
     },
-    countryName: {
-      required: true
-    }
+    countryName: { default: "Germany", type: String, required: true },
   },
   data() {
     return {
@@ -46,6 +44,15 @@ export default {
   watch: {
     typeOfFlights: function() {
       this.createHeatmap();
+    },
+    countryName: function (){
+      // Highlight Heatmap country label
+      d3.selectAll(`svg>g>g>.tick>text`).style("font-weight", "normal");
+
+      const textLabelOfCountry = d3.selectAll(
+        `g>.tick>#${this.countryName.toLowerCase().replace(" ", "-")}`
+      );
+      textLabelOfCountry.style("font-weight", "bold");
     }
   },
   methods: {
@@ -199,12 +206,6 @@ export default {
             countryName: d.displayedCountryName,
             countryCode: d.countryCode
           });
-
-          svg.selectAll(`g>.tick>text`).style("font-weight", "normal");
-          const textLabelOfCountry = svg.selectAll(
-            `g>.tick>#${d.displayedCountryName.toLowerCase().replace(" ", "-")}`
-          );
-          textLabelOfCountry.style("font-weight", "bold");
         });
     }
   },
