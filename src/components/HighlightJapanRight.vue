@@ -4,7 +4,6 @@
       <div class="left-content">
         <h1 class="image-title">Japan</h1>
         <img src="@/assets/japan.png" class="image" />
-        <p align="center">Short description - what are the colors?</p>
       </div>
     </div>
     <div class="item right">

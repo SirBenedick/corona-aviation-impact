@@ -70,7 +70,7 @@
       <div class="arrow" />
     </a>
     <section class="documentation">
-      <h1 class="highlights_heading" id="highlights">HIGHLIGHTS</h1>
+      <h1 class="highlights_heading" id="highlights">INCIDENTS</h1>
       <HighlightChinaRight :selected-country="setSelectedCountry" />
       <HighlightIcelandLeft :selected-country="setSelectedCountry" />
       <HighlightItalyRight :selected-country="setSelectedCountry" />
