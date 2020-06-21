@@ -3,7 +3,9 @@
     <section class="fullpage">
       <el-row type="flex" class="heading">
         <el-col class="head_label">
-          <h1 style="font-size: 30px">SARS-CoV-2's impact on aviation traffic</h1>
+          <h1
+            style="font-size: 30px"
+          >How have SARS-CoV-2's limitations impacted global aviation traffic?</h1>
         </el-col>
       </el-row>
       <el-row class="switcher_country_wrapper" type="flex">
