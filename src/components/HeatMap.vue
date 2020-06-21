@@ -2,9 +2,7 @@
   <div>
     <el-row>
       <el-col align="middle">
-        <div
-          class="click-cell-hint"
-        >Select a cell to view the countries data in more detail</div>
+        <div class="click-cell-hint">Select a cell to view the country's data in more detail</div>
         <div id="heatmap-diagram" />
       </el-col>
       <el-col align="middle">
@@ -32,7 +30,7 @@ export default {
     selectedCountries: {
       required: true
     },
-    countryName: { default: "Germany", type: String, required: true },
+    countryName: { default: "Germany", type: String, required: true }
   },
   data() {
     return {
@@ -45,7 +43,7 @@ export default {
     typeOfFlights: function() {
       this.createHeatmap();
     },
-    countryName: function (){
+    countryName: function() {
       // Highlight Heatmap country label
       d3.selectAll(`svg>g>g>.tick>text`).style("font-weight", "normal");
 

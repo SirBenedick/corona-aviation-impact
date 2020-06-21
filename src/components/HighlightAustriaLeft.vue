@@ -4,30 +4,20 @@
       <div class="left-content-cl">
         <h1>Austria enjoys gliding</h1>
         <p>
-          Already on 01st May 2020, the measures concerning leisure sports in Austria were relaxed. This also included gliding,
-          which is why domestic flights in Austria have increased enormously.
+          Austria in generall does not have a lot of domestic flights due to the geographically small size of the country.
+          Already on 01st May 2020 (W18), the measures concerning leisure sports in Austria were relaxed.
+          This also includes gliding and small propeller planes. With people having a lot of spare time and the desire to pick up their hobbies again this
+          is why domestic flights in Austria may have increased enormously.
         </p>
-        <a 
-          href="#app"
-          v-smooth-scroll
-        >
-          <el-button
-            @click="changeCountry()"
-          >
-            SEE IN DIAGRAM
-          </el-button>
+        <a href="#app" v-smooth-scroll>
+          <el-button @click="changeCountry()">SEE IN DIAGRAM</el-button>
         </a>
       </div>
     </div>
     <div class="item right-cl">
       <div class="right-content-cl">
-        <h1 class="image-title-cl">
-          Austria
-        </h1>
-        <img
-          src="@/assets/austria.png"
-          class="image-cl"
-        >
+        <h1 class="image-title-cl">Austria</h1>
+        <img src="@/assets/austria.png" class="image-cl" />
       </div>
     </div>
   </div>
@@ -37,19 +27,17 @@
 <script>
 export default {
   props: {
-    selectedCountry: {type: Function},
+    selectedCountry: { type: Function }
   },
   data() {
     return {};
   },
   methods: {
     changeCountry() {
-      this.selectedCountry( 
-        {
-          countryName: "Austria",
-          countryCode: "AT"
-
-        })
+      this.selectedCountry({
+        countryName: "Austria",
+        countryCode: "AT"
+      });
     }
   },
   mounted() {}
@@ -62,11 +50,9 @@ export default {
   display: -webkit-flex;
   display: flex;
   border-bottom: solid 1px #282828;
-
 }
 .parent-cl > div {
   flex: 1;
-
 }
 
 .container-cl {
@@ -77,23 +63,19 @@ export default {
 }
 .item-cl {
   padding: 10px;
-
 }
-
 
 .left-cl {
   background-color: #282828;
 }
-
 
 .right-content-cl {
   margin: 30px;
 }
 
 .left-content-cl {
-    margin: 30px;
-    color:white;
-
+  margin: 30px;
+  color: white;
 }
 
 .left-content-cl > h1 {
@@ -104,5 +86,4 @@ export default {
 .image-cl {
   max-width: 100%;
 }
-
 </style>
