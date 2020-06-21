@@ -13,7 +13,7 @@
     </div>
     <div class="item right">
       <div class="right-content">
-        <h1>Usa with a late lockdown</h1>
+        <h1>USA with a late lockdown</h1>
         <p>
             The USA has only restricted air traffic to other countries a few weeks ago. One can see that at week 11 to 12, international flights decrease sharply when the first corona cases are registered in the USA. The international flights have been discontinued in the USA but not completely. In terms of domestic flights, there were only minor deviations from the previous year in the USA. Both graphs run here, as in other countries, almost parallel to the global figures.
 

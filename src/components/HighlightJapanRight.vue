@@ -9,9 +9,6 @@
           src="@/assets/japan.png"
           class="image"
         >
-        <p align="center">
-          Short description - what are the colors?
-        </p>
       </div>
     </div>
     <div class="item right">
