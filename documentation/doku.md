@@ -127,5 +127,21 @@ Darüber hinaus hatten wir in unserem Team bereits Erfahrung mit _Element UI_, d
 - Verknüpfen Sie diese mit Ihren Fragen / Hypothesen.
 
 # Fazit
-Reflexion: Haben Sie erreicht, was sie wollten? Ist Ihr Ergebnis hilfreich?
-- Ausblick: Welche weiteren Ideen haben Sie? Was könnten interessante nächste Schritte sein?
+Durch unseren Prototypen konnte gezeigt werden, wie sich der Verlauf des Flugverkehrs durch die
+Einschränkungen des Corona Virus geändert hat. Darüber hinaus konnte die Korrelation zwischen 
+dem Flugverkehr und dem Verlauf der Pandemie gezeigt werden. Durch die Skripts die unsere
+Daten bereinigen und bereitstellen, können wir jederzeit den Datensatz aktualisieren um auch
+zukünftig den Verlauf der Pandemie und des Flugverkehrs darzustellen.
+
+# Ausblick
+Der erste Schritt, den wir beim weiteren Ausbauen unseres Dashboards gehen würden, wäre das
+automatisierte Updated der Daten. Dies hätte den Vorteil dass wir unsere Sktipts nicht mehr manuell
+ausführen müssten. \
+\
+Darüber hinaus könnte man eine _Story Telling_ entwickeln, sodass die Highlights nicht einzeln statisch
+im Text sind. Diese sollen einerseits dynamisch sein, d. h. durch scrollen ändern sich diese
+automatisch und es muss nur noch ein Platz für sie reserviert werde. Der Benutzer sieht also aus
+seiner Sicht an der exaten Stelle unterschiedliche Visualisierungen, die die Highlights darstellen.
+Andererseits sollten diese Visualisierungen auch interaktiv sein, dass der Nutzer die Möglichkeit 
+hat die Daten zu explorieren.
+
