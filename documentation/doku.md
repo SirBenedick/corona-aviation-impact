@@ -79,10 +79,10 @@ den gleichen Farbton lassen sich Gemeinsamkeiten beim Vergleich mehrerer Länder
 ![Linendiagramme der Flugdaten und der Coronadaten](./img/liniendiagramme.png) \
 \
 __Liniendiagramm der Flugdaten__ \
-In einem Linendiagramm wollten wir ermöglichen den Flugverkehr eines bestimmten Landes sowohl mit dem inländischen als auch mit dem weltweiten Flugverkehr zu vergleichen. Um einen 
-zeitlichen Verlauf mit mehreren quantitativen Daten zu visualisieren bot sich ein Linendiagramm an. Um starke Ausreißer an einzelnen Tagen zu vermeiden, haben wir ein gleitendes Mittel von drei Tagen für die Berechnung der Kurve verwendet. Dies hatte
-den Nachteil, dass beipielsweise ein Wochenende im Jahr 2020 mit der Mitte der Woche des Jahres 2019 verglichen wird, was die Ergbnisse verfälscht hätte. Deshalb entschieden
-wir uns ein gleitendes Mittel aus sieben Tagen zu verweden und so die Kalender Wochen der beine Jahre miteinander zu vergleichen um den Antieg bzw. Einbruch des Flugverkehrs
+In einem Liniendiagramm wollten wir ermöglichen den Flugverkehr eines bestimmten Landes sowohl mit dem inländischen als auch mit dem weltweiten Flugverkehr zu vergleichen. Um einen 
+zeitlichen Verlauf mit mehreren quantitativen Daten zu visualisieren bot sich ein Liniendiagramm an. Um starke Ausreißer an einzelnen Tagen zu vermeiden, haben wir ein gleitendes Mittel von drei Tagen für die Berechnung der Kurve verwendet. Dies hatte
+den Nachteil, dass beispielsweise ein Wochenende im Jahr 2020 mit der Mitte der Woche des Jahres 2019 verglichen wird, was die Ergebnisse verfälscht hätte. Deshalb entschieden
+wir uns ein gleitendes Mittel aus sieben Tagen zu verwenden und so die Kalender Wochen der beine Jahre miteinander zu vergleichen um den Anstieg bzw. Einbruch des Flugverkehrs
 zum Vorjahr zu berechnen.
 
 __Liniendiagramm der Corona Daten__ \
@@ -96,15 +96,15 @@ der Zusammenhang zwischen dem Einbrechen des Flugverkehrs und dem steigen der po
 Den __Prototypen__ können Sie hier __live testen__: <a href="https://sirbenedick.github.io/corona-aviation-impact/">Corona Flugverkehr</a>
 \
 \
-In unserem finalen Prototyp befindet sich die — jetzt lineare — Heat Map auf der linken Seite. Auf einem Schalter überhalb der Heat Map kann man ein Wechsel der Ansicht
+In unserem finalen Prototyp befindet sich die — jetzt lineare — Heat Map auf der linken Seite. Auf einem Schalter oberhalb der Heat Map kann man ein Wechsel der Ansicht
 zwischen dem inländischen und internationalen Flugverkehr anstoßen. Hält man über ein Feld, wird ein beschreibender Text angezeigt. Dieser erläutert, ob es 
 im gewählten Monat einen Anstieg oder Einbruch des Flugverkehrs, verglichen mit dem Vorjahr, gegeben hat. Durch das Auswählen eines Feldes in der Heat Map bekommt man eine 
 detaillierte Darstellung im rechten Teil des Prototypen für dieses Land. \
 \
 In der Visualisierung im rechten Teil des Prototypen kann der inländische und internationale Flugverkehr eines Landes mit dem weltweiten Flugverkehr verglichen werden.
-Hält man über das Liniendiagramm wird sowohl der genaue Tag innerhalb einer Woche angezeigt als auch die konkreten Veränderungen zum Vorjahr angezeigt. \
+Hält man über das Liniendiagramm, wird sowohl der genaue Tag innerhalb einer Woche angezeigt, als auch die konkreten Veränderungen zum Vorjahr angezeigt. \
 \
-Unter dem Liniendiagrmm des Flugverkehrs findet sich eine Visualiserung der positiv auf Covid-19 getesteten Personen. Durch die äquivalente Zeitachse kann der Flugverkehr
+Unter dem Liniendiagramm des Flugverkehrs findet sich eine Visualisierung der positiv auf Covid-19 getesteten Personen. Durch die äquivalente Zeitachse kann der Flugverkehr
 mit dem Verlauf von Covid-19 verglichen werden.
 
 ## Implementierung
@@ -113,7 +113,7 @@ Bei der Wahl der Tools kamen also D3.js und Chart.js in die nähere Auswahl. Mit
 Chart.js keine Interaktion, weshalb es für unser Projekt nicht geeignet war. Wir entschieden und also für D3.js. Dieses bietet den Vorteil, dass sich wohl komplexe
 als auch interaktive Visualisierungen umsetzten lassen. \
 \
-Die Schwierigkeit an D3.js war die steile Lernkurve. Für die Auseinandersetzung mit D3.js wollten wir ein bestehendes Diagramm nehmen und es nach unseren Bedürfnisse anpassen.
+Die Schwierigkeit an D3.js war die steile Lernkurve. Für die Auseinandersetzung mit D3.js wollten wir ein bestehendes Diagramm nehmen und es nach unseren Bedürfnissen anpassen.
 Dabei stellte sich heraus, dass d3.js einige Versionen hat, was dies verhinderte. Zusätzlich hat D3.js keine einheitliche Dokumentation, was die Implementierung zusätzlich
 erschwerte. Deshalb haben wir uns mit der Syntax von D3.js im Detail auseinandergesetzt, um unsere Visualisierung zu erstellen. \
 \
@@ -148,13 +148,13 @@ zukünftig den Verlauf der Pandemie und des Flugverkehrs darzustellen.
 
 # Ausblick
 Der erste Schritt, den wir beim weiteren Ausbauen unseres Dashboards gehen würden, wäre das
-automatisierte Updated der Daten. Dies hätte den Vorteil dass wir unsere Sktipts nicht mehr manuell
+automatisierte Updated der Daten. Dies hätte den Vorteil, dass wir unsere Sktipts nicht mehr manuell
 ausführen müssten. \
 \
 Darüber hinaus könnte man eine _Story Telling_ entwickeln, sodass die Highlights nicht einzeln statisch
 im Text sind. Diese sollen einerseits dynamisch sein, d. h. durch scrollen ändern sich diese
 automatisch und es muss nur noch ein Platz für sie reserviert werde. Der Benutzer sieht also aus
-seiner Sicht an der exaten Stelle unterschiedliche Visualisierungen, die die Highlights darstellen.
+seiner Sicht an der exakten Stelle unterschiedliche Visualisierungen, die die Highlights darstellen.
 Andererseits sollten diese Visualisierungen auch interaktiv sein, dass der Nutzer die Möglichkeit 
 hat die Daten zu explorieren.
 
