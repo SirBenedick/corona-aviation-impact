@@ -75,7 +75,7 @@
       <h1 class="highlights_heading" id="highlights">INCIDENTS</h1>
       <div
         class="disclaimer"
-      >(These are observations and statements based on our limited knowledge. They may not reflect real world events or causations)</div>
+      >(These are observations and statements based on our limited knowledge. They may not reflect real world events or causation)</div>
       <HighlightChinaRight :selected-country="setSelectedCountry" />
       <HighlightIcelandLeft :selected-country="setSelectedCountry" />
       <HighlightItalyRight :selected-country="setSelectedCountry" />
