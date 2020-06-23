@@ -44,8 +44,8 @@ Das Offene Datenportal der EU stellt die weiltweiten Fälle der Corona Infektion
 ## Auswertung
 Die Flugdaten des OpenSky Networks fasst über 20 Billionen Datensätze, durch die wir uns erstmal durcharbeiten mussten. Schnell konnte man sehen, wie stark die 
 Flugzahlen in den letzten Wochen und Monaten abgenommen haben. Auf unseren Visualisierungen konnte man klar erkennen, dass die Flugzahlen zeitgleich mit dem Anstieg 
-der Coronafälle stark gefallen sind. [[Visualisierung]] Zusätzlich haben wir die Flugdaten von diesem Jahr mit den Flugdaten vom letzten Jahr vergleichen, damit wir 
-sicherstellen können, dass die Einbrüche der Flugzahlen mit dem Anstieg der Coronafälle zusammen hängen. [[Visualisierung]]
+der Coronafälle stark gefallen sind. Zusätzlich haben wir die Flugdaten von diesem Jahr mit den Flugdaten vom letzten Jahr vergleichen, damit wir 
+sicherstellen können, dass die Einbrüche der Flugzahlen mit dem Anstieg der Coronafälle zusammen hängen.
 
 ## Prozess
 Damit wir auf unserer Website aus Gründen der Perfomanz nur eine Datei laden wollten, haben wir uns dazu entschieden, die Daten in ein JSON zu exportieren. 
@@ -123,8 +123,21 @@ Darüber hinaus hatten wir in unserem Team bereits Erfahrung mit _Element UI_, d
 
 # Erkenntnisse
 
-- Was haben Sie herausgefunden? Können Sie ein/zwei Aussagen oder Stories hervorheben? Nutzen Sie hierzu Abbildungen, die Visualisierungen realer Daten zeigen, sei es aus der EDA-Phase oder mit Hilfe des finalen Prototypens.
-- Verknüpfen Sie diese mit Ihren Fragen / Hypothesen.
+Das Ziel unseres Prototypen war es, zu untersuchen, ob die Einschränkungen des Flugverkehrs eine positive Auswirkung auf die Ausbreitung von SARS-Cov-2 hatte. China war das erste Land, das den Flugverkehr stark eingeschränkt hat, dies lag natürlich daran, da in China das Virus ausgebrochen ist. Nach den Einschränkungen des Flugverkehrs haben auch die Neuinfektionen stark abgenommen.\
+\
+![China Diagramme](./img/China.png)
+\
+\
+Natürlich liegt dies nicht nur an den Einschränkungen des Flugverkehrs. Man kann hier jedoch sagen, dass diverse Vorkehrungen, die sich mit Social Distancing befassen, bei der Eindämmung der Pandemie geholfen haben. Dies kann man beispielsweise auch an den USA sehen. Bei den Diagrammen der USA kann man sehen, dass der Flugverkehr nur zum Teil eingestellt wurde.
+In den USA wird der Lockdown nicht so ernst genommen wie beispielsweise in China. Dies könnte ein Grund sein, warum die Neuinfektionen in den USA nur recht langsam abnehmen.
+\
+\
+![USA Diagramme](./img/USA.png)
+\
+\
+Während unseren Untersuchungen sind wir zudem auf die Flugzahlen von Österreich gestoßen. Die Inlandflüge von Österreich haben zunächst stark abgenommen. In den letzten Wochen jedoch sind diese wieder sehr stark angestiegen. Es gibt Wochen in denen es teilweise doppelt so viele Inlandflüge, wie im Jahr davor gibt. Bei näherer Recherche und durch Bekannte konnten wir dann erfahren, dass dieser Ausschlag der Flugzahlen durch viele Flüge mit Segelflugzeugen entstanden ist.\
+\
+![Innlandsflüge Austria](./img/Austria.png)
 
 # Fazit
 Durch unseren Prototypen konnte gezeigt werden, wie sich der Verlauf des Flugverkehrs durch die
