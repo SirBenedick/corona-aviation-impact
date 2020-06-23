@@ -99,7 +99,12 @@
           >EU Open Data Portal</a>.
           <!-- Start of WebFreeCounter Code -->
           <a href="https://www.webfreecounter.com/" target="_blank">
-            <img src="https://www.webfreecounter.com/hit.php?id=greapafo&nd=6&style=1" border="0" alt="hit counter">
+            <img src="https://www.webfreecounter.com/hit.php?id=geapafp&nd=6&style=1" border="0" alt="visitor counter" width="0px" height="0px">
+          </a>
+          <!-- End of WebFreeCounter Code -->
+          <!-- Start of WebFreeCounter Code -->
+          <a href="https://www.webfreecounter.com/" target="_blank">
+            <img src="https://www.webfreecounter.com/hit.php?id=guveapafq&nd=6&style=1" border="0" alt="hit counter"  width="0px" height="0px">
           </a>
           <!-- End of WebFreeCounter Code -->
         </div>
