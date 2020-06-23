@@ -67,8 +67,9 @@ danach die für uns relevanten Daten, sowohl die des Flugverkehrs, als auch der 
 ## Entstehung des Prototypen
 
 **Heat Map** \
-Um zu entscheiden, welche Visualisierung sich für unsere Flugdaten eigneten ließen wir uns von <a href="https://datavizproject.com/" target="_blank">Data Viz Project</a> inspirieren. Dabei
-sind wir auf eine radiale Heat Map gestoßen. \
+Um zu entscheiden, welche Visualisierung sich für unsere Flugdaten eigneten ließen wir uns von 
+[Data Viz Project](https://datavizproject.com/) inspirieren. 
+Dabei sind wir auf eine radiale Heat Map gestoßen. \
 \
 ![Alt Text](./img/radialheatMapDatavisprojects.png) \
 \
@@ -104,7 +105,7 @@ der Zusammenhang zwischen dem Einbrechen des Flugverkehrs und dem steigen der po
 ![finales Dashboard](./img/dashboard.png)
 \
 \
-Den **Prototypen** können Sie hier **live testen**: <a href="https://sirbenedick.github.io/corona-aviation-impact/">Corona Flugverkehr</a>
+Den **Prototypen** können Sie hier **live testen**: [Corona Flugverkehr](https://sirbenedick.github.io/corona-aviation-impact/)
 \
 \
 In unserem finalen Prototyp befindet sich die — jetzt lineare — Heat Map auf der linken Seite. Mit einem Schalter oberhalb der Heatmap kann man zwischen der Ansicht
