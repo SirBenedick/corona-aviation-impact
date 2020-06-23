@@ -158,10 +158,11 @@ export default {
         const change = Math.round((d.value2020 / d.value2019) * 100 - 100);
         tooltip
           .html(
-            `In <b>${d.month}</b> 2020 there was an </br>${
-              "change "
-            } of <b>${(change > 0 ? "+" : "") +
-              change}%</b> in aviation traffic</br> compared to <b>${
+            `In <b>${
+              d.month
+            }</b> 2020 there was an </br>${"change "} of <b>${(change > 0
+              ? "+"
+              : "") + change}%</b> in aviation traffic</br> compared to <b>${
               d.month
             }</b> 2019.`
           )

@@ -1,6 +1,6 @@
 <template>
   <div>
-    Corona infections
+    Daily Corona infections
     <el-tooltip effect="light" placement="top">
       <div slot="content" style="width: 500px;">
         The chart below shows the daily infection numbers for the selected country.

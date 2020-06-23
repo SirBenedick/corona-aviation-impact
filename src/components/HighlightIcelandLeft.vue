@@ -6,9 +6,9 @@
         <p>
           As Iceland is an island, there is very little domestic air traffic. In simple terms, if there usually are 5 flights
           in a day and then there are 25 in one day there is an increase of 400%. However, one can only speculate about the cause of the increase.
-          An Announcement of travel restrictions could trigger the urge to get home quickly when you have been somewhere else.
-          The spike in domestic traffic accures shortly before the worldwide increase in avaiation traffic change.
-          This could be due to Iceland being on of the first countries effected by the SARS-CoV-2 virus.
+          An announcement of travel restrictions could trigger the urge to get home quickly when you have been somewhere else.
+          The spike in domestic traffic is present shortly before the worldwide increase in avaiation traffic.
+          This could be due to Iceland being on of the first countries to be affected by the SARS-CoV-2 virus.
         </p>
         <a href="#app" v-smooth-scroll>
           <el-button @click="changeCountry()">SEE IN DIAGRAM</el-button>

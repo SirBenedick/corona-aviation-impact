@@ -9,7 +9,7 @@
     <div class="item right">
       <div class="right-content">
         <h1>Japan</h1>
-        <p>When you look at Japan's flight figures, you can see that international air traffic is collapsing into a worldwide lockdown. Only week 9-11 shows a small deviation. However, domestic flights did not decrease until 1 month later, when the registered corona cases had increased sharply.</p>
+        <p>When you look at Japan's flight figures, you can see that international air traffic is collapsing into a worldwide lockdown. Only weeks 9-11 show a small deviation. However, domestic flights did not decrease until 1 month later, when the registered corona cases had increased sharply.</p>
         <a href="#app" v-smooth-scroll>
           <el-button @click="changeCountry()">SEE IN DIAGRAM</el-button>
         </a>

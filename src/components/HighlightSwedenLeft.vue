@@ -3,7 +3,7 @@
     <div class="item left-cl">
       <div class="left-content-cl">
         <h1>Sweden with a different technique</h1>
-        <p>On the basis of the graph of Sweden, one can clearly see that international air traffic has been almost completely shut down for the time being. However, domestic flights continue to operate here, even if not to the same extent as before. This is due to the fact that in Sweden corona measures are more voluntary.</p>
+        <p>On the basis of the graph of Sweden, one can clearly see that international air traffic has been almost completely shut down for the time being. However, domestic flights continue to operate here, even if not to the same extent as before. This might be due to the fact that in Sweden corona measures are more voluntary.</p>
         <a href="#app" v-smooth-scroll>
           <el-button @click="changeCountry()">SEE IN DIAGRAM</el-button>
         </a>
