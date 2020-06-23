@@ -73,6 +73,9 @@
     </a>
     <section class="documentation">
       <h1 class="highlights_heading" id="highlights">INCIDENTS</h1>
+      <div
+        class="disclaimer"
+      >(These are observations and statements based on our limited knowledge. They may not reflect real world events or causations)</div>
       <HighlightChinaRight :selected-country="setSelectedCountry" />
       <HighlightIcelandLeft :selected-country="setSelectedCountry" />
       <HighlightItalyRight :selected-country="setSelectedCountry" />
@@ -99,12 +102,24 @@
           >EU Open Data Portal</a>.
           <!-- Start of WebFreeCounter Code -->
           <a href="https://www.webfreecounter.com/" target="_blank">
-            <img src="https://www.webfreecounter.com/hit.php?id=geapafp&nd=6&style=1" border="0" alt="visitor counter" width="0px" height="0px">
+            <img
+              src="https://www.webfreecounter.com/hit.php?id=geapafp&nd=6&style=1"
+              border="0"
+              alt="visitor counter"
+              width="0px"
+              height="0px"
+            />
           </a>
           <!-- End of WebFreeCounter Code -->
           <!-- Start of WebFreeCounter Code -->
           <a href="https://www.webfreecounter.com/" target="_blank">
-            <img src="https://www.webfreecounter.com/hit.php?id=guveapafq&nd=6&style=1" border="0" alt="hit counter"  width="0px" height="0px">
+            <img
+              src="https://www.webfreecounter.com/hit.php?id=guveapafq&nd=6&style=1"
+              border="0"
+              alt="hit counter"
+              width="0px"
+              height="0px"
+            />
           </a>
           <!-- End of WebFreeCounter Code -->
         </div>
@@ -288,12 +303,20 @@ h1 {
 
 .highlights_heading {
   padding-top: 40px;
-  padding-bottom: 50px;
+  padding-bottom: 5px;
   text-align: center;
   font-size: 60px;
   letter-spacing: 12px;
-  border-bottom: solid 1px #282828;
   margin-bottom: 0px;
+}
+
+.disclaimer {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  border-bottom: solid 1px #282828;
+  padding-top: 50px;
+  padding-bottom: 10px;
 }
 
 .smooth_link {
