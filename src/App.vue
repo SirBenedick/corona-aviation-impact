@@ -82,6 +82,16 @@
       <HighlightUSARight :selected-country="setSelectedCountry" />
       <HighlightBrazilLeft :selected-country="setSelectedCountry" />
     </section>
+    <el-footer>
+      <div class="footer">
+        Flight Data provided by
+        <a
+          id="opensky-link"
+          target="_blank"
+          href="http://www.opensky-network.org"
+        >The OpenSky Network</a>
+      </div>
+    </el-footer>
   </div>
 </template>
 
@@ -314,5 +324,23 @@ div.arrow:hover::after {
 div.arrow:hover::before {
   border-color: orange;
   transform: scale(0.8);
+}
+
+.el-footer {
+  background-color: #282828;
+}
+
+.footer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+}
+
+#opensky-link {
+  color: white;
+  margin-left: 5px;
 }
 </style>
