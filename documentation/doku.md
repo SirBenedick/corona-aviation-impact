@@ -7,7 +7,7 @@ des Kurses 'Grundlagen der Datenvisualisierung' bei Herrn Prof. Dr. Till Nagel i
 Sommersemester 2020 an der Hochschule Mannheim stattgefunden hat.
 
 Die Corona Pandemie hat durch die Corona-Verordnungen zum Social Distancing und weiteren Einschränkungen geführt.
-Im Projekt _Corona Flugverkehr_ wird untersucht, welche Auswirkungen die Corona-Einschränkungen auf den weltweiten
+Im Projekt *Corona Flugverkehr* wird untersucht, welche Auswirkungen die Corona-Einschränkungen auf den weltweiten
 Flugverkehr haben und wie diese im Verhältnis der positiv auf Corona getestet Personen stehen.
 Die Daten des Flugverkehrs waren im Rahmen der Forschung frei zugänglich; die Zahlen der positiv auf Corona
 getesteten Personen werden vom Offenen Datenportal der EU bereitgestellt. Es konnte festgestellt
@@ -31,10 +31,10 @@ darstellen soll. Des Weiteren zwei Liniendiagramme, die den Flugverkehr und die 
 darstellen sollen. \
 Diese Visualisierungen sollte dabei folgende Frage beantworten:
 
-######_Wie haben sich die Einschränkungen des SARS-CoV-2-Virus auf den weltweiten Flugverkehr ausgewirkt?_
+######*Wie haben sich die Einschränkungen des SARS-CoV-2-Virus auf den weltweiten Flugverkehr ausgewirkt?*
 
-Für die Umsetzung des Dashboards entschieden wir uns für _D3.js_, eine JavaScript Library zum Erstellen von Visualisierungen. Darüber
-hinaus entschieden wir uns für das Front-End Framework _Vue.js_.
+Für die Umsetzung des Dashboards entschieden wir uns für *D3.js*, eine JavaScript Library zum Erstellen von Visualisierungen. Darüber
+hinaus entschieden wir uns für das Front-End Framework *Vue.js*.
 
 # Daten / Auswertung / Prozess
 
@@ -129,7 +129,7 @@ erschwerte. Deshalb haben wir uns mit der Syntax von D3.js im Detail auseinander
 \
 Da wir unser Ergebnis auf einer Website bereitstellen wollten, entschieden wir uns für ein Web-Framework, dass das iterative Umsetzen eines Prototypen erleichtert.
 Hier fiel unsere Entscheidung auf das ebenfalls JavaScript basierte Framework Vue.js. Aufgrund der hohen Flexibilität ließ sich dieses gut mit D3.js kombinieren.
-Darüber hinaus hatten wir in unserem Team bereits Erfahrung mit _Element UI_, dass mit Vue.js die Gestaltung des Layouts ermöglichte.
+Darüber hinaus hatten wir in unserem Team bereits Erfahrung mit *Element UI*, dass mit Vue.js die Gestaltung des Layouts ermöglichte.
 
 # Erkenntnisse
 
@@ -163,7 +163,7 @@ Der erste Schritt, den wir beim weiteren Ausbauen unseres Dashboards gehen würd
 automatisierte Updated der Daten. Dies hätte den Vorteil, dass wir unsere Skripts nicht mehr manuell
 ausführen müssen. \
 \
-Darüber hinaus könnte man ein _Story Telling_ entwickeln, sodass die Highlights nicht einzeln statisch
+Darüber hinaus könnte man ein *Story Telling* entwickeln, sodass die Highlights nicht einzeln statisch
 im Text sind. Diese sollen einerseits dynamisch sein, d. h. durch scrollen ändern sich diese
 automatisch und es muss nur noch ein Platz für sie reserviert werden. Der Benutzer sieht also aus
 seiner Sicht an der exakten Stelle unterschiedliche Visualisierungen, die die Highlights darstellen.
