@@ -1,6 +1,6 @@
 <template>
   <div>
-    Air traffic comparison from 2019 to 2020
+    Air traffic comparison of 2020 and 2019
     <el-tooltip
       effect="light"
       placement="top"
