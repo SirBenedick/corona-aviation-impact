@@ -97,6 +97,11 @@
             href="https://data.europa.eu/euodp/de/data/dataset/covid-19-coronavirus-data"
             target="_blank"
           >EU Open Data Portal</a>.
+          <!-- Start of WebFreeCounter Code -->
+          <a href="https://www.webfreecounter.com/" target="_blank">
+            <img src="https://www.webfreecounter.com/hit.php?id=greapafo&nd=6&style=1" border="0" alt="hit counter">
+          </a>
+          <!-- End of WebFreeCounter Code -->
         </div>
       </div>
     </el-footer>
