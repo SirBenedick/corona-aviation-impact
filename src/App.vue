@@ -22,16 +22,16 @@
           />
           <el-tooltip effect="light" placement="top">
             <div slot="content" style="width: 400px;">
-              This heatmap visualizes the change in the number of flights that accrued 2020 compared to 2019.
+              This heatmap visualizes the change in the number of flights that occurred in 2020 compared to 2019.
               The y-axis of the heatmap lists the countries which are displayed. On the x-axis, the month is shown.
               The switch above the heatmap allows you to switch from international to domestic flights.
-              A flight is counted as international when the departing airport is within the country and the arriving airport outside of it. Domestic flights depart and arrive within the selected country.
-              Below the heatmap, you can see a legend describing what value ranges the colors in the heatmap represent. If a cell has a blue shade it means that the aviation traffic (domestic or international depending on the switch) has increased in 2020 compared to 2019. If a cell has a red shade the traffic has decreased.
+              A flight is counted as international when the departure airport is within the country and the arrival airport is outside of it. Domestic flights depart and arrive within the same country.
+              Below the heatmap, you can see a legend showing the value ranges the colors in the heatmap represent. If a cell has a blue shade it means that the aviation traffic (domestic or international depending on the switch) has increased in 2020 compared to 2019. If a cell has a red shade the traffic has decreased.
               <br />The data was taken from the
               <a
                 href="https://opensky-network.org"
                 target="_blank"
-              >The OpenSky Network</a> community which is a community-driven network that collects and provides data for research and academic purposes.
+              >The OpenSky Network</a> community which is a community-driven network that collects and provides flight-data for research and academic purposes.
             </div>
             <i class="el-icon-question" />
           </el-tooltip>
@@ -84,12 +84,20 @@
     </section>
     <el-footer>
       <div class="footer">
-        Flight Data provided by
-        <a
-          id="opensky-link"
-          target="_blank"
-          href="http://www.opensky-network.org"
-        >The OpenSky Network</a>
+        <div>
+          Flight Data provided by
+          <a
+            target="_blank"
+            href="http://www.opensky-network.org"
+          >The OpenSky Network</a>
+        </div>
+        <div>
+          Corona case numbers provided by the
+          <a
+            href="https://data.europa.eu/euodp/de/data/dataset/covid-19-coronavirus-data"
+            target="_blank"
+          >EU Open Data Portal</a>.
+        </div>
       </div>
     </el-footer>
   </div>
@@ -333,14 +341,15 @@ div.arrow:hover::before {
 .footer {
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 12px;
 }
 
-#opensky-link {
+.footer > div > a {
   color: white;
-  margin-left: 5px;
+  margin-left: 3px;
 }
 </style>
