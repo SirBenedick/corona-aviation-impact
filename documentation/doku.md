@@ -1,3 +1,4 @@
+![dashboard](./img/dashboard_640x360.png) \
 Alexander Köhler, Benedict Kruse, Nico Gensheimer, Luca Gauß, Dominik Klar
 
 # Corona Flugverkehr
