@@ -32,19 +32,19 @@ darstellen soll. Des Weiteren zwei Liniendiagramme, die den Flugverkehr und die 
 darstellen sollen. \
 Diese Visualisierungen sollte dabei folgende Frage beantworten:
 
-######_Wie haben sich die Einschränkungen des SARS-CoV-2-Virus auf den weltweiten Flugverkehr ausgewirkt?_
+#####  _Wie haben sich die Einschränkungen des SARS-CoV-2-Virus auf den weltweiten Flugverkehr ausgewirkt?_
 
-Für die Umsetzung des Dashboards entschieden wir uns für _D3.js_, eine JavaScript Library zum Erstellen von Visualisierungen. Darüber
+Für die Umsetzung des Dashboards entschieden wir uns für _D3.js_, eine JavaScript Bibliothek zum Erstellen von Visualisierungen. Darüber
 hinaus entschieden wir uns für das Front-End Framework _Vue.js_.
 
 # Daten / Auswertung / Prozess
 
 ## Daten
 
-Unsere Datenquellen waren die Flugdaten des OpenSky Networks und die Coronadaten des offenen Datenportals der EU.
+Unsere Datenquellen waren die Flugdaten des [OpenSky Networks](https://opensky-network.org) und die Coronadaten des offenen [Datenportals der EU](https://data.europa.eu/euodp/de/data/dataset/covid-19-coronavirus-data).
 Das OpenSky Network ist ein gemeinnütziger Verein mit Sitz in der Schweiz, der Flugdaten aufzeichnet. Die Flugdaten werden durch eine Vielzahl an Sensoren aufgezeichnet, die weltweit verstreut sind. Die meisten dieser Sensoren befinden sich in Europa und den USA.
 Sie stellten aufgrund des Hohen Interesses — ausgelöst durch die Pandemie — einen bereinigten Datensatz öffentlich zur Verfügung. Dieser Datensatz enthielt allerdings nicht den Start und das Ziel der Flugzeuge.
-Deshalb kontaktierten wir die Zuständigen und baten um den vollständigen Datensatz. Schnell wurde uns der Zugriff auf die Datenbank des Netzwerks gewährt, wodurch wir alle jemals vom Netzwerk gesammelten Daten erhalten haben.\
+Deshalb kontaktierten wir die Zuständigen und baten um den vollständigen Datensatz. Schnell wurde uns der Zugriff auf die Datenbank des Netzwerks gewährt, wodurch wir alle vom Netzwerk gesammelten Daten erhalten haben.\
 Das offene Datenportal der EU stellt die weltweiten Fälle der Corona Infektionen bereit.
 
 ## Auswertung
@@ -57,7 +57,7 @@ sicherstellen können, dass die Einbrüche der Flugzahlen mit dem Anstieg der Co
 ## Prozess
 
 Da wir auf unserer Website aus Gründen der Performanz nur eine Datei laden wollten, haben wir uns dazu entschieden, die Daten in einer JSON-Datei zu speichern.
-Dieses Dateiformat ist nativ in JavaScript (also im Browser) unterstützt und lässt sich somit ohne zusätzliches Parsen einlesen.
+Dieses Dateiformat wird nativ in JavaScript (also im Browser) unterstützt und lässt sich somit ohne zusätzliches Parsen einlesen.
 Da jedoch viele Daten für uns unbrauchbar waren, mussten wir die Datensätze zunächst bereinigen und haben
 danach die für uns relevanten Daten, sowohl die des Flugverkehrs, als auch der Corona Daten als JSON-Datei gesichert. \
 \
@@ -163,7 +163,7 @@ zukünftig den Verlauf der Pandemie und des Flugverkehrs darzustellen.
 
 Der erste Schritt, den wir beim weiteren Ausbauen unseres Dashboards gehen würden, wäre das
 automatisierte Updated der Daten. Dies hätte den Vorteil, dass wir unsere Skripts nicht mehr manuell
-ausführen müssen. \
+ausführen müssen um aktuelle Daten zu bereinigen und in unser Datenformat umzuwandeln.  \
 \
 Darüber hinaus könnte man ein _Story Telling_ entwickeln, sodass die Highlights nicht einzeln statisch
 im Text sind. Diese sollen einerseits dynamisch sein, d. h. durch scrollen ändern sich diese
