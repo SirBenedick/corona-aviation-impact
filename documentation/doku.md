@@ -1,7 +1,16 @@
-![dashboard](./img/dashboard_640x360.png) \
-Alexander Köhler, Benedict Kruse, Nico Gensheimer, Luca Gauß, Dominik Klar
-
-# Corona Flugverkehr
+---
+layout: page
+title:  "Corona Flugverkehr"
+subheadline: Einfluss der Pandemie auf In- und Auslandsflüge
+teaser: "Das Dashboard visualisiert die prozentuale Zu- und Abnahme des Flugverkehrs in ausgewählten Ländern während der Corona-Pandemie"
+header: no
+show_meta: false
+categories:
+    - projects
+image:
+    title: corona_flugverkehr/dashboard_640x360.png
+author: Alexander Köhler, Benedict Kruse, Nico Gensheimer, Luca Gauß, Dominik Klar
+---
 
 Dokumentation des Projektes 'Corona Flugverkehr' zum Thema ‘Social Distancing’, das im Rahmen
 des Kurses 'Grundlagen der Datenvisualisierung' bei Herrn Prof. Dr. Till Nagel im
@@ -78,7 +87,7 @@ Da es sich bei Ländern und Monaten um nominale Merkmale und bei der Anzahl der 
 inspirierten uns die Punkte in den einzelnen Feldern, um Corona Events, wie beispielsweise die Schließung der amerikanischen Grenzen, anzeigen zu lassen. Diese
 Corona Events sollten den Zusammenhang zwischen dem Einbruch des Flugverkehrs und dem Inkrafttreten von Kontaktbeschränkungen untersuchen. Des Weiteren eignet
 sich eine radiale Heat Map gut um einzelne Länder und Monate miteinander zu vergleichen. \
-Abb. XY zeigt unsere erste Version eines datengestützten Prototypen. \
+Die folgende Abbildung zeigt unsere erste Version eines datengestützten Prototypen. \
 \
 ![radiale Heat Map Version 1](./img/radial_prototyp_datengestuetzt.png) \
 \
@@ -88,16 +97,16 @@ Deshalb entschieden wir uns eine lineare Heatmap für die Visualisierung der Flu
 Die Farbskala der Heat Map war zu Beginn fließend. Dies änderten wir in eine Farbskala mit 7 Bereichen. Nuancen lassen sich zwar nicht mehr erkennen, aber durch
 den gleichen Farbton lassen sich Gemeinsamkeiten beim Vergleich mehrerer Länder besser erkennen. \
 \
-![Linendiagramme der Flugdaten und der Coronadaten](./img/liniendiagramme.png) \
-\
 **Liniendiagramm der Flugdaten** \
 In einem Liniendiagramm wollten wir ermöglichen den Flugverkehr eines bestimmten Landes sowohl mit dem inländischen als auch mit dem weltweiten Flugverkehr zu vergleichen. Um einen
 zeitlichen Verlauf mit mehreren quantitativen Daten zu visualisieren bot sich ein Liniendiagramm an. Um starke Ausreißer an einzelnen Tagen zu vermeiden, haben wir ein gleitendes Mittel von drei Tagen für die Berechnung der Kurve verwendet. Dies hatte
 den Nachteil, dass beispielsweise ein Wochenende im Jahr 2020 mit der Mitte der Woche des Jahres 2019 verglichen wird, was die Ergebnisse verfälscht hätte. Deshalb entschieden
 wir uns ein gleitendes Mittel aus sieben Tagen zu verwenden und so die Kalender Wochen der beiden Jahre miteinander zu vergleichen um den Anstieg bzw. Einbruch des Flugverkehrs
-zum Vorjahr zu berechnen.
+zum Vorjahr zu berechnen. Die folgende Abbildung zeigt die erste Version der Flug- und Coronadaten.
 
-**Liniendiagramm der Corona Daten** \
+![Linendiagramme der Flugdaten und der Coronadaten](./img/liniendiagramme.png) 
+
+**Liniendiagramm der Coronadaten** \
 Unter dem Liniendiagramm der Flugdaten visualisieren wir die Corona Daten ebenfalls in einem Liniendiagramm. Durch die äquivalente zeitliche Achse kann so im zeitlichen Verlauf
 der Zusammenhang zwischen dem Einbrechen des Flugverkehrs und dem steigen der positiven Corona Fälle beobachtet werden.
 
