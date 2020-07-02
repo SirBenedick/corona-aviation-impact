@@ -1,14 +1,14 @@
 ---
 layout: page
-title:  "Corona Flugverkehr"
+title: "Corona Flugverkehr"
 subheadline: Einfluss der Pandemie auf In- und Auslandsflüge
 teaser: "Das Dashboard visualisiert die prozentuale Zu- und Abnahme des Flugverkehrs in ausgewählten Ländern während der Corona-Pandemie"
 header: no
 show_meta: false
 categories:
-    - projects
+  - projects
 image:
-    title: corona_flugverkehr/dashboard_640x360.png
+  title: corona_flugverkehr/dashboard_640x360.png
 author: Alexander Köhler, Benedict Kruse, Nico Gensheimer, Luca Gauß, Dominik Klar
 ---
 
@@ -41,7 +41,7 @@ darstellen soll. Des Weiteren zwei Liniendiagramme, die den Flugverkehr und die 
 darstellen sollen. <br>
 Diese Visualisierungen sollte dabei folgende Frage beantworten:
 
-#####  _Wie haben sich die Einschränkungen des SARS-CoV-2-Virus auf den weltweiten Flugverkehr ausgewirkt?_
+##### _Wie haben sich die Einschränkungen des SARS-CoV-2-Virus auf den weltweiten Flugverkehr ausgewirkt?_
 
 Für die Umsetzung des Dashboards entschieden wir uns für _D3.js_, eine JavaScript Bibliothek zum Erstellen von Visualisierungen. Darüber
 hinaus entschieden wir uns für das Front-End Framework _Vue.js_.
@@ -67,18 +67,20 @@ sicherstellen können, dass die Einbrüche der Flugzahlen mit dem Anstieg der Co
 
 Da wir auf unserer Website aus Gründen der Performanz nur eine Datei laden wollten, haben wir uns dazu entschieden, die Daten in einer JSON-Datei zu speichern.
 Dieses Dateiformat wird nativ in JavaScript (also im Browser) unterstützt und lässt sich somit ohne zusätzliches Parsen einlesen.
-Da jedoch viele Daten für uns unbrauchbar waren, mussten wir die Datensätze zunächst bereinigen und haben
-danach die für uns relevanten Daten, sowohl die des Flugverkehrs, als auch der Corona Daten als JSON-Datei gesichert. <br>
+Da der Umfang der Flugdaten enorm ist, mussten wir die für unser Projekt relevanten Daten aus den Rohdaten ziehen und in eine für uns verwertbare Form bringen.
+Dafür haben wir die Flugnummer, den Abflug- und Zielflughafen sowie den Tag des Fluges aus den Flugdaten gezogen. Anschließend haben wir mit Hilfe der Flughäfen eines Fluges das Ursprungsland bzw. Ankunftsland ermittelt. Nach diesem Schritt besteht ein Eintrag der Flugdaten aus einem Tag, dem Ursprungsland und dem Ankunftsland eines Fluges.
+Im Anschluss müssen die Flüge für ein Land an einem Tag gezählt werden und in Innlands- oder Internationale-Flüge aufgeteilt werden. Ein Flug der Im gleichen Land startet und landet wird dabei als Innlandsflug betrachtet, jeder andere als international. Die am Ende entstandene JSON-Datei beinhaltet letztendlich einen Eintrag für jedes Land sowie die dazugehörige Fluganzahl an den verschiedenen Tagen des Jahres.
+Dabei wird für jeden Tag die Fluganzahl im Jahr 2019 und im Jahr 2020 gespeichert, damit die beiden Werte später leicht verglichen werden können.
 <br>
- ![Screenshot vom JSON](./img/JSON_screenshot.png)
+![Screenshot vom JSON](./img/JSON_screenshot.png)
 
 # Prototyp / Ergebnisse
 
 ## Entstehung des Prototypen
 
 **Heat Map** <br>
-Um zu entscheiden, welche Visualisierung sich für unsere Flugdaten eigneten ließen wir uns von 
-[Data Viz Project](https://datavizproject.com/) inspirieren. 
+Um zu entscheiden, welche Visualisierung sich für unsere Flugdaten eigneten ließen wir uns von
+[Data Viz Project](https://datavizproject.com/) inspirieren.
 Dabei sind wir auf eine radiale Heat Map gestoßen. <br>
 <br>
 ![Alt Text](./img/radialheatMapDatavisprojects.png) <br>
@@ -104,7 +106,7 @@ den Nachteil, dass beispielsweise ein Wochenende im Jahr 2020 mit der Mitte der 
 wir uns ein gleitendes Mittel aus sieben Tagen zu verwenden und so die Kalender Wochen der beiden Jahre miteinander zu vergleichen um den Anstieg bzw. Einbruch des Flugverkehrs
 zum Vorjahr zu berechnen. Die folgende Abbildung zeigt die erste Version der Flug- und Coronadaten.
 
-![Linendiagramme der Flugdaten und der Coronadaten](./img/liniendiagramme.png) 
+![Linendiagramme der Flugdaten und der Coronadaten](./img/liniendiagramme.png)
 
 **Liniendiagramm der Coronadaten** <br>
 Unter dem Liniendiagramm der Flugdaten visualisieren wir die Corona Daten ebenfalls in einem Liniendiagramm. Durch die äquivalente zeitliche Achse kann so im zeitlichen Verlauf
