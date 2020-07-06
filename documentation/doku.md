@@ -72,7 +72,7 @@ Dafür haben wir die Flugnummer, den Abflug- und Zielflughafen sowie den Tag des
 Im Anschluss müssen die Flüge für ein Land an einem Tag gezählt werden und in Innlands- oder Internationale-Flüge aufgeteilt werden. Ein Flug der im gleichen Land startet und landet wird dabei als Innlandsflug betrachtet, jeder andere als international. Die am Ende entstandene JSON-Datei beinhaltet letztendlich einen Eintrag für jedes Land sowie die dazugehörige Fluganzahl an den verschiedenen Tagen des Jahres.
 Dabei wird für jeden Tag die Fluganzahl im Jahr 2019 und im Jahr 2020 gespeichert, damit die beiden Werte später leicht verglichen werden können.
 <br>
- ![Screenshot vom JSON](../../images/corona_flugverkehr/JSON_screenshot.png)
+ ![Screenshot vom JSON](./img/JSON_screenshot.png)
 
 # Prototyp / Ergebnisse
 
@@ -83,7 +83,7 @@ Um zu entscheiden, welche Visualisierung sich für unsere Flugdaten eigneten lie
 [Data Viz Project](https://datavizproject.com/) inspirieren. 
 Dabei sind wir auf eine radiale Heat Map gestoßen. <br>
 <br>
-![Alt Text](../../images/corona_flugverkehr/radialheatMapDatavisprojects.png) <br>
+![Alt Text](./img/radialheatMapDatavisprojects.png) <br>
 <br>
 Da es sich bei Ländern und Monaten um nominale Merkmale und bei der Anzahl der Flieger um ein quantitatives Merkmal handelt, bot sich eine Heat Map an. Zusätzlich
 inspirierten uns die Punkte in den einzelnen Feldern, um Corona Events, wie beispielsweise die Schließung der amerikanischen Grenzen, anzeigen zu lassen. Diese
@@ -91,7 +91,7 @@ Corona Events sollten den Zusammenhang zwischen dem Einbruch des Flugverkehrs un
 sich eine radiale Heat Map gut um einzelne Länder und Monate miteinander zu vergleichen. <br>
 Die folgende Abbildung zeigt unsere erste Version eines datengestützten Prototypen. <br>
 <br>
-![radiale Heat Map Version 1](../../images/corona_flugverkehr/radial_prototyp_datengestuetzt.png) <br>
+![radiale Heat Map Version 1](./img/radial_prototyp_datengestuetzt.png) <br>
 <br>
 Nach dem ersten datengestützten Prototypen bemerkten wir, dass keine sinnvolle Reihenfolge für die Anordnung der Ländern gewählt werden konnte. Darüber hinaus
 entspricht ein zeitlicher Verlauf von rechts nach links — wie es in der gesamten linken Hälfte der radialen Heatmap passiert — nicht der Erwartung von zeitlichen Verläufen. <br>
@@ -106,7 +106,7 @@ den Nachteil, dass beispielsweise ein Wochenende im Jahr 2020 mit der Mitte der 
 wir uns ein gleitendes Mittel aus sieben Tagen zu verwenden und so die Kalender Wochen der beiden Jahre miteinander zu vergleichen um den Anstieg bzw. Einbruch des Flugverkehrs
 zum Vorjahr zu berechnen. Die folgende Abbildung zeigt die erste Version der Flug- und Coronadaten.
 
-![Linendiagramme der Flugdaten und der Coronadaten](../../images/corona_flugverkehr/liniendiagramme.png) 
+![Linendiagramme der Flugdaten und der Coronadaten](./img/liniendiagramme.png) 
 
 **Liniendiagramm der Coronadaten** <br>
 Unter dem Liniendiagramm der Flugdaten visualisieren wir die Corona Daten ebenfalls in einem Liniendiagramm. Durch die äquivalente zeitliche Achse kann so im zeitlichen Verlauf
@@ -114,7 +114,7 @@ der Zusammenhang zwischen dem Einbrechen des Flugverkehrs und dem steigen der po
 
 ## Prototyp
 
-![finales Dashboard](../../images/corona_flugverkehr/dashboard.png)
+![finales Dashboard](./img/dashboard.png)
 <br>
 <br>
 Den **Prototypen** können Sie hier **live testen**: [Corona Flugverkehr](https://sirbenedick.github.io/corona-aviation-impact/)
@@ -148,19 +148,19 @@ Darüber hinaus hatten wir in unserem Team bereits Erfahrung mit _Element UI_, d
 
 Das Ziel unseres Prototypen war es, zu untersuchen, ob die Einschränkungen des Flugverkehrs eine Auswirkung auf die Ausbreitung von SARS-Cov-2 hatte. China war das erste Land, das den Flugverkehr stark eingeschränkt hat, dies lag natürlich daran, dass das Virus in China ausgebrochen ist. Nach den Einschränkungen des Flugverkehrs haben auch die Neuinfektionen stark abgenommen. \
 <br>
-![China Diagramme](../../images/corona_flugverkehr/China.png)
+![China Diagramme](./img/China.png)
 <br>
 <br>
 Natürlich liegt dies nicht nur an den Einschränkungen des Flugverkehrs. Man kann hier jedoch sagen, dass diverse Vorkehrungen, die sich mit Social Distancing befassen, bei der Eindämmung der Pandemie geholfen haben. Dies kann man beispielsweise auch an den USA sehen. Bei den Diagrammen der USA kann man sehen, dass der Flugverkehr nur zum Teil eingestellt wurde.
 In den USA wurde der Lockdown anfangs nicht so ernst genommen wie beispielsweise in China. Dies könnte ein Grund dafür sein, dass die Neuinfektionen in den USA nur recht langsam abnehmen.
 <br>
 <br>
-![USA Diagramme](../../images/corona_flugverkehr/USA.png)
+![USA Diagramme](./img/USA.png)
 <br>
 <br>
 Während unseren Untersuchungen sind wir zudem auf die Flugzahlen von Österreich gestoßen. Die Inlandsflüge von Österreich haben zunächst stark abgenommen. In den letzten Wochen sind diese jedoch wieder sehr stark angestiegen. Es gibt Wochen in denen es teilweise doppelt so viele Inlandflüge, wie im Jahr davor gibt. Bei näherer Recherche und durch Bekannte konnten wir dann erfahren, dass dieser Ausschlag der Flugzahlen durch viele private Flüge mit Segelflugzeugen und kleinen Propellermaschinen entstanden sein könnte.\
 <br>
-![Innlandsflüge Austria](../../images/corona_flugverkehr/Austria.png)
+![Innlandsflüge Austria](./img/Austria.png)
 
 # Fazit
 
