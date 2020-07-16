@@ -12,8 +12,8 @@ image:
 author: Alexander Köhler, Benedict Kruse, Nico Gensheimer, Luca Gauß, Dominik Klar
 ---
 
-Dokumentation des Projektes 'Corona Flugverkehr' zum Thema ‘Social Distancing’, das im Rahmen
-des Kurses 'Grundlagen der Datenvisualisierung' bei Herrn Prof. Dr. Till Nagel im
+Dokumentation des Projektes _Corona Flugverkehr_ zum Thema _Social Distancing_, das im Rahmen
+des Kurses _Grundlagen der Datenvisualisierung_ bei Herrn Prof. Dr. Till Nagel im
 Sommersemester 2020 an der Hochschule Mannheim stattgefunden hat.
 
 Die Corona Pandemie hat durch die Corona-Verordnungen zum Social Distancing und weiteren Einschränkungen geführt.
@@ -27,7 +27,7 @@ werden, dass die Zahlen der positiv getesteten Personen im Zusammenhang mit dem 
 
 ## Einführung
 
-Dieses Projekt ist im Rahmen der Vorlesung 'Grundlagen der Datenvisualisierung' entstanden. Die Vorgabe war Daten
+Dieses Projekt ist im Rahmen der Vorlesung _Grundlagen der Datenvisualisierung_ entstanden. Die Vorgabe war Daten
 die im Kontext von Social Distancing stehen, auszuwählen, aufzubereiten, sie zu analysieren und schließlich mit einer
 interaktiven Visualisierung darzustellen.
 Nach einer gemeinsamen Recherche, sind wir auf den Flugverkehr gekommen, der durch die Reisebeschränkungen starke
@@ -43,7 +43,7 @@ Diese Visualisierungen sollte dabei folgende Fragen beantworten:
 
 ##### _Wie haben sich die Einschränkungen des SARS-CoV-2-Virus auf den weltweiten Flugverkehr ausgewirkt?_
 ##### _Welche Änderungen der einzelnen Länder gab es im Vergleich zum Vorjahr?_
-##### _Welche Länder waren besonders schwer betreffen?_
+##### _Welche Länder waren besonders schwer betroffen?_
 ##### _Wie wirkten sich die Coronamaßnahmen auf den Flugverkehr aus?_
 <br>
 Für die Umsetzung des Dashboards entschieden wir uns für _D3.js_, eine JavaScript Bibliothek zum Erstellen von Visualisierungen. Darüber
@@ -70,7 +70,9 @@ mussten. Schnell konnte man sehen, wie stark die Flugzahlen in den letzten Woche
 unseren Visualisierungen konnte man klar erkennen, dass die Flugzahlen zeitgleich mit dem Anstieg der Coronafälle stark 
 gefallen sind. Zusätzlich haben wir die Flugdaten von diesem Jahr mit den Flugdaten vom letzten Jahr verglichen, damit wir
 sicherstellen können, dass die Einbrüche der Flugzahlen mit dem Anstieg der Coronafälle zusammen hängen. <br>
-Folgende Abbildung zeigt die Datenexploration über dein Einbruch des Flugverkehrs <br>
+Folgende Abbildung zeigt die Datenexploration über dein Einbruch des Flugverkehrs
+<br>
+<br>
 ![Tableau Einbruch Flugverkehr](./img/einbruch_flugverkehr.png)
 
 ## Prozess
@@ -86,6 +88,7 @@ Internationale-Flüge aufgeteilt werden. Ein Flug der im gleichen Land startet u
 jeder andere als international. Die am Ende entstandene JSON-Datei beinhaltet letztendlich einen Eintrag für jedes Land sowie die 
 dazugehörige Fluganzahl an den verschiedenen Tagen des Jahres. Dabei wird für jeden Tag die Fluganzahl im Jahr 2019 und im 
 Jahr 2020 gespeichert, damit die beiden Werte später leicht verglichen werden können.
+<br>
 <br>
  ![Screenshot vom JSON](./img/JSON_screenshot.png)
 
@@ -189,7 +192,7 @@ Aufgrund der hohen Flexibilität ließ sich dieses gut mit D3.js kombinieren. Da
 Erfahrung mit _Element UI_, dass mit Vue.js die Gestaltung des Layouts ermöglichte.
 
 # Erkenntnisse
-###China: first to spread, first to lock down
+### China: first to spread, first to lock down
 Das Ziel unseres Prototypen war es, zu untersuchen, ob die Einschränkungen des Flugverkehrs eine Auswirkung auf die 
 Ausbreitung von SARS-Cov-2 hatte. China war das erste Land, das den Flugverkehr stark eingeschränkt hat, dies lag natürlich 
 daran, dass das Virus in China ausgebrochen ist. Nach den Einschränkungen des Flugverkehrs haben auch die Neuinfektionen 
@@ -198,7 +201,7 @@ stark abgenommen.
 <br>
 ![China Diagramme](./img/China.png)
 <br>
-###USA with a late lockdown
+### USA with a late lockdown
 Natürlich liegt dies nicht nur an den Einschränkungen des Flugverkehrs. Man kann hier jedoch sagen, dass diverse Vorkehrungen, 
 die sich mit Social Distancing befassen, bei der Eindämmung der Pandemie geholfen haben. Dies kann man beispielsweise auch an den 
 USA sehen. Bei den Diagrammen der USA kann man sehen, dass der Flugverkehr nur zum Teil eingestellt wurde. In den USA wurde 
@@ -208,7 +211,7 @@ Neuinfektionen in den USA nur recht langsam abnehmen.
 <br>
 ![USA Diagramme](./img/USA.png)
 <br>
-###Austria enjoys gliding
+### Austria enjoys gliding
 Während unseren Untersuchungen sind wir zudem auf die Flugzahlen von Österreich gestoßen. Die Inlandsflüge von Österreich 
 haben zunächst stark abgenommen. In den letzten Wochen sind diese jedoch wieder sehr stark angestiegen. Es gibt Wochen in 
 denen es teilweise doppelt so viele Inlandflüge, wie im Jahr davor gibt. Bei näherer Recherche und durch Bekannte konnten 
