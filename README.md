@@ -1,16 +1,7 @@
----
-layout: page
-title:  "Corona Flugverkehr"
-subheadline: Einfluss der Pandemie auf In- und Auslandsflüge
-teaser: "Das Dashboard visualisiert die prozentuale Zu- und Abnahme des Flugverkehrs in ausgewählten Ländern während der Corona-Pandemie"
-header: no
-show_meta: false
-categories:
-    - projects
-image:
-    title: corona_flugverkehr/dashboard_640x360.png
-author: Alexander Köhler, Benedict Kruse, Nico Gensheimer, Luca Gauß, Dominik Klar
----
+
+![Dashboard](./documentation/img/dashboard_640x360.png)
+
+[>>> try it <<<](https://sirbenedick.github.io/corona-aviation-impact/)
 
 Dokumentation des Projektes _Corona Flugverkehr_ zum Thema _Social Distancing_, das im Rahmen
 des Kurses _Grundlagen der Datenvisualisierung_ bei Herrn Prof. Dr. Till Nagel im
