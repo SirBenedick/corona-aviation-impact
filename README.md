@@ -1,4 +1,5 @@
 
+# How have SARS-CoV-2's limitations impacted global aviation traffic?
 ![Dashboard](./documentation/img/dashboard_640x360.png)
 
 [>>> try it <<<](https://sirbenedick.github.io/corona-aviation-impact/)
