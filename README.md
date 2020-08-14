@@ -236,3 +236,5 @@ automatisch und es muss nur noch ein Platz für sie reserviert werden. Der Benut
 seiner Sicht an der exakten Stelle unterschiedliche Visualisierungen, die die Highlights darstellen.
 Andererseits sollten diese Visualisierungen auch interaktiv sein, dass der Nutzer die Möglichkeit
 hat die Daten zu explorieren.
+
+[Alexander Köhler](https://github.com/KoehlerAlexander), [Benedict Kruse](https://github.com/SirBenedick), [Dominik Klar](https://github.com/dominikklar), [Luca Gauß](https://github.com/LucaG99), [Nico Gensheimer](https://github.com/gensheimern)
